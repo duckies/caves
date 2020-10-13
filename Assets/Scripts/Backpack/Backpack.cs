@@ -1,34 +1,26 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System;
 using System.Collections.Generic;
 
 public class Backpack : MonoBehaviour
 {
-  [SerializeField] protected List<Item> startingItems;
-  [SerializeField] protected Transform itemsParent;
-  [SerializeField] ItemSlot[] itemSlots;
-  [SerializeField] ToolSlot[] toolSlots;
+  [SerializeField] protected List<Item> startingItems = null;
+  [SerializeField] protected Transform itemsParent = null;
+  [SerializeField] private ItemSlot[] itemSlots = null;
+  [SerializeField] private ToolSlot[] toolSlots = null;
+  [SerializeField] private Image draggingIcon = null;
 
-  // public event Action<ItemSlot> OnPointerEnterEvent;
-  // public event Action<ItemSlot> OnPointerExitEvent;
-  public event Action<ItemSlot> OnRightClickEvent;
-  public event Action<ItemSlot> OnBeginDragEvent;
-  public event Action<ItemSlot> OnEndDragEvent;
-  public event Action<ItemSlot> OnDragEvent;
-  public event Action<ItemSlot> OnDropEvent;
+  private Slot draggingSlot;
 
   private void Awake()
   {
-    for (int i = 0; i < itemSlots.Length; i++)
-    {
-      // itemSlots[i].OnPointerEnterEvent += OnPointerEnterEvent;
-      // itemSlots[i].OnPointerExitEvent += OnPointerExitEvent;
-      itemSlots[i].OnRightClickEvent += OnRightClickEvent;
-      itemSlots[i].OnBeginDragEvent += OnBeginDragEvent;
-      itemSlots[i].OnEndDragEvent += OnEndDragEvent;
-      itemSlots[i].OnDragEvent += OnDragEvent;
-      itemSlots[i].OnDropEvent += OnDropEvent;
-    }
+    EventManager.instance.LeftClickDownEvent += OnSlotClickDown;
+    EventManager.instance.RightClickDownEvent += OnSlotClickDown;
+    EventManager.instance.LeftClickUpEvent += OnSlotClickUp;
+    EventManager.instance.RightClickUpEvent += OnSlotClickUp;
+    EventManager.instance.BeginDragEvent += OnSlotBeginDrag;
+    EventManager.instance.EndDragEvent += OnSlotEndDrag;
 
     SetStartingItems();
   }
@@ -48,24 +40,51 @@ public class Backpack : MonoBehaviour
     int i = 0;
     for (; i < startingItems.Count && i < itemSlots.Length; i++)
     {
-      itemSlots[i].Item = startingItems[i];
+      itemSlots[i].item = startingItems[i];
     }
 
     for (; i < itemSlots.Length; i++)
     {
-      itemSlots[i].Item = null;
+      itemSlots[i].item = null;
     }
   }
 
-  public bool AddItem(Item item)
+  private void OnSlotClickDown(Slot slot)
+  {
+    slot.pressed = true;
+  }
 
+  private void OnSlotClickUp(Slot slot)
+  {
+    slot.pressed = false;
+  }
+
+  private void OnSlotBeginDrag(Slot slot)
+  {
+    Debug.Log("Begin Drag");
+    if (slot.item == null) return;
+
+    draggingSlot = slot;
+    draggingIcon.sprite = slot.item.icon;
+    draggingIcon.transform.position = Input.mousePosition;
+    draggingIcon.enabled = true;
+  }
+
+  private void OnSlotEndDrag(Slot slot)
+  {
+    Debug.Log("End Drag");
+    draggingSlot = null;
+    draggingIcon.enabled = false;
+  }
+
+  public bool AddItem(Item item)
   {
     Debug.Log("Add Item: " + item);
     for (int i = 0; i < itemSlots.Length; i++)
     {
-      if (itemSlots[i].Item == null)
+      if (itemSlots[i].item == null)
       {
-        itemSlots[i].Item = item;
+        itemSlots[i].item = item;
         return true;
       }
     }
@@ -77,9 +96,9 @@ public class Backpack : MonoBehaviour
   {
     for (int i = 0; i < itemSlots.Length; i++)
     {
-      if (itemSlots[i].Item == item)
+      if (itemSlots[i].item == item)
       {
-        itemSlots[i].Item = null;
+        itemSlots[i].item = null;
         return true;
       }
     }
@@ -91,7 +110,7 @@ public class Backpack : MonoBehaviour
   {
     for (int i = 0; i < itemSlots.Length; i++)
     {
-      if (itemSlots[i].Item == null)
+      if (itemSlots[i].item == null)
       {
         return false;
       }
