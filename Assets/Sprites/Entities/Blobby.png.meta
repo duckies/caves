@@ -1,0 +1,232 @@
+fileFormatVersion: 2
+guid: 819315432f6e0cd4586afd5b640bfa5f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7364984980776242377
+    second: Blobby_0
+  - first:
+      213: 6388477740353027883
+    second: Blobby_1
+  - first:
+      213: -3538936447351604318
+    second: Blobby_2
+  - first:
+      213: -4776977521282215698
+    second: Blobby_3
+  - first:
+      213: -2961202197496666014
+    second: Blobby_4
+  - first:
+      213: -4189228413954895439
+    second: Blobby_5
+  - first:
+      213: 6822252203335642409
+    second: Blobby_6
+  - first:
+      213: -2655932162054485947
+    second: Blobby_7
+  - first:
+      213: -5599836291759611186
+    second: Blobby_8
+  - first:
+      213: -1998306595705528769
+    second: Blobby_9
+  - first:
+      213: 8754262875407310221
+    second: Blobby_10
+  - first:
+      213: -25959118088734642
+    second: Blobby_11
+  - first:
+      213: 643414287246117975
+    second: Blobby_12
+  - first:
+      213: 3776519410102453178
+    second: Blobby_13
+  - first:
+      213: 5512366140795589556
+    second: Blobby_14
+  - first:
+      213: 2447063545609433131
+    second: Blobby_15
+  - first:
+      213: 3623715872382867875
+    second: Blobby_16
+  - first:
+      213: -2090403041315559702
+    second: Blobby_17
+  - first:
+      213: -1258910975617466997
+    second: Blobby_18
+  - first:
+      213: -7674384156100299211
+    second: Blobby_19
+  - first:
+      213: -3356885613807740756
+    second: Blobby_20
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Blobby_4
+      rect:
+        serializedVersion: 2
+        x: 1343
+        y: 615
+        width: 262
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 268ea1e5a42b7e6d0800000000000000
+      internalID: -2961202197496666014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blobby_7
+      rect:
+        serializedVersion: 2
+        x: 957
+        y: 614
+        width: 295
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 548053535cb342bd0800000000000000
+      internalID: -2655932162054485947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blobby_19
+      rect:
+        serializedVersion: 2
+        x: 705
+        y: 51
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53671c9454c1f7590800000000000000
+      internalID: -7674384156100299211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
