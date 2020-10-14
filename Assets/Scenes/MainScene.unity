@@ -2633,7 +2633,7 @@ RectTransform:
   m_GameObject: {fileID: 1147095174}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 1581611982}
   - {fileID: 615107091}
@@ -2667,7 +2667,7 @@ MonoBehaviour:
   m_StartCorner: 0
   m_StartAxis: 0
   m_CellSize: {x: 100, y: 100}
-  m_Spacing: {x: 20, y: 20}
+  m_Spacing: {x: 20, y: 15}
   m_Constraint: 0
   m_ConstraintCount: 2
 --- !u!4 &1159247603 stripped
