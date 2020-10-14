@@ -16,7 +16,6 @@ public class ItemPickup : MonoBehaviour
 
   private void Update()
   {
-    Debug.Log("Is in range? : " + inRange);
     if (inRange && Input.GetKeyDown(keyCode))
     {
       Backpack.AddItem(item);
@@ -29,7 +28,6 @@ public class ItemPickup : MonoBehaviour
   {
     if (other.gameObject.CompareTag("Player"))
     {
-      Debug.Log("Player in range of pickup");
       inRange = true;
     }
 

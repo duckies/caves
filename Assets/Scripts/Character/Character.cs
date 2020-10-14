@@ -10,8 +10,7 @@ public class Character : MonoBehaviour
   public float relocateFallHeight = -20f;
 
   [Header("Serialize Fields")]
-  [SerializeField] private Backpack backpack = null;
-  [SerializeField] private Image draggableItem = null;
+  // [SerializeField] private Backpack backpack = null;
   [SerializeField] private Transform respawnPoint = null;
   public GameObject itemPickupPrefab;
 

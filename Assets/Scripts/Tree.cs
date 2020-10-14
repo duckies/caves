@@ -5,7 +5,7 @@ public class Tree : MonoBehaviour
 {
   //   [SerializeField] private Sprite[] sprites = null;
   [SerializeField] private float winGrowthAmount = 10;
-  [SerializeField] private Slider slider;
+  [SerializeField] private Slider slider = null;
 
   private float treeState = 0f;
 

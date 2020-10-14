@@ -11,9 +11,9 @@ public class Backpack : MonoBehaviour
   [SerializeField] private ToolSlot[] toolSlots = null;
   [SerializeField] private Image draggingIcon = null;
   [SerializeField] private GameObject itemPickupPrefab = null;
-  [SerializeField] private Transform character;
+  [SerializeField] private Transform character = null;
 
-  private Slot draggingSlot;
+  private ItemSlot draggingSlot;
 
   private void Awake()
   {
@@ -23,6 +23,8 @@ public class Backpack : MonoBehaviour
     EventManager.instance.RightClickUpEvent += OnSlotClickUp;
     EventManager.instance.BeginDragEvent += OnSlotBeginDrag;
     EventManager.instance.EndDragEvent += OnSlotEndDrag;
+    EventManager.instance.DragEvent += OnSlotDrag;
+    EventManager.instance.DropEvent += OnSlotDrop;
 
     SetStartingItems();
   }
@@ -58,12 +60,12 @@ public class Backpack : MonoBehaviour
 
   private void OnSlotRightClick(Slot slot)
   {
-    if (slot is ItemSlot)
+    if (slot is ItemSlot itemSlot)
     {
       GameObject itemGO = (GameObject)Instantiate(itemPickupPrefab, character.position, character.rotation);
       ItemPickup item = itemGO.GetComponent<ItemPickup>();
-      item.item = slot.item;
-      RemoveItem(slot.item);
+      item.item = itemSlot.item;
+      RemoveItem(itemSlot.item);
     }
   }
 
@@ -74,20 +76,38 @@ public class Backpack : MonoBehaviour
 
   private void OnSlotBeginDrag(Slot slot)
   {
-    Debug.Log("Begin Drag");
-    if (slot.item == null) return;
-
-    draggingSlot = slot;
-    draggingIcon.sprite = slot.item.icon;
-    draggingIcon.transform.position = Input.mousePosition;
-    draggingIcon.enabled = true;
+    if (slot is ItemSlot itemSlot)
+    {
+      draggingSlot = itemSlot;
+      draggingIcon.sprite = itemSlot.item.sprite;
+      draggingIcon.transform.position = Input.mousePosition;
+      draggingIcon.enabled = true;
+    }
   }
 
   private void OnSlotEndDrag(Slot slot)
   {
-    Debug.Log("End Drag");
     draggingSlot = null;
     draggingIcon.enabled = false;
+  }
+
+  private void OnSlotDrag(Slot slot)
+  {
+    if (draggingIcon.enabled)
+    {
+      draggingIcon.transform.position = Input.mousePosition;
+    }
+  }
+
+  private void OnSlotDrop(Slot slot)
+  {
+    // TODO: Fix issue where dropping a tool here causes error!
+    if (slot is ItemSlot itemSlot)
+    {
+      Item draggedItem = draggingSlot.item;
+      draggingSlot.item = itemSlot.item;
+      itemSlot.item = draggedItem;
+    }
   }
 
   public bool AddItem(Item item)

@@ -7,36 +7,16 @@ using TMPro;
 public class Slot : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IBeginDragHandler, IEndDragHandler, IDragHandler, IDropHandler
 {
   [SerializeField] private Image background = null;
-  [SerializeField] private Image icon = null;
   [SerializeField] private Color pressedColor = default;
   [SerializeField] private KeyCode keyCode = default;
   [SerializeField] private String keyCodeName = null;
   [SerializeField] private TextMeshProUGUI keybindText = null;
 
-  private Color normalColor = Color.white;
-  private Color disabledColor = new Color(1, 1, 1, 0);
   private Color normalBackgroundColor;
 
-  private Item _item;
-
-  public Item item
-  {
-    get { return _item; }
-    set
-    {
-      _item = value;
-      if (_item == null)
-      {
-        icon.color = disabledColor;
-      }
-      else
-      {
-        icon.sprite = _item.icon;
-        icon.color = normalColor;
-      }
-    }
-  }
-
+  public Color normalColor = Color.white;
+  public Color disabledColor = new Color(1, 1, 1, 0);
+  public Image icon = null;
   public bool _pressed;
   public bool pressed
   {
