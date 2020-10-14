@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b19a1a853d7c8a446b821a39925f10a6, type: 3}
-  m_Name: Hoe
+  m_Script: {fileID: 11500000, guid: c78bf29693c2e0242a611b1b33e28a4d, type: 3}
+  m_Name: WateringPail
   m_EditorClassIdentifier: 
-  toolName: Hoe
-  sprite: {fileID: 21300000, guid: 4da468a94b3f64a4f87fe8ce73ecf32d, type: 3}
+  toolName: Watering Pail
+  sprite: {fileID: 21300000, guid: 210d45f7849350e408c3d18f40291a1b, type: 3}

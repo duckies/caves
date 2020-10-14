@@ -91,11 +91,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   background: {fileID: 349949179448407434}
-  icon: {fileID: 383468618655673111}
   pressedColor: {r: 0.745283, g: 0.745283, b: 0.745283, a: 1}
   keyCode: 0
   keyCodeName: 
   keybindText: {fileID: 6649707544089431660}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
+  disabledColor: {r: 1, g: 1, b: 1, a: 0}
+  icon: {fileID: 383468618655673111}
+  _pressed: 0
 --- !u!1 &6793889090425389549
 GameObject:
   m_ObjectHideFlags: 0
@@ -295,7 +298,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e748a13d9d7fab346b5f58708e8b1393, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d90e2ac83f60a09499e1f7b7c680a038, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

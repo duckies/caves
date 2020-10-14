@@ -64,7 +64,6 @@ public class FarmController : MonoBehaviour
       {
         // TODO: REMOVE TEMPORARY
         selected.plant = tempPlant;
-        Debug.Log("Added Plant: " + coordinates);
       }
 
       DrawProgressBar(selected);
@@ -84,15 +83,15 @@ public class FarmController : MonoBehaviour
         UsePlow();
         return;
       default:
+        Debug.Log("Unimplemented Tool Name [" + toolSlot.tool.name + "]");
         return;
     }
   }
 
   private void UseWateringPail()
   {
+    Debug.Log("Using Watering Pail");
     if (selected == null || selected.isWatered) return;
-
-
   }
 
   private void UsePlow()
@@ -110,9 +109,8 @@ public class FarmController : MonoBehaviour
       FarmingTilemap.SetTile(position, null);
     }
 
-    selected.HideProgressBar();
+    selected.ClearPlot();
   }
-
 
   public void GrowPlants()
   {
@@ -122,33 +120,34 @@ public class FarmController : MonoBehaviour
       {
         plot.Value.Update();
         SetPlantTiles(plot.Value);
-        StartCoroutine(plot.Value.SetProgressBar());
+        plot.Value.SetProgress();
       }
     }
   }
 
-  public void DrawProgressBar(Plot Plot)
+  public void DrawProgressBar(Plot plot)
   {
-    if (Plot.progressBar == null)
+    if (plot.progressBar == null)
     {
       Vector3 position = new Vector3(
-        Plot.worldLocation.x + 0.5f,
-        Plot.worldLocation.y + 2f,
-        Plot.worldLocation.z
+        plot.worldLocation.x + 0.5f,
+        plot.worldLocation.y + 2f,
+        plot.worldLocation.z
       );
 
-      Plot.progressBar = (GameObject)Instantiate(ProgressBar, position, UIRotation);
-      Plot.slider = Plot.progressBar.GetComponent<Slider>();
+      plot.progressBar = (GameObject)Instantiate(ProgressBar, position, UIRotation);
+      plot.slider = plot.progressBar.GetComponent<Slider>();
+    }
+    else
+    {
+      plot.progressBar.SetActive(true);
     }
   }
 
   public void SetPlantTiles(Plot plot)
   {
-    Debug.Log("Stages Drawn: " + plot.stagesDrawn);
-    Debug.Log("Current Stage: " + plot.CurrentStage());
     while (plot.stagesDrawn < plot.CurrentStage())
     {
-      Debug.Log("Adding Plant Stage: " + plot.stagesDrawn + 1);
       DrawPlotStage(plot, plot.stagesDrawn + 1);
       plot.stagesDrawn += 1;
     }

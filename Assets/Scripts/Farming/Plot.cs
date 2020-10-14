@@ -55,7 +55,7 @@ public class Plot
     return Mathf.Clamp(growth / plant.growthTime, 0, plant.growthTime);
   }
 
-  public IEnumerator SetProgressBar()
+  public void SetProgress()
   {
     float progress = Progress();
 
@@ -63,14 +63,24 @@ public class Plot
 
     if (progress == 1.0)
     {
-      yield return new WaitForSeconds(2f);
+      // Figure out a decent way to do this later, coroutines don't work
+      // outside of MonoBehaviorus.
+      // yield return new WaitForSeconds(2f);
 
-      HideProgressBar();
+      progressBar.SetActive(false);
+    }
+    else if (progressBar.activeSelf == false)
+    {
+      progressBar.SetActive(true);
     }
   }
 
-  public void HideProgressBar()
+  public void ClearPlot()
   {
+    plant = null;
+    growth = 0;
+    isWatered = false;
+    stagesDrawn = 0;
     progressBar.SetActive(false);
   }
 }

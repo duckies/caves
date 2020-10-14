@@ -13,6 +13,8 @@ public class EventManager : MonoBehaviour
 
   // Backpack SLots
 
+  public event Action<Slot> KeyDownEvent;
+  public event Action<Slot> KeyUpEvent;
   public event Action<Slot> LeftClickDownEvent;
   public event Action<Slot> LeftClickUpEvent;
   public event Action<Slot> RightClickDownEvent;
@@ -21,6 +23,16 @@ public class EventManager : MonoBehaviour
   public event Action<Slot> BeginDragEvent;
   public event Action<Slot> EndDragEvent;
   public event Action<Slot> DropEvent;
+
+  public void OnKeyDownEvent(Slot slot)
+  {
+    KeyDownEvent?.Invoke(slot);
+  }
+
+  public void OnKeyUpEvent(Slot slot)
+  {
+    KeyUpEvent?.Invoke(slot);
+  }
 
   public void OnLeftClickDownEvent(Slot slot)
   {

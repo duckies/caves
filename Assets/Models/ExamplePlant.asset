@@ -23,5 +23,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d341a3e4270687845808a0dcaeccc552, type: 2}
   fourthStage: []
   growthTime: 5
-  treeGrowthAmount: 0.3
+  treeGrowthAmount: 3
   numStages: 3

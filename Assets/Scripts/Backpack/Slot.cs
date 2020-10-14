@@ -6,8 +6,8 @@ using TMPro;
 
 public class Slot : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IBeginDragHandler, IEndDragHandler, IDragHandler, IDropHandler
 {
-  [SerializeField] private Image background = null;
-  [SerializeField] private Color pressedColor = default;
+  [SerializeField] protected Image background = null;
+  [SerializeField] protected Color pressedColor = default;
   [SerializeField] private KeyCode keyCode = default;
   [SerializeField] private String keyCodeName = null;
   [SerializeField] private TextMeshProUGUI keybindText = null;
@@ -49,11 +49,11 @@ public class Slot : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IBegi
   {
     if (Input.GetKeyDown(keyCode))
     {
-      pressed = true;
+      EventManager.instance.OnKeyDownEvent(this);
     }
     else if (Input.GetKeyUp(keyCode))
     {
-      pressed = false;
+      EventManager.instance.OnKeyUpEvent(this);
     }
   }
 
@@ -93,7 +93,6 @@ public class Slot : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IBegi
 
   public void OnBeginDrag(PointerEventData eventData)
   {
-    Debug.Log("Dragging!");
     EventManager.instance.OnBeginDragEvent(this);
   }
 

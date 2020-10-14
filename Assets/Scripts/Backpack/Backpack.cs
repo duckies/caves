@@ -6,7 +6,9 @@ using System.Collections.Generic;
 public class Backpack : MonoBehaviour
 {
   [SerializeField] protected List<Item> startingItems = null;
+  [SerializeField] protected List<Tool> startingTools = null;
   [SerializeField] protected Transform itemsParent = null;
+  [SerializeField] protected Transform toolsParent = null;
   [SerializeField] private ItemSlot[] itemSlots = null;
   [SerializeField] private ToolSlot[] toolSlots = null;
   [SerializeField] private Image draggingIcon = null;
@@ -17,6 +19,8 @@ public class Backpack : MonoBehaviour
 
   private void Awake()
   {
+    EventManager.instance.KeyDownEvent += OnSlotKeyDown;
+    EventManager.instance.KeyUpEvent += OnSlotKeyUp;
     EventManager.instance.LeftClickDownEvent += OnSlotClickDown;
     EventManager.instance.RightClickDownEvent += OnSlotRightClick;
     EventManager.instance.LeftClickUpEvent += OnSlotClickUp;
@@ -27,6 +31,7 @@ public class Backpack : MonoBehaviour
     EventManager.instance.DropEvent += OnSlotDrop;
 
     SetStartingItems();
+    SetStartingTools();
   }
 
   private void OnValidate()
@@ -36,7 +41,30 @@ public class Backpack : MonoBehaviour
       itemSlots = itemsParent.GetComponentsInChildren<ItemSlot>();
     }
 
-    if (!Application.isPlaying) SetStartingItems();
+    if (toolsParent != null)
+    {
+      toolSlots = toolsParent.GetComponentsInChildren<ToolSlot>();
+    }
+
+    if (!Application.isPlaying)
+    {
+      SetStartingItems();
+      SetStartingTools();
+    }
+  }
+
+  private void SetStartingTools()
+  {
+    int i = 0;
+    for (; i < startingTools.Count && i < toolSlots.Length; i++)
+    {
+      toolSlots[i].tool = startingTools[i];
+    }
+
+    for (; i < toolSlots.Length; i++)
+    {
+      toolSlots[i].tool = null;
+    }
   }
 
   private void SetStartingItems()
@@ -50,6 +78,20 @@ public class Backpack : MonoBehaviour
     for (; i < itemSlots.Length; i++)
     {
       itemSlots[i].item = null;
+    }
+  }
+
+  private void OnSlotKeyDown(Slot slot)
+  {
+    slot.pressed = true;
+  }
+
+  private void OnSlotKeyUp(Slot slot)
+  {
+    slot.pressed = false;
+    if (slot is ToolSlot toolSlot)
+    {
+      EventManager.instance.OnToolUse(toolSlot);
     }
   }
 
@@ -112,7 +154,6 @@ public class Backpack : MonoBehaviour
 
   public bool AddItem(Item item)
   {
-    Debug.Log("Add Item: " + item);
     for (int i = 0; i < itemSlots.Length; i++)
     {
       if (itemSlots[i].item == null)
