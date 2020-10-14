@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 000774d770a4629409c8f1623d97a816, type: 3}
+  m_Name: ExamplePlant
+  m_EditorClassIdentifier: 
+  firstStage:
+  - {fileID: 11400000, guid: b95849971292aa84fb470bdea7a3560a, type: 2}
+  secondStage:
+  - {fileID: 11400000, guid: b95849971292aa84fb470bdea7a3560a, type: 2}
+  - {fileID: 11400000, guid: 112a39a623f2b8f40923bc02e0912745, type: 2}
+  thirdStage:
+  - {fileID: 11400000, guid: b95849971292aa84fb470bdea7a3560a, type: 2}
+  - {fileID: 11400000, guid: 112a39a623f2b8f40923bc02e0912745, type: 2}
+  - {fileID: 11400000, guid: d341a3e4270687845808a0dcaeccc552, type: 2}
+  fourthStage: []
+  growthTime: 5
+  treeGrowthAmount: 0.3
+  numStages: 3

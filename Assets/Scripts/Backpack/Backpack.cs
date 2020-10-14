@@ -10,13 +10,15 @@ public class Backpack : MonoBehaviour
   [SerializeField] private ItemSlot[] itemSlots = null;
   [SerializeField] private ToolSlot[] toolSlots = null;
   [SerializeField] private Image draggingIcon = null;
+  [SerializeField] private GameObject itemPickupPrefab = null;
+  [SerializeField] private Transform character;
 
   private Slot draggingSlot;
 
   private void Awake()
   {
     EventManager.instance.LeftClickDownEvent += OnSlotClickDown;
-    EventManager.instance.RightClickDownEvent += OnSlotClickDown;
+    EventManager.instance.RightClickDownEvent += OnSlotRightClick;
     EventManager.instance.LeftClickUpEvent += OnSlotClickUp;
     EventManager.instance.RightClickUpEvent += OnSlotClickUp;
     EventManager.instance.BeginDragEvent += OnSlotBeginDrag;
@@ -52,6 +54,17 @@ public class Backpack : MonoBehaviour
   private void OnSlotClickDown(Slot slot)
   {
     slot.pressed = true;
+  }
+
+  private void OnSlotRightClick(Slot slot)
+  {
+    if (slot is ItemSlot)
+    {
+      GameObject itemGO = (GameObject)Instantiate(itemPickupPrefab, character.position, character.rotation);
+      ItemPickup item = itemGO.GetComponent<ItemPickup>();
+      item.item = slot.item;
+      RemoveItem(slot.item);
+    }
   }
 
   private void OnSlotClickUp(Slot slot)
