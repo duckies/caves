@@ -23,6 +23,8 @@ public class EventManager : MonoBehaviour
   public event Action<Slot> BeginDragEvent;
   public event Action<Slot> EndDragEvent;
   public event Action<Slot> DropEvent;
+  public event Action<Item> ConsumeItem;
+  public event Action<Item> CreateItem;
 
   public void OnKeyDownEvent(Slot slot)
   {
@@ -74,6 +76,16 @@ public class EventManager : MonoBehaviour
     DropEvent?.Invoke(slot);
   }
 
+  public void OnCreateItem(Item item)
+  {
+    CreateItem?.Invoke(item);
+  }
+
+  public void OnConsumeItem(Item item)
+  {
+    ConsumeItem?.Invoke(item);
+  }
+
   // Tool Events
 
   public event Action<ToolSlot> ToolUse;
@@ -86,9 +98,15 @@ public class EventManager : MonoBehaviour
   // Farming Events
 
   public event Action<float> HarvestPlant;
+  public event Action<SeedItem> SeedUse;
 
   public void OnHarvestPlant(float growthAmount)
   {
     HarvestPlant?.Invoke(growthAmount);
+  }
+
+  public void OnSeedUse(SeedItem seed)
+  {
+    SeedUse?.Invoke(seed);
   }
 }

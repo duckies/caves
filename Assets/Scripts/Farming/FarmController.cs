@@ -10,7 +10,6 @@ public class FarmController : MonoBehaviour
 {
   [SerializeField] private Tilemap FarmingTilemap = null;
   [SerializeField] private Color highlightColor = default;
-  [SerializeField] private Plant tempPlant = null;
   [SerializeField] private GameObject ProgressBar = null;
 
   private Dictionary<Vector3, Plot> Farm = null;
@@ -20,6 +19,7 @@ public class FarmController : MonoBehaviour
   private void Awake()
   {
     EventManager.instance.ToolUse += UseTool;
+    EventManager.instance.SeedUse += OnSeedUse;
 
     Farm = new Dictionary<Vector3, Plot>();
 
@@ -39,37 +39,30 @@ public class FarmController : MonoBehaviour
   private void Update()
   {
     // On Left Click.
-    if (Input.GetMouseButtonDown(0))
-    {
-      (Vector3Int coordinates, TileBase tile) = GetTileFromCoords(Input.mousePosition);
-
-      // If we didn't click on a tile, abort.
-      if (!tile) return;
-
-      // Clear the current color modification on the selected tile.
-      if (selected != null)
-      {
-        FarmingTilemap.SetColor(selected.localLocation, Color.white);
-      }
-
-      // Select the new tile.
-      if (Farm.TryGetValue(coordinates, out selected))
-      {
-        FarmingTilemap.SetTileFlags(selected.localLocation, TileFlags.None);
-        FarmingTilemap.SetColor(selected.localLocation, highlightColor);
-      };
-
-      // If there is no plant in the plot, put one there.
-      if (!selected.plant)
-      {
-        // TODO: REMOVE TEMPORARY
-        selected.plant = tempPlant;
-      }
-
-      DrawProgressBar(selected);
-    }
+    if (Input.GetMouseButtonDown(0)) CheckSelectedPlant();
 
     GrowPlants();
+  }
+
+  private void CheckSelectedPlant()
+  {
+    (Vector3Int coordinates, TileBase tile) = GetTileFromCoords(Input.mousePosition);
+
+    // If we didn't click on a tile, abort.
+    if (!tile) return;
+
+    // Clear the current color modification on the selected tile.
+    if (selected != null)
+    {
+      FarmingTilemap.SetColor(selected.localLocation, Color.white);
+    }
+
+    // Select the new tile.
+    if (Farm.TryGetValue(coordinates, out selected))
+    {
+      FarmingTilemap.SetTileFlags(selected.localLocation, TileFlags.None);
+      FarmingTilemap.SetColor(selected.localLocation, highlightColor);
+    };
   }
 
   private void UseTool(ToolSlot toolSlot)
@@ -110,6 +103,16 @@ public class FarmController : MonoBehaviour
     }
 
     selected.ClearPlot();
+  }
+
+  private void OnSeedUse(SeedItem seed)
+  {
+    if (selected.plant != null) return;
+
+    DrawProgressBar(selected);
+    selected.plant = seed.plant;
+
+    EventManager.instance.OnConsumeItem(seed);
   }
 
   public void GrowPlants()

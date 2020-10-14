@@ -29,6 +29,8 @@ public class Backpack : MonoBehaviour
     EventManager.instance.EndDragEvent += OnSlotEndDrag;
     EventManager.instance.DragEvent += OnSlotDrag;
     EventManager.instance.DropEvent += OnSlotDrop;
+    EventManager.instance.ConsumeItem += OnConsumeItem;
+    EventManager.instance.CreateItem += OnCreateItem;
 
     SetStartingItems();
     SetStartingTools();
@@ -93,6 +95,10 @@ public class Backpack : MonoBehaviour
     {
       EventManager.instance.OnToolUse(toolSlot);
     }
+    else if (slot is ItemSlot itemSlot && itemSlot.item is SeedItem seed)
+    {
+      EventManager.instance.OnSeedUse(seed);
+    }
   }
 
   private void OnSlotClickDown(Slot slot)
@@ -150,6 +156,16 @@ public class Backpack : MonoBehaviour
       draggingSlot.item = itemSlot.item;
       itemSlot.item = draggedItem;
     }
+  }
+
+  private void OnCreateItem(Item item)
+  {
+    AddItem(item);
+  }
+
+  private void OnConsumeItem(Item item)
+  {
+    RemoveItem(item);
   }
 
   public bool AddItem(Item item)

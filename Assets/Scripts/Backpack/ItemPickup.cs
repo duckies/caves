@@ -8,6 +8,13 @@ public class ItemPickup : MonoBehaviour
   public KeyCode keyCode = KeyCode.E;
 
   private bool inRange;
+  private SpriteRenderer sprite;
+
+  private void Awake()
+  {
+    sprite = GetComponent<SpriteRenderer>();
+    sprite.sprite = item.sprite;
+  }
 
   private void OnValidate()
   {
