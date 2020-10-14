@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: StarterSeed
   m_EditorClassIdentifier: 
   itemName: Starter Seed
-  sprite: {fileID: -6099050445329199328, guid: ecb0c30cee69d20459e8a59448bbb50e, type: 3}
+  sprite: {fileID: 1801263428120863714, guid: ecb0c30cee69d20459e8a59448bbb50e, type: 3}
   plant: {fileID: 11400000, guid: baaea006be9cf1b44aac428248d93ee0, type: 2}

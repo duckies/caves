@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: YellowSeed
   m_EditorClassIdentifier: 
   itemName: Ominous Yellow Seed
-  sprite: {fileID: -6099050445329199328, guid: ecb0c30cee69d20459e8a59448bbb50e, type: 3}
+  sprite: {fileID: 1801263428120863714, guid: ecb0c30cee69d20459e8a59448bbb50e, type: 3}
   plant: {fileID: 11400000, guid: 5d2304a35469cb145aa5206090326900, type: 2}
