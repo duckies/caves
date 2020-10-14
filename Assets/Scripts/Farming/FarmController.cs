@@ -11,6 +11,7 @@ public class FarmController : MonoBehaviour
   [SerializeField] private Tilemap FarmingTilemap = null;
   [SerializeField] private Color highlightColor = default;
   [SerializeField] private GameObject ProgressBar = null;
+  [SerializeField] private GameObject PlantPrefab = null;
 
   private Dictionary<Vector3, Plot> Farm = null;
   private Plot selected = null;
@@ -94,13 +95,7 @@ public class FarmController : MonoBehaviour
 
     EventManager.instance.OnHarvestPlant(selected.plant.treeGrowthAmount);
 
-    Vector3Int position = new Vector3Int(selected.localLocation.x, selected.localLocation.y, 0);
-
-    for (int i = 0; i < selected.CurrentStage(); i++)
-    {
-      position.y += 1;
-      FarmingTilemap.SetTile(position, null);
-    }
+    Destroy(selected.plantPrefab);
 
     selected.ClearPlot();
   }
@@ -122,7 +117,8 @@ public class FarmController : MonoBehaviour
       if (plot.Value.plant != null)
       {
         plot.Value.Update();
-        SetPlantTiles(plot.Value);
+        // SetPlantTiles(plot.Value);
+        DrawPlant(plot.Value);
         plot.Value.SetProgress();
       }
     }
@@ -147,30 +143,31 @@ public class FarmController : MonoBehaviour
     }
   }
 
-  public void SetPlantTiles(Plot plot)
+  public void DrawPlant(Plot plot)
   {
-    while (plot.stagesDrawn < plot.CurrentStage())
+    if (plot.stagesDrawn != plot.CurrentStage())
     {
-      DrawPlotStage(plot, plot.stagesDrawn + 1);
-      plot.stagesDrawn += 1;
+      DrawPlantStage(plot);
+      plot.stagesDrawn = plot.CurrentStage();
     }
   }
 
-  public void DrawPlotStage(Plot plot, int stage)
+  public void DrawPlantStage(Plot plot)
   {
-    TileBase[] tilesToDraw = plot.plant.GetStage(stage);
-
-    for (var i = 0; i < tilesToDraw.Length; i++)
+    if (plot.plantPrefab == null)
     {
-      PlaceTile(plot.localLocation, i + 1, tilesToDraw[i]);
+      plot.plantPrefab = (GameObject)Instantiate(PlantPrefab);
     }
-  }
 
-  public void PlaceTile(Vector3Int position, int offset, TileBase tile)
-  {
-    position.y += offset;
+    SpriteRenderer renderer = plot.plantPrefab.GetComponent<SpriteRenderer>();
 
-    FarmingTilemap.SetTile(position, tile);
+    renderer.sprite = plot.plant.stages[plot.CurrentStage() - 1];
+
+    Vector3 objectSize = renderer.sprite.bounds.size;
+    plot.plantPrefab.transform.position = new Vector3(
+      plot.localLocation.x + 0.5f,
+      plot.localLocation.y + 1.0f,
+      0);
   }
 
   private void UpdatePlant(Plot Plot)

@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-using System;
 using System.Collections.Generic;
 
 public class Backpack : MonoBehaviour
@@ -111,8 +110,9 @@ public class Backpack : MonoBehaviour
     if (slot is ItemSlot itemSlot)
     {
       GameObject itemGO = (GameObject)Instantiate(itemPickupPrefab, character.position, character.rotation);
-      ItemPickup item = itemGO.GetComponent<ItemPickup>();
-      item.item = itemSlot.item;
+      ItemPickup itemPickup = itemGO.GetComponent<ItemPickup>();
+      itemPickup.item = itemSlot.item;
+      itemPickup.Backpack = this;
       RemoveItem(itemSlot.item);
     }
   }

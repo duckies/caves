@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEngine.Tilemaps;
 using UnityEngine.UI;
-using System.Collections;
 
 public class Plot
 {
@@ -12,6 +11,7 @@ public class Plot
   public Slider slider = null;
   public float growth;
   public bool isWatered = false;
+  public GameObject plantPrefab = null;
 
   private Tilemap Tilemap;
   private TileBase TileData;
@@ -28,7 +28,7 @@ public class Plot
 
   public int CurrentStage()
   {
-    return Mathf.Max(Mathf.FloorToInt(plant.numStages * Progress()), 1);
+    return Mathf.FloorToInt(plant.stages.Length * Progress());
   }
 
   public void GrowPlant()

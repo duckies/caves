@@ -12,18 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 000774d770a4629409c8f1623d97a816, type: 3}
   m_Name: ExamplePlantYellow
   m_EditorClassIdentifier: 
-  firstStage:
-  - {fileID: 11400000, guid: b95849971292aa84fb470bdea7a3560a, type: 2}
-  - {fileID: 11400000, guid: fb0545089a82c954b8f308d3f521d0d2, type: 2}
-  secondStage:
-  - {fileID: 11400000, guid: b95849971292aa84fb470bdea7a3560a, type: 2}
-  - {fileID: 11400000, guid: 112a39a623f2b8f40923bc02e0912745, type: 2}
-  - {fileID: 11400000, guid: fb0545089a82c954b8f308d3f521d0d2, type: 2}
-  thirdStage:
-  - {fileID: 11400000, guid: b95849971292aa84fb470bdea7a3560a, type: 2}
-  - {fileID: 11400000, guid: 112a39a623f2b8f40923bc02e0912745, type: 2}
-  - {fileID: 11400000, guid: 4bbfc6573bc7535409bc33f753752922, type: 2}
-  fourthStage: []
+  stages:
+  - {fileID: -488721925442295091, guid: ecb0c30cee69d20459e8a59448bbb50e, type: 3}
+  - {fileID: 4337684191699249041, guid: ecb0c30cee69d20459e8a59448bbb50e, type: 3}
+  - {fileID: 8033092973025764044, guid: ecb0c30cee69d20459e8a59448bbb50e, type: 3}
   growthTime: 2
   treeGrowthAmount: 1
-  numStages: 3
