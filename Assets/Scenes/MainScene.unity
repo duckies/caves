@@ -2342,11 +2342,11 @@ RectTransform:
   m_Father: {fileID: 865423526}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1043.4, y: -51}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -41, y: -26}
   m_SizeDelta: {x: 65, y: 65}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 1, y: 1}
 --- !u!114 &988455646
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2566,7 +2566,7 @@ MonoBehaviour:
   m_ChildAlignment: 0
   m_StartCorner: 0
   m_StartAxis: 1
-  m_CellSize: {x: 100, y: 100}
+  m_CellSize: {x: 90, y: 90}
   m_Spacing: {x: 10, y: 0}
   m_Constraint: 0
   m_ConstraintCount: 2
@@ -4974,11 +4974,11 @@ RectTransform:
   m_Father: {fileID: 865423526}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1125, y: -51}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -135, y: -26}
   m_SizeDelta: {x: 65, y: 65}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 1, y: 1}
 --- !u!114 &1464299790
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5439,7 +5439,7 @@ MonoBehaviour:
   m_ChildAlignment: 4
   m_StartCorner: 0
   m_StartAxis: 1
-  m_CellSize: {x: 60, y: 60}
+  m_CellSize: {x: 70, y: 70}
   m_Spacing: {x: 10, y: 10}
   m_Constraint: 0
   m_ConstraintCount: 2
@@ -6238,11 +6238,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5992166288544002314, guid: 0effaea69f1fffe47bfc5e679878f625, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.97
+      value: 4.08
       objectReference: {fileID: 0}
     - target: {fileID: 5992166288544002314, guid: 0effaea69f1fffe47bfc5e679878f625, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.74
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5992166288544002314, guid: 0effaea69f1fffe47bfc5e679878f625, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6282,12 +6282,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5992166288544002315, guid: 0effaea69f1fffe47bfc5e679878f625, type: 3}
       propertyPath: m_Name
-      value: StarterSeed
+      value: Seed (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5992166288544002316, guid: 0effaea69f1fffe47bfc5e679878f625, type: 3}
+      propertyPath: oscillationRange
+      value: 0.125
+      objectReference: {fileID: 0}
+    - target: {fileID: 5992166288544002316, guid: 0effaea69f1fffe47bfc5e679878f625, type: 3}
+      propertyPath: upperHeightLimit
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5992166288544002317, guid: 0effaea69f1fffe47bfc5e679878f625, type: 3}
       propertyPath: item
       value: 
       objectReference: {fileID: 11400000, guid: dca0f539bc22d7c4d998b3d2f1701af9, type: 2}
+    - target: {fileID: 5992166288544002318, guid: 0effaea69f1fffe47bfc5e679878f625, type: 3}
+      propertyPath: m_Radius
+      value: 0.8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0effaea69f1fffe47bfc5e679878f625, type: 3}
 --- !u!224 &1778992303 stripped
@@ -7115,7 +7127,7 @@ Canvas:
   m_RenderMode: 0
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
-  m_PixelPerfect: 0
+  m_PixelPerfect: 1
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
@@ -7448,7 +7460,7 @@ MonoBehaviour:
   m_ChildAlignment: 4
   m_StartCorner: 0
   m_StartAxis: 1
-  m_CellSize: {x: 60, y: 60}
+  m_CellSize: {x: 70, y: 70}
   m_Spacing: {x: 10, y: 10}
   m_Constraint: 0
   m_ConstraintCount: 2
@@ -7602,7 +7614,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5992166288544002314, guid: 0effaea69f1fffe47bfc5e679878f625, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.29
+      value: 0.98
       objectReference: {fileID: 0}
     - target: {fileID: 5992166288544002314, guid: 0effaea69f1fffe47bfc5e679878f625, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7642,11 +7654,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5992166288544002315, guid: 0effaea69f1fffe47bfc5e679878f625, type: 3}
       propertyPath: m_Name
-      value: Water
+      value: Seed (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 5992166288544002317, guid: 0effaea69f1fffe47bfc5e679878f625, type: 3}
-      propertyPath: item
-      value: 
-      objectReference: {fileID: 11400000, guid: 3f733df1ca5879e43b4dbd8ae46d9e89, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0effaea69f1fffe47bfc5e679878f625, type: 3}
