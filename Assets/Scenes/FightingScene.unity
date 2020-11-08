@@ -1197,6 +1197,7 @@ GameObject:
   - component: {fileID: 1616254854}
   - component: {fileID: 1616254853}
   - component: {fileID: 1616254856}
+  - component: {fileID: 1616254857}
   m_Layer: 0
   m_Name: Blob
   m_TagString: Untagged
@@ -1316,3 +1317,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1616254857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1616254852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb1eb62fb099d7c49a06e466278af067, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 4
+  attackDistance: 3
+  bufferDistance: 5
+  player: {fileID: 925688105}
+  minDist: -4
+  maxDist: 2
+  direction: 1
