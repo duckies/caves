@@ -14,6 +14,7 @@ public class Follow : MonoBehaviour
 
     Transform playerTransform;
 
+    [SerializeField] private Item item = null;
     void GetPlayerTransform()
     {
         if (player != null)
@@ -32,7 +33,7 @@ public class Follow : MonoBehaviour
         //  GetPlayerTransform();
         //initialPosition = transform.position;
         direction = -1;
-       // maxDist += transform.position.x;
+        //maxDist += transform.position.x;
         //minDist -= transform.position.x;
     }
 
@@ -79,5 +80,15 @@ public class Follow : MonoBehaviour
         }*/
     }
 
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            EventManager.instance.OnCreateItem(item);
+            Destroy(gameObject);
+            return;
+        }
+    }
 }
 
