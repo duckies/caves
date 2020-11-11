@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Follow : MonoBehaviour
 {
+
     public float speed = 4;
     public float attackDistance;
     public float bufferDistance;
@@ -11,6 +12,7 @@ public class Follow : MonoBehaviour
     public float minDist;
     public float maxDist;
     public int direction;
+    public float distance;
 
     Transform playerTransform;
 
@@ -40,6 +42,9 @@ public class Follow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //distance = Vector2.Distance(playerTransform.position.x, transform.position.x);
+        //Debug.Log("Distance to Player " + distance);
+        // patrolling the area until player get close
         switch (direction)
         {
             case -1:
@@ -66,7 +71,7 @@ public class Follow : MonoBehaviour
                 break;
         }
         /*var distance = Vector3.Distance(playerTransform.position, transform.position);
-        Debug.Log("Distance to Player " + distance);
+       
         if (distance <= attackDistance)
         {
             if (distance >= bufferDistance)
