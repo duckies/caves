@@ -1336,3 +1336,5 @@ MonoBehaviour:
   minDist: -4
   maxDist: 2
   direction: 1
+  distance: 0
+  item: {fileID: 11400000, guid: 85e890c1a0fd6684ca824c0273016087, type: 2}

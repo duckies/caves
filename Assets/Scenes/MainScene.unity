@@ -2977,6 +2977,8 @@ MonoBehaviour:
   minDist: -26
   maxDist: -21
   direction: 1
+  distance: 0
+  playerTransform: {fileID: 1490157684}
   item: {fileID: 11400000, guid: 3f733df1ca5879e43b4dbd8ae46d9e89, type: 2}
 --- !u!4 &1159247603 stripped
 Transform:
