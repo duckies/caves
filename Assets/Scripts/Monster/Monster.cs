@@ -12,8 +12,10 @@ public class Monster : MonoBehaviour
     // distance to start attacking player
     float attackRadius;
 
-    //movement
+    // distance to start following the player
     float followRadius;
+
+    // action monster can take
     public enum MAction
     {
         Attack, Patrol, Follow // etc...
