@@ -13,6 +13,7 @@ public class Follow : MonoBehaviour
     public float maxDist;
     public int direction;
     public float distance;
+    private bool facingRight = false;
 
     Transform playerTransform;
 
@@ -57,6 +58,7 @@ public class Follow : MonoBehaviour
                 else
                 {
                     direction = 1;
+                    Flip();
                 }
                 break;
             case 1:
@@ -68,6 +70,7 @@ public class Follow : MonoBehaviour
                 else
                 {
                     direction = -1;
+                    Flip();
                 }
                 break;
         }
@@ -86,6 +89,15 @@ public class Follow : MonoBehaviour
         }*/
     }
 
+    private void Flip()
+    {
+        // Switch the way the player is labelled as facing.
+        facingRight = !facingRight;
+
+        Vector3 scale = transform.localScale;
+        scale.x *= -1;
+        transform.localScale = scale;
+    }
 
     private void OnTriggerEnter2D(Collider2D other)
     {

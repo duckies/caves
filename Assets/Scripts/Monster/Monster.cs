@@ -21,6 +21,13 @@ public class Monster : MonoBehaviour
         Attack, Patrol, Follow // etc...
     }
 
+    MAction action;
+    
+    public void setAction(MAction currAction)
+    {
+        action = currAction;
+    }
+
     public void setMoveSpeed(float speed)
     {
         moveSpeed = speed;
@@ -51,6 +58,10 @@ public class Monster : MonoBehaviour
         return lifePoints;
     }
 
+    public MAction getAction()
+    {
+        return action;
+    }
 
     //movement toward a player
     public void setFollowRadius(float r)

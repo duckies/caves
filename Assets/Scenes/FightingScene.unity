@@ -840,6 +840,10 @@ GameObject:
   - component: {fileID: 500962163}
   - component: {fileID: 500962162}
   - component: {fileID: 500962161}
+  - component: {fileID: 500962167}
+  - component: {fileID: 500962166}
+  - component: {fileID: 500962165}
+  - component: {fileID: 500962164}
   m_Layer: 0
   m_Name: Dragonfly
   m_TagString: Untagged
@@ -925,12 +929,89 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 500962160}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.288374, y: 2.4761324, z: 0}
+  m_LocalPosition: {x: 8.87, y: 3.03, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &500962164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 500962160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13cedde666d98474e83e88296367773a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 4
+  attack: 1
+  health: 5
+  followDis: 4
+  attackDis: 2
+  range: 2
+--- !u!114 &500962165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 500962160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0994dc3359ff47478f61c7ebb892828, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!50 &500962166
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 500962160}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 8.150701
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 6200000, guid: 8f2eafb83c3a90d4588e287c794199b2, type: 2}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!61 &500962167
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 500962160}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.69, y: 3.03}
+    newSize: {x: 2.69, y: 3.03}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.69, y: 3.03}
+  m_EdgeRadius: 0
 --- !u!1 &925688105
 GameObject:
   m_ObjectHideFlags: 0
@@ -1299,8 +1380,8 @@ GameObject:
   - component: {fileID: 1616254854}
   - component: {fileID: 1616254853}
   - component: {fileID: 1616254856}
-  - component: {fileID: 1616254857}
   - component: {fileID: 1616254859}
+  - component: {fileID: 1616254858}
   m_Layer: 0
   m_Name: Blob
   m_TagString: Untagged
@@ -1393,7 +1474,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1616254852}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.6075563, y: 1.6042827, z: -6.3614626}
+  m_LocalPosition: {x: -2.94, y: -1.79, z: -6.3614626}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1410,8 +1491,8 @@ Rigidbody2D:
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
+  m_UseAutoMass: 1
+  m_Mass: 4.4026747
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -1420,27 +1501,26 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &1616254857
+--- !u!114 &1616254858
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1616254852}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb1eb62fb099d7c49a06e466278af067, type: 3}
+  m_Script: {fileID: 11500000, guid: bed85b18b3c495243b098e0ff85a1644, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 4
-  attackDistance: 0
-  bufferDistance: 0
-  player: {fileID: 0}
+  attack: 2
+  health: 2
+  followDis: 1
+  attackDis: 1
+  player: {fileID: 925688105}
   minDist: -4
   maxDist: 2
-  direction: 1
-  distance: 2
-  item: {fileID: 0}
 --- !u!114 &1616254859
 MonoBehaviour:
   m_ObjectHideFlags: 0

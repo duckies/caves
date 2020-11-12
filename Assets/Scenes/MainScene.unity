@@ -2839,6 +2839,7 @@ GameObject:
   - component: {fileID: 1154606306}
   - component: {fileID: 1154606305}
   - component: {fileID: 1154606309}
+  - component: {fileID: 1154606310}
   m_Layer: 0
   m_Name: Cyclon
   m_TagString: Untagged
@@ -2884,7 +2885,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 5
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -2978,8 +2979,19 @@ MonoBehaviour:
   maxDist: -21
   direction: 1
   distance: 0
-  playerTransform: {fileID: 1490157684}
   item: {fileID: 11400000, guid: 3f733df1ca5879e43b4dbd8ae46d9e89, type: 2}
+--- !u!114 &1154606310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1154606304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0994dc3359ff47478f61c7ebb892828, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1159247603 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5992166288544002314, guid: 0effaea69f1fffe47bfc5e679878f625, type: 3}
