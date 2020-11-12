@@ -5,7 +5,7 @@ using UnityEngine;
 // base monster class so our monsters can inherit from
 public class Monster : MonoBehaviour
 {
-    int moveSpeed;
+    float moveSpeed;
     int attackDamage;
     // for implementing health bar later
     int lifePoints;
@@ -14,8 +14,12 @@ public class Monster : MonoBehaviour
 
     //movement
     float followRadius;
+    public enum MAction
+    {
+        Attack, Patrol, Follow // etc...
+    }
 
-    public void setMoveSpeed(int speed)
+    public void setMoveSpeed(float speed)
     {
         moveSpeed = speed;
     }
@@ -30,7 +34,7 @@ public class Monster : MonoBehaviour
         lifePoints = lp;
     }
 
-    public int getMoveSpeed()
+    public float getMoveSpeed()
     {
         return moveSpeed;
     }

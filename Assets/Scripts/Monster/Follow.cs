@@ -35,6 +35,7 @@ public class Follow : MonoBehaviour
         //  GetPlayerTransform();
         //initialPosition = transform.position;
         direction = -1;
+        
         //maxDist += transform.position.x;
         //minDist -= transform.position.x;
     }
@@ -95,5 +96,6 @@ public class Follow : MonoBehaviour
             return;
         }
     }
+
 }
 
