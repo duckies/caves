@@ -1,6 +1,5 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using System.Security.Cryptography;
 using UnityEngine;
 
 public class Blob : Monster
@@ -12,10 +11,10 @@ public class Blob : Monster
     public float attackDis;
     public GameObject player;
     private bool facingRight = false;
-    public float minDist;
-    public float maxDist;
+    public int range;
     private int direction;
-   // public float distance;
+    // public float distance;
+    Vector3 orgPos;
 
     private MAction currentAction;
 
@@ -36,6 +35,7 @@ public class Blob : Monster
     // Start is called before the first frame update
     void Start()
     {
+        orgPos = transform.position;
         setMoveSpeed(speed);
         setAttackDamage(attack);
         setLifePoints(health);
@@ -44,38 +44,14 @@ public class Blob : Monster
         direction = -1;
         currentAction = MAction.Patrol;
         setAction(currentAction);
+
+        StartCoroutine(BlobFSM());
     }
 
     // Update is called once per frame
     void Update()
     {
-            switch (direction)
-            {
-                case -1:
-                    // Moving Left
-                    if (transform.position.x > minDist)
-                    {
-                        GetComponent<Rigidbody2D>().velocity = new Vector2(-speed, GetComponent<Rigidbody2D>().velocity.y);
-                    }
-                    else
-                    {
-                        direction = 1;
-                    Flip();
-                }
-                    break;
-                case 1:
-                    //Moving Right
-                    if (transform.position.x < maxDist)
-                    {
-                        GetComponent<Rigidbody2D>().velocity = new Vector2(speed, GetComponent<Rigidbody2D>().velocity.y);
-                    }
-                    else
-                    {
-                        direction = -1;
-                    Flip();
-                    }
-                    break;
-            }
+           
     }
 
     private void Flip()
@@ -86,6 +62,62 @@ public class Blob : Monster
         Vector3 scale = transform.localScale;
         scale.x *= -1;
         transform.localScale = scale;
+    }
+
+    IEnumerator BlobFSM()
+    {
+        while (true)
+        {
+            yield return StartCoroutine(currentAction.ToString());
+        }
+    }
+
+    IEnumerator Patrol()
+    {
+        Debug.Log("Entered Patrol State");
+        while (currentAction == MAction.Patrol)
+        {
+            // move back and forth between range
+            switch (direction)
+            {
+                case -1:
+                    // Moving Left
+                    if (transform.position.x > (orgPos.x - range))
+                    {
+                        GetComponent<Rigidbody2D>().velocity = new Vector2(-speed, GetComponent<Rigidbody2D>().velocity.y);
+                    }
+                    else
+                    {
+                        direction = 1;
+                        Flip();
+                    }
+                    break;
+                case 1:
+                    //Moving Right
+                    if (transform.position.x < (orgPos.x + range))
+                    {
+                        GetComponent<Rigidbody2D>().velocity = new Vector2(speed, GetComponent<Rigidbody2D>().velocity.y);
+                    }
+                    else
+                    {
+                        direction = -1;
+                        Flip();
+                    }
+                    break;
+            }
+            yield return null;
+        }
+        Debug.Log("Exited Patrol State");
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (currentAction == MAction.Patrol)
+        {
+            setAction(MAction.Attack);
+            Debug.Log("Transform to ATTACK state");
+            currentAction = MAction.Attack;
+        }
     }
     /* void Patrol()
      {

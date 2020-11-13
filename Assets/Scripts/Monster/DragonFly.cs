@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DragonFly : Monster
 {
-    //public GameObject dragonFly;//refrence of dragonfly gameobject
+    public GameObject dragonFly;//refrence of dragonfly gameobject
     public float speed;
     public int attack;
     public int health;
@@ -14,13 +14,16 @@ public class DragonFly : Monster
     private int direction;
     private bool facingRight = false;
 
-    Vector2 original;
+    Vector3 original;
 
     Vector2 newPosition;
+
+    MAction currentAction;
     // Start is called before the first frame update
     void Start()
     {
-        //dragonFly.GetComponent<Rigidbody2D>().useGravity = false; //.gravity = 0f;
+        // disable gravity for our dragonfly
+        dragonFly.GetComponent<Rigidbody2D>().gravityScale = 0f; //.gravity = 0f;
         setMoveSpeed(speed);
         setAttackDamage(attack);
         setLifePoints(health);
@@ -29,7 +32,7 @@ public class DragonFly : Monster
         direction = -1;
         original = transform.position;
 
-        PositionChange();
+        StartCoroutine(FlyFSM());
     }
 
     void PositionChange()
@@ -48,34 +51,6 @@ public class DragonFly : Monster
          Vector2 destination = newPosition + position;
          Debug.Log("new destination: " + destination);
          transform.position = Vector2.MoveTowards(transform.position, destination, Time.deltaTime * speed);*/
-
-        switch (direction)
-        {
-            case -1:
-                // Moving Left
-                if (transform.position.x > (original.x - range))
-                {
-                    GetComponent<Rigidbody2D>().velocity = new Vector2(-speed, GetComponent<Rigidbody2D>().velocity.y);
-                }
-                else
-                {
-                    direction = 1;
-                    Flip();
-                }
-                break;
-            case 1:
-                //Moving Right
-                if (transform.position.x < (original.x + range))
-                {
-                    GetComponent<Rigidbody2D>().velocity = new Vector2(speed, GetComponent<Rigidbody2D>().velocity.y);
-                }
-                else
-                {
-                    direction = -1;
-                    Flip();
-                }
-                break;
-        }
     }
 
     private void Flip()
@@ -86,5 +61,60 @@ public class DragonFly : Monster
         Vector3 scale = transform.localScale;
         scale.x *= -1;
         transform.localScale = scale;
+    }
+
+    IEnumerator FlyFSM()
+    {
+        while (true)
+        {
+            yield return StartCoroutine(currentAction.ToString());
+        }
+    }
+    IEnumerator Patrol()
+    {
+        Debug.Log("Entered Patrol State");
+        while (currentAction == MAction.Patrol)
+        {
+            // move back and forth between range
+            switch (direction)
+            {
+                case -1:
+                    // Moving Left
+                    if (transform.position.x > (original.x - range))
+                    {
+                        GetComponent<Rigidbody2D>().velocity = new Vector2(-speed, GetComponent<Rigidbody2D>().velocity.y);
+                    }
+                    else
+                    {
+                        direction = 1;
+                        Flip();
+                    }
+                    break;
+                case 1:
+                    //Moving Right
+                    if (transform.position.x < (original.x + range))
+                    {
+                        GetComponent<Rigidbody2D>().velocity = new Vector2(speed, GetComponent<Rigidbody2D>().velocity.y);
+                    }
+                    else
+                    {
+                        direction = -1;
+                        Flip();
+                    }
+                    break;
+            }
+            yield return null;
+        }
+        Debug.Log("Exited Patrol State");
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (currentAction == MAction.Patrol)
+        {
+            setAction(MAction.Attack);
+            Debug.Log("Transform to ATTACK state");
+            currentAction = MAction.Attack;
+        }
     }
 }
