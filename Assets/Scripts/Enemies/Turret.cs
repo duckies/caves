@@ -2,9 +2,9 @@
 
 public class Turret : Enemy
 {
-  [SerializeField] private float shootingRate;
-  [SerializeField] private GameObject projectile;
-  [SerializeField] private Transform spawnLocation;
+  [SerializeField] private float shootingRate = default;
+  [SerializeField] private GameObject projectile = null;
+  [SerializeField] private Transform spawnLocation = null;
 
   private float shootingTimer;
 

@@ -7,19 +7,34 @@ TextureImporter:
     second: startree_0
   - first:
       213: 4169421106279562096
-    second: startree_1
+    second: treegrowth_1
   - first:
       213: 3481875031530572284
-    second: startree_2
+    second: treegrowth_5
   - first:
       213: -1655309447109255946
-    second: startree_3
+    second: treegrowth_2
   - first:
       213: 4238878389355506609
-    second: startree_4
+    second: treegrowth_3
   - first:
       213: 3854146487977405418
-    second: startree_5
+    second: treegrowth_4
+  - first:
+      213: -3629525256241210584
+    second: treegrowth_1
+  - first:
+      213: 1111623244101191697
+    second: treegrowth_5
+  - first:
+      213: -7786635552259301358
+    second: treegrowth_2
+  - first:
+      213: -7095227439125831646
+    second: treegrowth_3
+  - first:
+      213: -4495935217842015729
+    second: treegrowth_4
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -64,7 +79,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 128
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -107,7 +122,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: startree_1
+      name: treegrowth_1
       rect:
         serializedVersion: 2
         x: 115
@@ -121,35 +136,35 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 07b3fc6d762ccd930800000000000000
-      internalID: 4169421106279562096
+      spriteID: 82b1f6e620651adc0800000000000000
+      internalID: -3629525256241210584
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: startree_2
+      name: treegrowth_5
       rect:
         serializedVersion: 2
-        x: 169
+        x: 1752
         y: 0
-        width: 2742
+        width: 1159
         height: 1500
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 1585, y: 0, z: 0, w: 0}
+      alignment: 9
+      pivot: {x: 0.6531021, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cf98ea6b4ea125030800000000000000
-      internalID: 3481875031530572284
+      spriteID: 11808bc63774d6f00800000000000000
+      internalID: 1111623244101191697
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: startree_3
+      name: treegrowth_2
       rect:
         serializedVersion: 2
         x: 263
@@ -163,14 +178,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6fc54bbf3d82709e0800000000000000
-      internalID: -1655309447109255946
+      spriteID: 2102828783050f390800000000000000
+      internalID: -7786635552259301358
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: startree_4
+      name: treegrowth_3
       rect:
         serializedVersion: 2
         x: 478
@@ -184,18 +199,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1bb6d93cf6583da30800000000000000
-      internalID: 4238878389355506609
+      spriteID: 220ec4a7c30b88d90800000000000000
+      internalID: -7095227439125831646
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: startree_5
+      name: treegrowth_4
       rect:
         serializedVersion: 2
         x: 984
-        y: 0
+        y: 2
         width: 640
         height: 878
       alignment: 7
@@ -205,8 +220,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aeb66388fcdac7530800000000000000
-      internalID: 3854146487977405418
+      spriteID: f02bb576dba3b91c0800000000000000
+      internalID: -4495935217842015729
       vertices: []
       indices: 
       edges: []

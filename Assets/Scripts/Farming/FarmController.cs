@@ -93,7 +93,7 @@ public class FarmController : MonoBehaviour
     // Can we harvest?
     if (selected == null || !selected.IsGrown()) return;
 
-    EventManager.instance.OnHarvestPlant(selected.plant.treeGrowthAmount);
+    EventManager.instance.OnHarvestPlant(selected.plant.growthAmount);
 
     Destroy(selected.plantPrefab);
 

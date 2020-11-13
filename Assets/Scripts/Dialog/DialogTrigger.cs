@@ -2,14 +2,19 @@
 
 public class DialogTrigger : MonoBehaviour
 {
-  [SerializeField] private Transform character = null;
   [SerializeField] private TriggerType type = TriggerType.Range;
 
+  private Transform character = null;
   public float range = 3f;
   public bool triggersOnce = true;
   public Dialog dialog;
 
   private enum TriggerType { Range, Manual }
+
+  private void Awake()
+  {
+    character = GameObject.FindGameObjectWithTag("Player").transform;
+  }
 
   public void TriggerDialog()
   {
