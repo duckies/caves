@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Patroller : Enemy
 {
+  [SerializeField] private int attackDamage;
   [SerializeField] private Transform[] waypoints;
 
   private int wayIndex = 0;
@@ -33,4 +34,14 @@ public class Patroller : Enemy
       transform.position = Vector2.MoveTowards(transform.position, waypoints[wayIndex].position, speed * Time.deltaTime);
     }
   }
+
+  private void OnCollisionEnter2D(Collision2D other)
+  {
+    if (other.collider.tag == "Player")
+    {
+      Debug.Log("Patroller hit player");
+      other.collider.GetComponent<Character>().TakeDamage(attackDamage);
+    }
+  }
+
 }
