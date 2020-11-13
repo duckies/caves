@@ -100,6 +100,7 @@ MonoBehaviour:
   rotationSpeed: 2
   maxLifeTime: 5
   destroyEffect: {fileID: 0}
+  damage: 10
 --- !u!58 &4973465665450466540
 CircleCollider2D:
   m_ObjectHideFlags: 0

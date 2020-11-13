@@ -2,22 +2,23 @@
 
 public class Projectile : MonoBehaviour
 {
-  private Transform target;
   [SerializeField] private float speed;
   [SerializeField] private float rotationSpeed = 2.0f;
   [SerializeField] private float maxLifeTime = 2.0f;
   [SerializeField] private GameObject destroyEffect = null;
+  [SerializeField] private int damage = 3;
 
   private float curLifeTime = 0f;
+  private Character target;
 
   private void Awake()
   {
-    target = GameObject.FindGameObjectWithTag("Player").transform;
+    target = Character.instance;
   }
 
   private void Update()
   {
-    transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+    transform.position = Vector2.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
     transform.Rotate(new Vector3(0, 0, 90 * Time.deltaTime));
 
     curLifeTime += Time.deltaTime;
@@ -31,8 +32,9 @@ public class Projectile : MonoBehaviour
 
   private void OnTriggerEnter2D(Collider2D other)
   {
-    Debug.Log("Acorn touched " + other.tag);
     if (other.tag != "Player") return;
+
+    target.TakeDamage(damage);
 
     Death();
   }
