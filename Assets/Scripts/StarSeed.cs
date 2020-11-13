@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class StarSeed : MonoBehaviour
 {
+  [SerializeField] private GameObject tree = null;
   [SerializeField] private Dialog dialog = null;
 
   private void OnTriggerEnter2D(Collider2D other)

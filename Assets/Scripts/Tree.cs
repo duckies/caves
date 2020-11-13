@@ -6,14 +6,18 @@ public class Tree : MonoBehaviour
   [SerializeField] private Sprite[] sprites = null;
   [SerializeField] private int maxGrowth = 5;
   [SerializeField] private Slider slider = null;
+  [SerializeField] private GameObject seed = null;
+  [SerializeField] private GameObject[] tutorialWalls = null;
+  [SerializeField] private Dialog tutorialDialog = null;
 
   private SpriteRenderer sprite;
   public int curGrowth = 1;
 
   private void Awake()
   {
+    EventManager.instance.DialogCompleteEvent += OnDialogCompleteEvent;
     sprite = GetComponent<SpriteRenderer>();
-    sprite.sprite = sprites[0];
+    sprite.sprite = null;
 
     EventManager.instance.HarvestPlant += OnHarvestPlant;
     slider.maxValue = maxGrowth;
@@ -46,5 +50,21 @@ public class Tree : MonoBehaviour
   private void OnHarvestPlant(int amount)
   {
     AdvanceState(amount);
+  }
+
+  private void OnDialogCompleteEvent(Dialog dialog)
+  {
+    if (dialog.name == "StarSeed")
+    {
+      sprite.sprite = sprites[0];
+      Destroy(seed);
+
+      foreach (GameObject wall in tutorialWalls)
+      {
+        Destroy(wall);
+      }
+
+      DialogManager.instance.StartDialog(tutorialDialog);
+    }
   }
 }
