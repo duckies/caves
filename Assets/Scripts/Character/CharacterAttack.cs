@@ -1,49 +1,51 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class CharacterAttack : MonoBehaviour
 {
-    private Animator anim;
-    public float attackRange;
+  [Header("Serialize Fields")]
+  [SerializeField] private LayerMask enemyLayers;
+  [SerializeField] private Transform attackPoint;
 
-    // public Transform attackLocation;
-    // Start is called before the first frame update
-    void Start()
+  [Header("Configurables")]
+  public float attackRange;
+  public int attackDamage;
+
+  private Animator animator;
+
+  private void Start()
+  {
+    animator = GetComponent<Animator>();
+  }
+
+  private void Update()
+  {
+    if (Input.GetMouseButtonDown(0))
     {
-        anim = GetComponent<Animator>();
+      Attack();
     }
-
-    // Update is called once per frame
-    void Update()
+    else
     {
-        if (Input.GetMouseButtonDown(0)) // start attacking
-        {
-
-            anim.SetBool("IsAttacking", true);
-            // doesn't work yet :(
-            Collider2D[] damage = Physics2D.OverlapCircleAll(transform.position, attackRange);
-
-            for (int i = 0; i < damage.Length; i++)
-            {
-            //  Destroy(damage[i].gameObject); 
-
-               if(damage[i].gameObject != gameObject)
-                {
-                Blob enemy = damage[i].gameObject.GetComponent<Blob>();
-                if (enemy != null){
-                        Debug.Log("Hitting the Blob");
-                enemy.health -= 1;
-
-                }
-
-                }
-            }
-        }
-        else
-        {
-            anim.SetBool("IsAttacking", false);
-        }
+      animator.SetBool("IsAttacking", false);
     }
+  }
+
+  private void Attack()
+  {
+    animator.SetBool("IsAttacking", true);
+
+    // We may want to change this to a rectangle, since, you know, spear.
+    Collider2D[] enemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
+
+    foreach (Collider2D enemy in enemies)
+    {
+      Debug.Log("Hit " + enemy.name);
+      enemy.GetComponent<Enemy>().TakeDamage(attackDamage);
+    }
+  }
+
+  private void OnDrawGizmosSelected()
+  {
+    Gizmos.DrawWireSphere(attackPoint.position, attackRange);
+  }
 
 }

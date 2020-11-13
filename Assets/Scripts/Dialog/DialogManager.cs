@@ -6,9 +6,10 @@ using TMPro;
 public class DialogManager : MonoBehaviour
 {
   [SerializeField] private GameObject dialog = null;
+  [SerializeField] private GameObject button = null;
   [SerializeField] private TextMeshProUGUI text = null;
 
-  // public Animator animator;
+  public Animator animator;
   public static DialogManager instance;
   public float typingSpeed;
 
@@ -27,16 +28,19 @@ public class DialogManager : MonoBehaviour
 
   private IEnumerator Type(string sentence)
   {
+    animator.SetTrigger("Change");
+
     foreach (char character in sentence)
     {
       text.text += character;
       yield return new WaitForSeconds(typingSpeed);
     }
+
+    button.SetActive(true);
   }
 
   public void StartDialog(Dialog dialogue)
   {
-    // animator.SetBool("IsOpen", true);
     dialog.SetActive(true);
 
     sentences.Clear();
@@ -49,16 +53,10 @@ public class DialogManager : MonoBehaviour
     DisplayNextSentence();
   }
 
-  private void Update()
-  {
-    // if (animator.GetBool("IsOpen") == true)
-    // {
-    //   dialogueBubble.transform.localPosition = new Vector3(character.position.x, character.position.y - 3, 0);
-    // }
-  }
-
   public void DisplayNextSentence()
   {
+    button.SetActive(false);
+
     if (sentences.Count == 0)
     {
       EndDialogue();
@@ -73,6 +71,5 @@ public class DialogManager : MonoBehaviour
   public void EndDialogue()
   {
     dialog.SetActive(false);
-    // animator.SetBool("IsOpen", false);
   }
 }
