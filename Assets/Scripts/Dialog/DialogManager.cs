@@ -5,25 +5,39 @@ using TMPro;
 
 public class DialogManager : MonoBehaviour
 {
-  [SerializeField] private GameObject dialogueBubble = null;
-  [SerializeField] private Transform character = null;
+  [SerializeField] private GameObject dialog = null;
+  [SerializeField] private TextMeshProUGUI text = null;
 
-  public Animator animator;
+  // public Animator animator;
+  public static DialogManager instance;
+  public float typingSpeed;
+
   private Queue<string> sentences;
-  private TextMeshProUGUI text;
+
+  private void Awake()
+  {
+    if (instance == null) instance = this;
+    else Destroy(this);
+  }
 
   private void Start()
   {
     sentences = new Queue<string>();
-    // dialogueBubble.SetActive(false);
-    text = dialogueBubble.GetComponentInChildren<TextMeshProUGUI>();
   }
 
-  public void StartDialogue(Dialog dialogue)
+  private IEnumerator Type(string sentence)
   {
-    Debug.Log("Starting conversation");
-    animator.SetBool("IsOpen", true);
-    // dialogueBubble.SetActive(true);
+    foreach (char character in sentence)
+    {
+      text.text += character;
+      yield return new WaitForSeconds(typingSpeed);
+    }
+  }
+
+  public void StartDialog(Dialog dialogue)
+  {
+    // animator.SetBool("IsOpen", true);
+    dialog.SetActive(true);
 
     sentences.Clear();
 
@@ -37,10 +51,10 @@ public class DialogManager : MonoBehaviour
 
   private void Update()
   {
-    if (animator.GetBool("IsOpen") == true)
-    {
-      dialogueBubble.transform.localPosition = new Vector3(character.position.x, character.position.y - 3, 0);
-    }
+    // if (animator.GetBool("IsOpen") == true)
+    // {
+    //   dialogueBubble.transform.localPosition = new Vector3(character.position.x, character.position.y - 3, 0);
+    // }
   }
 
   public void DisplayNextSentence()
@@ -52,14 +66,13 @@ public class DialogManager : MonoBehaviour
     }
 
     string sentence = sentences.Dequeue();
-    text.SetText(sentence);
-    Debug.Log(sentence);
+    text.text = "";
+    StartCoroutine(Type(sentence));
   }
 
   public void EndDialogue()
   {
-    // dialogueBubble.SetActive(false);
-    animator.SetBool("IsOpen", false);
-    Debug.Log("End Dialogue");
+    dialog.SetActive(false);
+    // animator.SetBool("IsOpen", false);
   }
 }

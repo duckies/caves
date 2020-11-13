@@ -1,30 +1,42 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class DialogTrigger : MonoBehaviour
 {
   [SerializeField] private Transform character = null;
-  public bool isDestroyed = true;
-  public Dialog dialogue;
+  [SerializeField] private TriggerType type = TriggerType.Range;
 
+  public float range = 3f;
+  public bool triggersOnce = true;
+  public Dialog dialog;
 
-  public void TriggerDialogue()
+  private enum TriggerType { Range, Manual }
+
+  public void TriggerDialog()
   {
-    FindObjectOfType<DialogManager>().StartDialogue(dialogue);
+    Debug.Log("Starting Dialog " + dialog.name);
+    DialogManager.instance.StartDialog(dialog);
   }
 
   public void Update()
   {
-    // If the player walks over (to the left of) the trigger. 
-    if (character.position.x <= gameObject.transform.position.x)
+    if (type == TriggerType.Range)
     {
-      TriggerDialogue();
-      if (isDestroyed)
+      if (Vector2.Distance(transform.position, character.position) <= range)
       {
-        Destroy(gameObject);
-        return;
+        Debug.Log("Dialog in Range");
+        TriggerDialog();
+
+        if (triggersOnce)
+        {
+          Destroy(gameObject);
+          return;
+        }
       }
     }
+  }
+
+  private void OnDrawGizmosSelected()
+  {
+    Gizmos.DrawWireSphere(transform.position, range);
   }
 }
