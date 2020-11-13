@@ -21,7 +21,7 @@ public class Patroller : Enemy
     // No waypoints means no patrolling.
     if (waypoints.Length == 0) return;
 
-    if (IsPlayerInRange())
+    if (!IsPlayerInRange())
     {
       // Change waypoints by cycling through the array length if we are close enough to a waypoint.
       if (Vector2.Distance(transform.position, waypoints[wayIndex].position) < 0.01f)

@@ -8,9 +8,14 @@ public class Turret : Enemy
 
   private float shootingTimer;
 
+  // Turret enemies do not move.
+  protected override void Move() { }
+
   protected override void Attack()
   {
     base.Attack();
+
+    if (!IsPlayerInRange()) return;
 
     shootingTimer += Time.deltaTime;
     if (shootingTimer > shootingRate)
