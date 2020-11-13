@@ -20,6 +20,8 @@ public class Blob : Monster
 
     Transform playerTransform;
 
+    [SerializeField] private Item item = null;
+
     void GetPlayerTransform()
     {
         if (player != null)
@@ -179,5 +181,12 @@ public class Blob : Monster
             Debug.Log("Transform to ATTACK state");
             currentAction = MAction.Attack;
         //}
+        if (collision.gameObject.CompareTag("Player"))
+        {
+       //   EventManager.instance.OnCreateItem(item);
+            if(health == 0)
+            Destroy(gameObject);
+            return;
+        }
     }
 }
