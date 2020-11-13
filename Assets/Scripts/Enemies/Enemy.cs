@@ -14,6 +14,7 @@ public class Enemy : MonoBehaviour
   protected private Animator animator;
   protected private Transform player;
   private float curHealth;
+  private bool facingRight = true;
 
   protected virtual void Start()
   {
@@ -26,7 +27,7 @@ public class Enemy : MonoBehaviour
 
   protected virtual void Update()
   {
-    Flip();
+    FaceCharacter();
 
     if (curHealth <= 0)
     {
@@ -50,15 +51,14 @@ public class Enemy : MonoBehaviour
     return Vector2.Distance(transform.position, player.position) > range;
   }
 
-  protected virtual void Flip()
+  protected virtual void FaceCharacter()
   {
-    if (transform.position.x > player.position.x)
+    float abs = transform.position.x - player.position.x;
+
+    if (abs > 0 && !facingRight || abs < 0 && facingRight)
     {
-      sprite.flipX = false;
-    }
-    else
-    {
-      sprite.flipX = true;
+      facingRight = !facingRight;
+      transform.Rotate(0f, 180f, 0f);
     }
   }
 

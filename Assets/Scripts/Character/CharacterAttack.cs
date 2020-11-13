@@ -47,5 +47,4 @@ public class CharacterAttack : MonoBehaviour
   {
     Gizmos.DrawWireSphere(attackPoint.position, attackRange);
   }
-
 }
