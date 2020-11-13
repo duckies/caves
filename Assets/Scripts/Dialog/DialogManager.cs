@@ -12,6 +12,7 @@ public class DialogManager : MonoBehaviour
   public Animator animator;
   public static DialogManager instance;
   public float typingSpeed;
+  public Dialog curDialog;
 
   private Queue<string> sentences;
 
@@ -41,7 +42,11 @@ public class DialogManager : MonoBehaviour
 
   public void StartDialog(Dialog dialogue)
   {
+    Debug.Log("Starting Dialog: " + dialogue.name);
+
     dialog.SetActive(true);
+
+    curDialog = dialogue;
 
     sentences.Clear();
 
@@ -71,5 +76,6 @@ public class DialogManager : MonoBehaviour
   public void EndDialogue()
   {
     dialog.SetActive(false);
+    EventManager.instance.OnDialogCompleteEvent(curDialog);
   }
 }

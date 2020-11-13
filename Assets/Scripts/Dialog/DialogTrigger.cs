@@ -18,7 +18,6 @@ public class DialogTrigger : MonoBehaviour
 
   public void TriggerDialog()
   {
-    Debug.Log("Starting Dialog " + dialog.name);
     DialogManager.instance.StartDialog(dialog);
   }
 
@@ -28,7 +27,7 @@ public class DialogTrigger : MonoBehaviour
     {
       if (Vector2.Distance(transform.position, character.position) <= range)
       {
-        Debug.Log("Dialog in Range");
+        Debug.Log("Range Dialog Trigger " + dialog.name);
         TriggerDialog();
 
         if (triggersOnce)
