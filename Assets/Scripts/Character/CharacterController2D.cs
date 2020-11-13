@@ -4,22 +4,18 @@ using UnityEngine.Events;
 public class CharacterController2D : MonoBehaviour
 {
   [SerializeField] private float jumpForce = 400f;
-  [Range(0, 1)] [SerializeField] private float crouchSpeed = 0.36f;
   [Range(0, 0.3f)] [SerializeField] private float movementSmoothing = 0.05f;
-  [SerializeField] private bool airControl = false;
 
   [Header("Unity Fields")]
   public LayerMask whatIsGround;
   public Transform groundCheck;
-  public Transform ceilingCheck;
-  public Collider2D crouchDisabledCollider;
 
   const float groundedRadius = .2f; // Radius of the overlap circle to determine if grounded
   private bool grounded;            // Whether or not the player is grounded.
-  const float ceilingRadius = .2f; // Radius of the overlap circle to determine if the player can stand up
-  private Rigidbody2D _rigidbody2D;
   private bool facingRight = true;  // For determining which way the player is currently facing.
+  private Rigidbody2D _rigidbody2D;
   private Vector3 velocity = Vector3.zero;
+  private Vector3 targetVelocity;
 
   [Header("Events")]
   [Space]
@@ -29,15 +25,11 @@ public class CharacterController2D : MonoBehaviour
   [System.Serializable]
   public class BoolEvent : UnityEvent<bool> { }
 
-  public BoolEvent OnCrouchEvent;
-  private bool wasCrouching = false;
-
   private void Awake()
   {
     _rigidbody2D = GetComponent<Rigidbody2D>();
 
     if (OnLandEvent == null) OnLandEvent = new UnityEvent();
-    if (OnCrouchEvent == null) OnCrouchEvent = new BoolEvent();
   }
 
   private void FixedUpdate()
@@ -57,69 +49,25 @@ public class CharacterController2D : MonoBehaviour
     }
   }
 
-  public void Move(float move, bool crouch, bool jump)
+  public void Move(float moveX, float moveY, bool jump, bool climb)
   {
-    // If crouching, check if the character can stand up.
-    if (!crouch)
+    if (climb)
     {
-      if (Physics2D.OverlapCircle(ceilingCheck.position, ceilingRadius, whatIsGround))
-      {
-        crouch = true;
-      }
+      // targetVelocity = new Vector2(_rigidbody2D.velocity.x, moveY * 10f);
+      targetVelocity = new Vector2(moveX * 3f, moveY * 10f);
+      _rigidbody2D.gravityScale = 0;
+    }
+    else
+    {
+      targetVelocity = new Vector2(moveX * 10f, _rigidbody2D.velocity.y);
+      _rigidbody2D.gravityScale = 3;
     }
 
-    // Only control the player if grounded or airControl is turned on.
-    if (grounded || airControl)
+    _rigidbody2D.velocity = Vector3.SmoothDamp(_rigidbody2D.velocity, targetVelocity, ref velocity, movementSmoothing);
+
+    if ((moveX > 0 && !facingRight) || (moveX < 0 && facingRight))
     {
-      if (crouch)
-      {
-        if (!wasCrouching)
-        {
-          wasCrouching = true;
-          OnCrouchEvent.Invoke(true);
-        }
-
-        // Reduce speed by the crouchSpeed multiplier
-        move *= crouchSpeed;
-
-        // Disable one of the colliders when crouching.
-        if (crouchDisabledCollider != null)
-        {
-          crouchDisabledCollider.enabled = false;
-        }
-      }
-      else
-      {
-        // Enable the collider when not crouching
-        if (crouchDisabledCollider != null)
-        {
-          crouchDisabledCollider.enabled = true;
-        }
-
-        if (wasCrouching)
-        {
-          wasCrouching = false;
-          OnCrouchEvent.Invoke(false);
-        }
-      }
-
-      // Move the character by finding the target velocity
-      Vector3 targetVelocity = new Vector2(move * 10f, _rigidbody2D.velocity.y);
-      // And then smoothing it out and applying it to the character
-      _rigidbody2D.velocity = Vector3.SmoothDamp(_rigidbody2D.velocity, targetVelocity, ref velocity, movementSmoothing);
-
-      // If the input is moving the player right and the player is facing left...
-      if (move > 0 && !facingRight)
-      {
-        // ... flip the player.
-        Flip();
-      }
-      // Otherwise if the input is moving the player left and the player is facing right...
-      else if (move < 0 && facingRight)
-      {
-        // ... flip the player.
-        Flip();
-      }
+      Flip();
     }
 
     // If the player should jump...
