@@ -34,13 +34,15 @@ public class Enemy : MonoBehaviour
       Death();
     }
 
+    Move();
+
     Attack();
     UpdateHealthBar();
   }
 
   protected virtual void Move()
   {
-    if (!IsPlayerInRange())
+    if (IsPlayerInRange())
     {
       transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
     }
@@ -48,7 +50,7 @@ public class Enemy : MonoBehaviour
 
   protected virtual bool IsPlayerInRange()
   {
-    return Vector2.Distance(transform.position, player.position) > range;
+    return Vector2.Distance(transform.position, player.position) < range;
   }
 
   protected virtual void FaceCharacter()
