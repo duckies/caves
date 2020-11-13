@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 // base monster class so our monsters can inherit from
 public class Monster : MonoBehaviour
@@ -8,7 +9,7 @@ public class Monster : MonoBehaviour
     float moveSpeed;
     int attackDamage;
     // for implementing health bar later
-    int lifePoints;
+    int maxHealth;
     // distance to start attacking player
     float attackRadius;
 
@@ -23,9 +24,25 @@ public class Monster : MonoBehaviour
         Attack 
          // etc...
     }
-
     MAction action;
-    
+
+    [SerializeField] protected private Slider healthSlider;
+
+    private SpriteRenderer sprite;
+    protected private Animator animator;
+    protected private Transform _player;
+    private float curHealth;
+  //  private bool facingRight = true;
+
+    protected virtual void Start()
+    {
+        curHealth = maxHealth;
+        healthSlider.value = 1f;
+        _player = GameObject.FindGameObjectWithTag("Player").transform;
+        animator = GetComponent<Animator>();
+        sprite = GetComponent<SpriteRenderer>();
+    }
+
     public void setAction(MAction currAction)
     {
         action = currAction;
@@ -43,7 +60,7 @@ public class Monster : MonoBehaviour
 
     public void setLifePoints(int lp)
     {
-        lifePoints = lp;
+        maxHealth = lp;
     }
 
     public float getMoveSpeed()
@@ -58,7 +75,7 @@ public class Monster : MonoBehaviour
 
     public int getLifePoints()
     {
-        return lifePoints;
+        return maxHealth;
     }
 
     public MAction getAction()
@@ -105,4 +122,29 @@ public class Monster : MonoBehaviour
         }
     }
 
+    protected virtual void Death()
+    {
+        Destroy(gameObject);
+    }
+
+    /*protected virtual void FaceCharacter()
+    {
+        float abs = transform.position.x - player.position.x;
+
+        if (abs > 0 && !facingRight || abs < 0 && facingRight)
+        {
+            facingRight = !facingRight;
+            transform.Rotate(0f, 180f, 0f);
+        }
+    }*/
+
+    protected virtual void UpdateHealthBar()
+    {
+        healthSlider.value = Mathf.Clamp01(curHealth / maxHealth);
+    }
+
+    public void TakeDamage(int amount)
+    {
+        curHealth -= amount;
+    }
 }

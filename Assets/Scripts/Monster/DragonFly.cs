@@ -19,6 +19,11 @@ public class DragonFly : Monster
     Vector2 newPosition;
 
     MAction currentAction;
+
+    [SerializeField] private Transform[] waypoints;
+
+    private int wayIndex = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,12 +38,6 @@ public class DragonFly : Monster
         original = transform.position;
 
         StartCoroutine(FlyFSM());
-    }
-
-    void PositionChange()
-    {
-        newPosition = new Vector2(Random.Range(-range, range), Random.Range(-range, range));
-        Debug.Log("new range: " + newPosition);
     }
 
     // Update is called once per frame
@@ -58,9 +57,7 @@ public class DragonFly : Monster
         // Switch the way the player is labelled as facing.
         facingRight = !facingRight;
 
-        Vector3 scale = transform.localScale;
-        scale.x *= -1;
-        transform.localScale = scale;
+        transform.Rotate(0f, 180f, 0f);
     }
 
     IEnumerator FlyFSM()
@@ -75,8 +72,18 @@ public class DragonFly : Monster
         Debug.Log("Entered Patrol State");
         while (currentAction == MAction.Patrol)
         {
+            
+            if (Vector2.Distance(transform.position, waypoints[wayIndex].position) < 0.01f)
+            {
+                wayIndex = (wayIndex + 1) % waypoints.Length;
+            }
+            var des = waypoints[wayIndex].position;
+           // if(des.x == transform.position.x)
+            // Move to the current waypoint
+            transform.position = Vector2.MoveTowards(transform.position, waypoints[wayIndex].position, speed * Time.deltaTime);
+           
             // move back and forth between range
-            switch (direction)
+            /*switch (direction)
             {
                 case -1:
                     // Moving Left
@@ -102,7 +109,7 @@ public class DragonFly : Monster
                         Flip();
                     }
                     break;
-            }
+            }*/
             yield return null;
         }
         Debug.Log("Exited Patrol State");
@@ -110,11 +117,12 @@ public class DragonFly : Monster
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (currentAction == MAction.Patrol)
-        {
+      //  if (currentAction == MAction.Patrol)
+        //{
             setAction(MAction.Attack);
             Debug.Log("Transform to ATTACK state");
             currentAction = MAction.Attack;
-        }
+        //}
+
     }
 }
