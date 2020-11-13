@@ -97,16 +97,24 @@ public class EventManager : MonoBehaviour
 
   // Farming Events
 
-  public event Action<float> HarvestPlant;
+  public event Action<int> HarvestPlant;
   public event Action<SeedItem> SeedUse;
 
-  public void OnHarvestPlant(float growthAmount)
+  public void OnHarvestPlant(int amount)
   {
-    HarvestPlant?.Invoke(growthAmount);
+    HarvestPlant?.Invoke(amount);
   }
 
   public void OnSeedUse(SeedItem seed)
   {
     SeedUse?.Invoke(seed);
+  }
+
+  // Tree Events
+  public event Action<Dialog> DialogCompleteEvent;
+
+  public void OnDialogCompleteEvent(Dialog dialog)
+  {
+    DialogCompleteEvent?.Invoke(dialog);
   }
 }

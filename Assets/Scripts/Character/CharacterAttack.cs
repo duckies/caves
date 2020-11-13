@@ -3,8 +3,8 @@
 public class CharacterAttack : MonoBehaviour
 {
   [Header("Serialize Fields")]
-  [SerializeField] private LayerMask enemyLayers;
-  [SerializeField] private Transform attackPoint;
+  [SerializeField] private LayerMask enemyLayers = default;
+  [SerializeField] private Transform attackPoint = null;
 
   [Header("Configurables")]
   public float attackRange;

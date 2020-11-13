@@ -5,5 +5,5 @@ public class Plant : ScriptableObject
 {
   public Sprite[] stages;
   public float growthTime;
-  public float treeGrowthAmount = 0.1f;
+  public int growthAmount = 1;
 }
