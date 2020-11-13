@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class Character : MonoBehaviour
 {
@@ -8,9 +9,11 @@ public class Character : MonoBehaviour
   [SerializeField] private GridLayoutGroup healthBar = null;
   [SerializeField] private GameObject heart = null;
   [SerializeField] private GameObject heartHalf = null;
+  [SerializeField] private TextMeshProUGUI text = null;
 
   [Header("Stats")]
   public int health = 100;
+  public float regenRate = 1.0f;
 
   [Header("Configurables")]
   public float relocateFallHeight = -20f;
@@ -18,6 +21,8 @@ public class Character : MonoBehaviour
 
   public int curHealth = 0;
   public static Character instance;
+
+  private float regenCountdown = 0.0f;
 
   private void Awake()
   {
@@ -37,24 +42,51 @@ public class Character : MonoBehaviour
     {
       gameObject.transform.position = respawnPoint.position;
     }
+
+    if (curHealth < health)
+    {
+      regenCountdown += Time.deltaTime;
+
+      if (regenCountdown >= regenRate)
+      {
+        curHealth++;
+        regenCountdown = 0.0f;
+      }
+
+      DrawHearts();
+    }
+  }
+
+  public bool HalfHeart()
+  {
+    return curHealth > 0 && curHealth % (numHearts * 4) != 0;
+  }
+
+  public int FullHearts()
+  {
+    return curHealth / (numHearts * 4);
+  }
+
+  public float HealthPercent()
+  {
+    return Mathf.Clamp((float)curHealth / (float)health, 0f, 1f);
   }
 
   private void DrawHearts()
   {
-    bool hasHalfHeart = curHealth > 0 && curHealth % (numHearts * 4) != 0;
-    int fullHearts = curHealth / (numHearts * 4);
+    text.text = string.Format("Health: {0:P0}", HealthPercent());
 
     foreach (Transform child in healthBar.transform)
     {
       Destroy(child.gameObject);
     }
 
-    for (int i = 0; i < fullHearts; i++)
+    for (int i = 0; i < FullHearts(); i++)
     {
       Instantiate(heart, Vector3.zero, Quaternion.identity, healthBar.transform);
     }
 
-    if (hasHalfHeart)
+    if (HalfHeart())
     {
       Instantiate(heartHalf, Vector3.zero, Quaternion.identity, healthBar.transform);
     }
