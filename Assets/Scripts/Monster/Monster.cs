@@ -19,8 +19,9 @@ public class Monster : MonoBehaviour
     public enum MAction
     {
         Patrol,
-        Attack, 
-        Follow // etc...
+        Follow,
+        Attack 
+         // etc...
     }
 
     MAction action;

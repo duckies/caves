@@ -77,6 +77,13 @@ public class Blob : Monster
         Debug.Log("Entered Patrol State");
         while (currentAction == MAction.Patrol)
         {
+            var target = player.transform.position;
+            if (checkFollowRadius(target.x, transform.position.x))
+            {
+                //Debug.Log("Change to Follow state");
+                currentAction = MAction.Follow;
+                setAction(currentAction);
+            }
             // move back and forth between range
             switch (direction)
             {
@@ -110,54 +117,67 @@ public class Blob : Monster
         Debug.Log("Exited Patrol State");
     }
 
+    IEnumerator Follow()
+    {
+        Debug.Log("Entered Follow State");
+        var target = player.transform.position;
+        target.x = player.transform.position.x - attackDis;
+        //yield return new WaitForSeconds(ActivationDelay);
+
+        while (currentAction == MAction.Follow)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, target, speed * Time.deltaTime);
+
+            // change to attack if in range
+            if (checkAttackRadius(player.transform.position.x, transform.position.x))
+            {
+                Debug.Log("Change to Attack State");
+                currentAction = MAction.Attack;
+                setAction(currentAction);
+            }
+            // if the distance from the player to the blob is out of reach => go back to patrolling
+            else if(!checkFollowRadius(player.transform.position.x, transform.position.x))
+            {
+                // move back to original spot
+                transform.position = Vector3.MoveTowards(transform.position, orgPos, speed * Time.deltaTime);
+                currentAction = MAction.Patrol;
+                setAction(currentAction);
+            }
+            yield return null;
+        }
+        Debug.Log("Exited Follow State");
+    }
+
+    IEnumerator Attack()
+    {
+        Debug.Log("Entered Attack State");
+        var target = transform.position;
+        target.x = player.transform.position.x;
+        // yield return new WaitForSeconds(ActivationDelay);
+
+        while (currentAction == MAction.Attack)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, target, speed *30f * Time.deltaTime);
+
+            //reset
+            if (transform.position == target)
+            {
+                transform.position = Vector3.MoveTowards(transform.position, orgPos, speed * Time.deltaTime);
+                if (!checkFollowRadius(player.transform.position.x, transform.position.x))
+                    currentAction = MAction.Patrol;
+            }
+            yield return null;
+        }
+        Debug.Log("Exited Attack State");
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (currentAction == MAction.Patrol)
-        {
+        //if (currentAction == MAction.Patrol)
+        //{
             setAction(MAction.Attack);
             Debug.Log("Transform to ATTACK state");
             currentAction = MAction.Attack;
-        }
+        //}
     }
-    /* void Patrol()
-     {
-         while(!checkFollowRadius(playerTransform.position.x, transform.position.x) && !checkAttackRadius(playerTransform.position.x, transform.position.x))
-         {
-             switch (direction)
-             {
-                 case -1:
-                     // Moving Left
-                     if (transform.position.x > minDist)
-                     {
-                         GetComponent<Rigidbody2D>().velocity = new Vector2(-speed, GetComponent<Rigidbody2D>().velocity.y);
-                     }
-                     else
-                     {
-                         direction = 1;
-                     }
-                     break;
-                 case 1:
-                     //Moving Right
-                     if (transform.position.x < maxDist)
-                     {
-                         GetComponent<Rigidbody2D>().velocity = new Vector2(speed, GetComponent<Rigidbody2D>().velocity.y);
-                     }
-                     else
-                     {
-                         direction = -1;
-                     }
-                     break;
-             }
-         }
-
-         if (checkFollowRadius(playerTransform.position.x, transform.position.x))
-         {
-             setAction(MAction.Follow);
-         }
-         else if(checkAttackRadius(playerTransform.position.x, transform.position.x))
-         {
-             setAction(MAction.Attack);
-         }
-
-     }*/
 }
