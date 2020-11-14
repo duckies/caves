@@ -9,7 +9,7 @@ public class Fly : Enemy
     private int wayIndex = 0;
     public float scaleSize;
     Vector2 originalPos;
-    // 
+    private bool isAttack = false;
     protected override void Start()
     {
         base.Start();
@@ -48,7 +48,7 @@ public class Fly : Enemy
             transform.position = Vector2.MoveTowards(transform.position, waypoints[wayIndex].position, speed * Time.deltaTime);
         }
 
-        if(Vector2.Distance(transform.position, waypoints[wayIndex].position) > 10f)
+        if(Vector2.Distance(transform.position, waypoints[wayIndex].position) > 5f)
         {
             transform.position = Vector2.MoveTowards(transform.position, originalPos, speed * Time.deltaTime);
         }
@@ -59,12 +59,18 @@ public class Fly : Enemy
         base.Attack();
 
         if (!IsPlayerInRange()) return;
-
+        Debug.Log("Enter Attack state");
         var target = player.transform.position;
-
-        transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * 30f * Time.deltaTime);
+        //isAttack = true;
+        if(IsPlayerInRange() && isAttack)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, target, speed * 30f * Time.deltaTime);
+            isAttack = false;
+           // transform.position = Vector2.MoveTowards(transform.position, originalPos, speed * Time.deltaTime);
+        }
+            
         //if (transform.position == target)
-            transform.position = Vector2.MoveTowards(transform.position, originalPos, speed * Time.deltaTime);
+        transform.position = Vector2.MoveTowards(transform.position, originalPos, speed * Time.deltaTime);
         Patrol();
     }
 
@@ -74,6 +80,8 @@ public class Fly : Enemy
         {
             Debug.Log("Fly hit player");
             other.collider.GetComponent<Character>().TakeDamage(attackDamage);
+            isAttack = false;
         }
+        Patrol();
     }
 }
