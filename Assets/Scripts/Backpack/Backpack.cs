@@ -14,10 +14,14 @@ public class Backpack : MonoBehaviour
   [SerializeField] private GameObject itemPickupPrefab = null;
   [SerializeField] private Transform character = null;
 
+  public static Backpack instance;
   private ItemSlot draggingSlot;
 
   private void Awake()
   {
+    if (instance == null) instance = this;
+    else Destroy(this);
+
     EventManager.instance.KeyDownEvent += OnSlotKeyDown;
     EventManager.instance.KeyUpEvent += OnSlotKeyUp;
     EventManager.instance.LeftClickDownEvent += OnSlotClickDown;
@@ -112,7 +116,6 @@ public class Backpack : MonoBehaviour
       GameObject itemGO = (GameObject)Instantiate(itemPickupPrefab, character.position, character.rotation);
       ItemPickup itemPickup = itemGO.GetComponent<ItemPickup>();
       itemPickup.item = itemSlot.item;
-      itemPickup.Backpack = this;
       RemoveItem(itemSlot.item);
     }
   }

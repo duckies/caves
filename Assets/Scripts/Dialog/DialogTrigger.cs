@@ -7,9 +7,12 @@ public class DialogTrigger : MonoBehaviour
   private Transform character = null;
   public float range = 3f;
   public bool triggersOnce = true;
+  public bool shouldDestroy = true;
   public Dialog dialog;
 
   private enum TriggerType { Range, Manual }
+
+  private bool triggered = false;
 
   private void Awake()
   {
@@ -23,6 +26,8 @@ public class DialogTrigger : MonoBehaviour
 
   public void Update()
   {
+    if (triggered) return;
+
     if (type == TriggerType.Range)
     {
       if (Vector2.Distance(transform.position, character.position) <= range)
@@ -32,8 +37,16 @@ public class DialogTrigger : MonoBehaviour
 
         if (triggersOnce)
         {
-          Destroy(gameObject);
-          return;
+          if (shouldDestroy)
+          {
+            Destroy(gameObject);
+            return;
+
+          }
+          else
+          {
+            triggered = true;
+          }
         }
       }
     }

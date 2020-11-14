@@ -7,8 +7,12 @@ public class Enemy : MonoBehaviour
 {
   [SerializeField] protected private float speed;
   [SerializeField] protected private float range;
-  [SerializeField] private float maxHealth;
+  [SerializeField] private float maxHealth = default;
   [SerializeField] protected private Slider healthSlider;
+  [SerializeField] protected GameObject itemPickupPrefab;
+  [SerializeField] protected Item item;
+  [SerializeField] protected float itemSpawnYOffset;
+  [SerializeField, Range(0, 1)] protected float dropChance;
 
   private SpriteRenderer sprite;
   protected private Animator animator;
@@ -75,6 +79,20 @@ public class Enemy : MonoBehaviour
 
   protected virtual void Death()
   {
+    if (itemPickupPrefab && item && Random.value <= dropChance)
+    {
+      Vector3 position = new Vector3(
+        transform.position.x,
+        transform.position.y + itemSpawnYOffset,
+        transform.position.z
+      );
+      GameObject pickupGO = Instantiate(itemPickupPrefab, position, Quaternion.identity);
+      ItemPickup pickup = pickupGO.GetComponent<ItemPickup>();
+      pickup.item = item;
+
+      EventManager.instance.OnItemDrop(item);
+    }
+
     Destroy(gameObject);
   }
 
