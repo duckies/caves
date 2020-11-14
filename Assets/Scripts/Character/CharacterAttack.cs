@@ -5,6 +5,7 @@ public class CharacterAttack : MonoBehaviour
   [Header("Serialize Fields")]
   [SerializeField] private LayerMask enemyLayers = default;
   [SerializeField] private Transform attackPoint = null;
+  [SerializeField] private KeyCode attackKeyCode = default;
 
   [Header("Configurables")]
   public float attackRange;
@@ -19,7 +20,7 @@ public class CharacterAttack : MonoBehaviour
 
   private void Update()
   {
-    if (Input.GetMouseButtonDown(0))
+    if (Input.GetKey(attackKeyCode))
     {
       Attack();
     }

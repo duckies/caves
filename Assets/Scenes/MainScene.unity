@@ -6254,7 +6254,7 @@ Transform:
   m_GameObject: {fileID: 1559940478}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -8.55, y: 5.03, z: 0}
-  m_LocalScale: {x: 2.5, y: 2.5, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 804610493}
   m_RootOrder: 1
@@ -6315,7 +6315,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -6099050445329199328, guid: ecb0c30cee69d20459e8a59448bbb50e, type: 3}
+  m_Sprite: {fileID: -4863336276314997047, guid: 414bdd50228714347ad3a56b86cbc298, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -6392,6 +6392,7 @@ MonoBehaviour:
     name: Tutorial
     sentences:
     - You feel compelled to help the seedling...
+    - Lets plant the seed...
   firstSeedDialog:
     name: FirstSeedDialog
     sentences:
@@ -8180,6 +8181,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   attackPoint: {fileID: 1651566648}
+  attackKeyCode: 113
   attackRange: 1.26
   attackDamage: 10
 --- !u!1 &1838885467
@@ -8238,8 +8240,9 @@ MonoBehaviour:
   startingItems:
   - {fileID: 11400000, guid: 85e890c1a0fd6684ca824c0273016087, type: 2}
   startingTools:
-  - {fileID: 11400000, guid: c8cd9410a8aab39449d83b5852138ec9, type: 2}
+  - {fileID: 11400000, guid: 9a3610f3f05abcd4c909def16fbbe9a3, type: 2}
   - {fileID: 11400000, guid: 80c9c56bfbe9ebd4fa9ccb921ab73527, type: 2}
+  - {fileID: 11400000, guid: c8cd9410a8aab39449d83b5852138ec9, type: 2}
   itemsParent: {fileID: 242982750}
   toolsParent: {fileID: 721652368}
   itemSlots:
