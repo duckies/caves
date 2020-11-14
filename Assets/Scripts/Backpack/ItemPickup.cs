@@ -3,7 +3,6 @@ using UnityEngine;
 public class ItemPickup : MonoBehaviour
 {
   public Item item;
-  public Backpack Backpack;
   public Color emptyColor;
   public KeyCode keyCode = KeyCode.E;
 
@@ -16,16 +15,11 @@ public class ItemPickup : MonoBehaviour
     sprite.sprite = item.sprite;
   }
 
-  private void OnValidate()
-  {
-    if (Backpack == null) Backpack = FindObjectOfType<Backpack>();
-  }
-
   private void Update()
   {
     if (inRange && Input.GetKeyDown(keyCode))
     {
-      Backpack.AddItem(item);
+      Backpack.instance.AddItem(item);
       Destroy(this.gameObject);
       return;
     }
