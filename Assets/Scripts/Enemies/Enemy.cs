@@ -11,6 +11,7 @@ public class Enemy : MonoBehaviour
   [SerializeField] protected Item item;
   [SerializeField] protected float itemSpawnYOffset;
   [SerializeField, Range(0, 1)] protected float dropChance;
+  [SerializeField] protected bool shouldFacePlayer = true;
 
   private SpriteRenderer sprite;
   protected private Animator animator;
@@ -29,7 +30,10 @@ public class Enemy : MonoBehaviour
 
   protected virtual void Update()
   {
-    FaceCharacter();
+    if (shouldFacePlayer)
+    {
+      FaceCharacter();
+    }
 
     if (curHealth <= 0)
     {
