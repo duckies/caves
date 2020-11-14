@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1dabdc32f5158804ca5f881f0bd950c9, type: 3}
-  m_Name: StarterSeed
+  m_Name: SpiralSeed
   m_EditorClassIdentifier: 
-  itemName: Starter Seed
-  sprite: {fileID: 1801263428120863714, guid: ecb0c30cee69d20459e8a59448bbb50e, type: 3}
-  plant: {fileID: 11400000, guid: baaea006be9cf1b44aac428248d93ee0, type: 2}
+  itemName: Spiral Seed
+  sprite: {fileID: 4668710757928070320, guid: c00ce3175c6bd6048a0711c6cea7cf27, type: 3}
+  plant: {fileID: 11400000, guid: 3f6afa5ccf894164d8fd0f21b606d331, type: 2}

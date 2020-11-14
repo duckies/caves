@@ -1729,10 +1729,10 @@ MonoBehaviour:
   range: 7
   maxHealth: 200
   healthSlider: {fileID: 888521087}
-  itemPickupPrefab: {fileID: 0}
-  item: {fileID: 0}
-  itemSpawnYOffset: 0
-  dropChance: 0
+  itemPickupPrefab: {fileID: 5992166288544002315, guid: 0effaea69f1fffe47bfc5e679878f625, type: 3}
+  item: {fileID: 11400000, guid: b79eaee6173b5d146a638dee0f5dfc17, type: 2}
+  itemSpawnYOffset: -2
+  dropChance: 1
   shouldFacePlayer: 0
   shootingRate: 1
   projectile: {fileID: 3423147512851388995, guid: 05b20c3d0e8beee4ab14c4f1afe38ba1, type: 3}
@@ -19361,7 +19361,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingItems:
-  - {fileID: 11400000, guid: 85e890c1a0fd6684ca824c0273016087, type: 2}
+  - {fileID: 0}
   startingTools:
   - {fileID: 11400000, guid: 9a3610f3f05abcd4c909def16fbbe9a3, type: 2}
   - {fileID: 11400000, guid: 80c9c56bfbe9ebd4fa9ccb921ab73527, type: 2}
