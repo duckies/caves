@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 000774d770a4629409c8f1623d97a816, type: 3}
-  m_Name: ExamplePlant
+  m_Name: Mushroom
   m_EditorClassIdentifier: 
   stages:
   - {fileID: -488721925442295091, guid: ecb0c30cee69d20459e8a59448bbb50e, type: 3}
   - {fileID: 4337684191699249041, guid: ecb0c30cee69d20459e8a59448bbb50e, type: 3}
   - {fileID: 8033092973025764044, guid: ecb0c30cee69d20459e8a59448bbb50e, type: 3}
   growthTime: 5
-  treeGrowthAmount: 3
+  growthAmount: 1

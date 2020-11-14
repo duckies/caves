@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1dabdc32f5158804ca5f881f0bd950c9, type: 3}
-  m_Name: YellowSeed
+  m_Name: CradleSeed
   m_EditorClassIdentifier: 
-  itemName: Ominous Yellow Seed
-  sprite: {fileID: 1801263428120863714, guid: ecb0c30cee69d20459e8a59448bbb50e, type: 3}
-  plant: {fileID: 11400000, guid: 5d2304a35469cb145aa5206090326900, type: 2}
+  itemName: Cradle Seed
+  sprite: {fileID: 4353201962583441817, guid: c00ce3175c6bd6048a0711c6cea7cf27, type: 3}
+  plant: {fileID: 11400000, guid: 72ce0bffc657a094da9e027aac224c6a, type: 2}
