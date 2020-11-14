@@ -10,8 +10,9 @@ public class Plot
   public GameObject progressBar = null;
   public Slider slider = null;
   public float growth;
-  public bool isWatered = false;
   public GameObject plantPrefab = null;
+  public bool isWatered = false;
+  public bool isTilled = false;
 
   private Tilemap Tilemap;
   private TileBase TileData;

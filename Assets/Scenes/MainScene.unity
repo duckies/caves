@@ -1311,6 +1311,14 @@ PrefabInstance:
       propertyPath: pressedColor.a
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7774060263985718043, guid: 0984a78d958a44a439c5c2918eb74e7e, type: 3}
+      propertyPath: keyCode
+      value: 114
+      objectReference: {fileID: 0}
+    - target: {fileID: 7774060263985718043, guid: 0984a78d958a44a439c5c2918eb74e7e, type: 3}
+      propertyPath: keyCodeName
+      value: R
+      objectReference: {fileID: 0}
     - target: {fileID: 8810920189363237004, guid: 0984a78d958a44a439c5c2918eb74e7e, type: 3}
       propertyPath: m_Name
       value: ToolSlot (2)
@@ -1345,7 +1353,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8810920189363237005, guid: 0984a78d958a44a439c5c2918eb74e7e, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8810920189363237005, guid: 0984a78d958a44a439c5c2918eb74e7e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3730,8 +3738,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 624228007}
-  - {fileID: 298478633}
   - {fileID: 1315855767}
+  - {fileID: 298478633}
   - {fileID: 1140946658}
   - {fileID: 759887270}
   m_Father: {fileID: 1838885468}
@@ -4110,6 +4118,9 @@ MonoBehaviour:
   highlightColor: {r: 0.4433962, g: 0.4433962, b: 0.4433962, a: 1}
   ProgressBar: {fileID: 8642539938235802801, guid: c737f8d13bcae594fb3cb2c23a907371, type: 3}
   PlantPrefab: {fileID: 4421093722137959741, guid: d28b65e1a81e28c409056649fb0e4f26, type: 3}
+  defaultTile: {fileID: 11400000, guid: 30752e599af0da442a977cf9179c471e, type: 2}
+  wateredTile: {fileID: 11400000, guid: 7d1b9a0cd52c17e45b8f324a12b83899, type: 2}
+  tilledTile: {fileID: 11400000, guid: 360d36ac86858b947a1de814fb263834, type: 2}
 --- !u!4 &804610493
 Transform:
   m_ObjectHideFlags: 0
@@ -4788,7 +4799,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7774060263985718043, guid: 0984a78d958a44a439c5c2918eb74e7e, type: 3}
       propertyPath: keyCodeName
-      value: R
+      value: T
       objectReference: {fileID: 0}
     - target: {fileID: 7774060263985718043, guid: 0984a78d958a44a439c5c2918eb74e7e, type: 3}
       propertyPath: toolName
@@ -4796,7 +4807,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7774060263985718043, guid: 0984a78d958a44a439c5c2918eb74e7e, type: 3}
       propertyPath: keyCode
-      value: 114
+      value: 116
       objectReference: {fileID: 0}
     - target: {fileID: 8810920189363237004, guid: 0984a78d958a44a439c5c2918eb74e7e, type: 3}
       propertyPath: m_Name
@@ -4832,7 +4843,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8810920189363237005, guid: 0984a78d958a44a439c5c2918eb74e7e, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8810920189363237005, guid: 0984a78d958a44a439c5c2918eb74e7e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -16895,8 +16906,8 @@ MonoBehaviour:
   - {fileID: 478940399}
   toolSlots:
   - {fileID: 624228008}
-  - {fileID: 298478634}
   - {fileID: 1315855768}
+  - {fileID: 298478634}
   - {fileID: 1140946659}
   - {fileID: 759887271}
   draggingIcon: {fileID: 232186793}

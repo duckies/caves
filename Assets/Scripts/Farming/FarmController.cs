@@ -12,6 +12,9 @@ public class FarmController : MonoBehaviour
   [SerializeField] private Color highlightColor = default;
   [SerializeField] private GameObject ProgressBar = null;
   [SerializeField] private GameObject PlantPrefab = null;
+  [SerializeField] private Tile defaultTile = null;
+  [SerializeField] private Tile wateredTile = null;
+  [SerializeField] private Tile tilledTile = null;
 
   private Dictionary<Vector3, Plot> Farm = null;
   private Plot selected = null;
@@ -76,6 +79,9 @@ public class FarmController : MonoBehaviour
       case "Plow":
         UsePlow();
         return;
+      case "WateringPail":
+        UseWateringPail();
+        return;
       default:
         Debug.Log("Unimplemented Tool Name [" + toolSlot.tool.name + "]");
         return;
@@ -84,30 +90,35 @@ public class FarmController : MonoBehaviour
 
   private void UseWateringPail()
   {
-    Debug.Log("Using Watering Pail");
-    if (selected == null || selected.isWatered) return;
+    if (selected == null || selected.plant || selected.isWatered || !selected.isTilled) return;
+
+    selected.isWatered = true;
+
+    ChangeTile(selected.localLocation, wateredTile);
   }
 
   private void UsePlow()
   {
-    // Can we harvest?
-    if (selected == null || !selected.IsGrown()) return;
+    if (selected == null || selected.plant || selected.isTilled) return;
 
-    EventManager.instance.OnHarvestPlant(selected.plant.growthAmount);
+    selected.isTilled = true;
 
-    Destroy(selected.plantPrefab);
-
-    selected.ClearPlot();
+    ChangeTile(selected.localLocation, tilledTile);
   }
 
   private void OnSeedUse(SeedItem seed)
   {
-    if (selected.plant != null) return;
+    if (selected.plant != null || !selected.isWatered || !selected.isTilled) return;
 
     DrawProgressBar(selected);
     selected.plant = seed.plant;
 
     EventManager.instance.OnConsumeItem(seed);
+  }
+
+  private void ChangeTile(Vector3Int coords, Tile newTile)
+  {
+    FarmingTilemap.SetTile(coords, newTile);
   }
 
   public void GrowPlants()
