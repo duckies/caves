@@ -10,6 +10,7 @@ public class Tree : MonoBehaviour
   [SerializeField] private GameObject[] tutorialWalls = null;
   [SerializeField] private Dialog tutorialDialog = null;
   [SerializeField] private Dialog firstSeedDialog = null;
+  [SerializeField] private Dialog firstGrowth = null;
 
   private SpriteRenderer sprite;
   private int seedsSeen = 0;
@@ -37,6 +38,11 @@ public class Tree : MonoBehaviour
     {
       Debug.Log("You won!");
       return;
+    }
+
+    if (curGrowth == 2)
+    {
+      DialogManager.instance.StartDialog(firstGrowth);
     }
 
     ChangeSprite(curGrowth - 2);

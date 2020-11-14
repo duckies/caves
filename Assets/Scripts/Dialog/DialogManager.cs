@@ -9,6 +9,7 @@ public class DialogManager : MonoBehaviour
   [SerializeField] private GameObject button = null;
   [SerializeField] private TextMeshProUGUI text = null;
 
+  public float autoAdvanceTimer = 5.0f;
   public Animator animator;
   public static DialogManager instance;
   public float typingSpeed;
@@ -38,6 +39,13 @@ public class DialogManager : MonoBehaviour
     }
 
     button.SetActive(true);
+    StartCoroutine(ContinueTimer());
+  }
+
+  private IEnumerator ContinueTimer()
+  {
+    yield return new WaitForSeconds(autoAdvanceTimer);
+    DisplayNextSentence();
   }
 
   public void StartDialog(Dialog dialogue)
@@ -60,6 +68,8 @@ public class DialogManager : MonoBehaviour
 
   public void DisplayNextSentence()
   {
+    StopCoroutine("Type");
+
     button.SetActive(false);
 
     if (sentences.Count == 0)

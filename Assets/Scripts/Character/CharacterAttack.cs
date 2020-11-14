@@ -20,7 +20,7 @@ public class CharacterAttack : MonoBehaviour
 
   private void Update()
   {
-    if (Input.GetKey(attackKeyCode))
+    if (Input.GetKeyDown(attackKeyCode))
     {
       Attack();
     }
