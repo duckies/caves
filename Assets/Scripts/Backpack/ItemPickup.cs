@@ -9,7 +9,7 @@ public class ItemPickup : MonoBehaviour
   private bool inRange;
   private SpriteRenderer sprite;
 
-  private void Awake()
+  private void Start()
   {
     sprite = GetComponent<SpriteRenderer>();
     sprite.sprite = item.sprite;
