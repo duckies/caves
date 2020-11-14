@@ -5,7 +5,7 @@ using TMPro;
 public class Character : MonoBehaviour
 {
   [Header("Serialize Fields")]
-  [SerializeField] private Transform respawnPoint = null;
+  public Transform respawnPoint = null;
   [SerializeField] private GridLayoutGroup healthBar = null;
   [SerializeField] private GameObject heart = null;
   [SerializeField] private GameObject heartHalf = null;
@@ -72,7 +72,7 @@ public class Character : MonoBehaviour
     return Mathf.Clamp((float)curHealth / (float)health, 0f, 1f);
   }
 
-  private void DrawHearts()
+  public void DrawHearts()
   {
     text.text = string.Format("Health: {0:P0}", HealthPercent());
 
@@ -106,6 +106,6 @@ public class Character : MonoBehaviour
 
   public void Death()
   {
-    // Do sad noises.
+    EventManager.instance.OnDeathEvent(this);
   }
 }

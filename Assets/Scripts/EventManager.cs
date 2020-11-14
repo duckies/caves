@@ -11,6 +11,14 @@ public class EventManager : MonoBehaviour
     else Destroy(this);
   }
 
+  // Death Events
+  public event Action<Character> DeathEvent;
+
+  public void OnDeathEvent(Character character)
+  {
+    DeathEvent?.Invoke(character);
+  }
+
   // Backpack SLots
 
   public event Action<Slot> KeyDownEvent;
