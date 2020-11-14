@@ -125,10 +125,14 @@ public class FarmController : MonoBehaviour
   {
     foreach (var plot in Farm)
     {
-      if (plot.Value.plant != null)
+      if (plot.Value.plant != null && !plot.Value.IsGrown())
       {
         plot.Value.Update();
-        // SetPlantTiles(plot.Value);
+
+        if (plot.Value.IsGrown())
+        {
+          EventManager.instance.OnPlantGrown(plot.Value.plant.growthAmount);
+        }
         DrawPlant(plot.Value);
         plot.Value.SetProgress();
       }

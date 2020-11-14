@@ -24,7 +24,7 @@ public class Tree : MonoBehaviour
     sprite = GetComponent<SpriteRenderer>();
     sprite.sprite = null;
 
-    EventManager.instance.HarvestPlant += OnHarvestPlant;
+    EventManager.instance.PlantGrown += OnPlantGrown;
     slider.maxValue = maxGrowth;
   }
 
@@ -52,7 +52,7 @@ public class Tree : MonoBehaviour
     return curGrowth;
   }
 
-  private void OnHarvestPlant(int amount)
+  private void OnPlantGrown(int amount)
   {
     AdvanceState(amount);
   }
