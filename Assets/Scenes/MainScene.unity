@@ -1620,7 +1620,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &243721313
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1639,7 +1639,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -690, y: 397.2}
+  m_AnchoredPosition: {x: -684.66, y: 335}
   m_SizeDelta: {x: 500, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &263049852
@@ -1932,6 +1932,7 @@ MonoBehaviour:
   item: {fileID: 11400000, guid: dca0f539bc22d7c4d998b3d2f1701af9, type: 2}
   itemSpawnYOffset: 1.5
   dropChance: 1
+  shouldFacePlayer: 1
   attackDamage: 5
   waypoints:
   - {fileID: 803945457}
@@ -2487,6 +2488,7 @@ MonoBehaviour:
   item: {fileID: 0}
   itemSpawnYOffset: 0
   dropChance: 0
+  shouldFacePlayer: 1
   shootingRate: 2
   projectile: {fileID: 3577086438707411787, guid: 6281ebeba5c6fbe47a5fae3c53601cc5, type: 3}
   spawnLocation: {fileID: 1929428982}
@@ -2871,6 +2873,7 @@ MonoBehaviour:
   item: {fileID: 0}
   itemSpawnYOffset: 0
   dropChance: 0
+  shouldFacePlayer: 1
   shootingRate: 2
   projectile: {fileID: 3577086438707411787, guid: 6281ebeba5c6fbe47a5fae3c53601cc5, type: 3}
   spawnLocation: {fileID: 597221751}
@@ -3512,6 +3515,7 @@ MonoBehaviour:
   item: {fileID: 11400000, guid: dca0f539bc22d7c4d998b3d2f1701af9, type: 2}
   itemSpawnYOffset: 1.5
   dropChance: 1
+  shouldFacePlayer: 1
   attackDamage: 5
   waypoints:
   - {fileID: 1614026826}
@@ -5737,6 +5741,7 @@ MonoBehaviour:
   item: {fileID: 11400000, guid: dca0f539bc22d7c4d998b3d2f1701af9, type: 2}
   itemSpawnYOffset: 1.5
   dropChance: 1
+  shouldFacePlayer: 1
   attackDamage: 5
   waypoints:
   - {fileID: 1298672998}
@@ -9045,6 +9050,7 @@ MonoBehaviour:
   item: {fileID: 0}
   itemSpawnYOffset: 0
   dropChance: 0
+  shouldFacePlayer: 1
   shootingRate: 2
   projectile: {fileID: 3577086438707411787, guid: 6281ebeba5c6fbe47a5fae3c53601cc5, type: 3}
   spawnLocation: {fileID: 2047153609}
@@ -17679,6 +17685,7 @@ MonoBehaviour:
   item: {fileID: 11400000, guid: dca0f539bc22d7c4d998b3d2f1701af9, type: 2}
   itemSpawnYOffset: 1.5
   dropChance: 1
+  shouldFacePlayer: 1
   attackDamage: 5
   waypoints:
   - {fileID: 1469422890}
@@ -18348,6 +18355,7 @@ MonoBehaviour:
   item: {fileID: 0}
   itemSpawnYOffset: 0
   dropChance: 0
+  shouldFacePlayer: 1
   shootingRate: 2
   projectile: {fileID: 3577086438707411787, guid: 6281ebeba5c6fbe47a5fae3c53601cc5, type: 3}
   spawnLocation: {fileID: 758811298}
@@ -18411,7 +18419,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 31167963856921125, guid: c737f8d13bcae594fb3cb2c23a907371, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6739348058265739822, guid: c737f8d13bcae594fb3cb2c23a907371, type: 3}
       propertyPath: m_LocalPosition.x
@@ -57090,6 +57098,7 @@ MonoBehaviour:
   item: {fileID: 11400000, guid: dca0f539bc22d7c4d998b3d2f1701af9, type: 2}
   itemSpawnYOffset: 1.5
   dropChance: 1
+  shouldFacePlayer: 1
   attackDamage: 5
   waypoints:
   - {fileID: 1335955811}
