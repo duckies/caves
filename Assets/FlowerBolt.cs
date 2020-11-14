@@ -10,6 +10,7 @@ public class FlowerBolt : MonoBehaviour
   private float curLifeTime = 0f;
   private Character target;
   private Rigidbody2D rigidbody2D;
+  public bool isUpsideDown = false;
 
   private void Awake()
   {
@@ -19,7 +20,7 @@ public class FlowerBolt : MonoBehaviour
 
   private void Update()
   {
-    rigidbody2D.velocity = new Vector2(0f, 5f);
+    rigidbody2D.velocity = new Vector2(0f, isUpsideDown ? -5f : 5f);
 
     transform.Rotate(new Vector3(0, 0, 90 * Time.deltaTime));
 
