@@ -39,7 +39,7 @@ public class DialogManager : MonoBehaviour
     }
 
     button.SetActive(true);
-    StartCoroutine(ContinueTimer());
+    // StartCoroutine(ContinueTimer());
   }
 
   private IEnumerator ContinueTimer()
@@ -68,7 +68,7 @@ public class DialogManager : MonoBehaviour
 
   public void DisplayNextSentence()
   {
-    StopCoroutine("Type");
+    // StopCoroutine("Type");
 
     button.SetActive(false);
 

@@ -40,10 +40,10 @@ public class Tree : MonoBehaviour
       return;
     }
 
-    if (curGrowth == 2)
-    {
-      DialogManager.instance.StartDialog(firstGrowth);
-    }
+    // if (curGrowth == 2)
+    // {
+    DialogManager.instance.StartDialog(firstGrowth);
+    // }
 
     ChangeSprite(curGrowth - 2);
   }
