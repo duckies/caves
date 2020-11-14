@@ -111,10 +111,17 @@ public class EventManager : MonoBehaviour
   }
 
   // Tree Events
+
   public event Action<Dialog> DialogCompleteEvent;
+  public event Action<Item> ItemDrop;
 
   public void OnDialogCompleteEvent(Dialog dialog)
   {
     DialogCompleteEvent?.Invoke(dialog);
+  }
+
+  public void OnItemDrop(Item item)
+  {
+    ItemDrop?.Invoke(item);
   }
 }

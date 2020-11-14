@@ -9,13 +9,18 @@ public class Tree : MonoBehaviour
   [SerializeField] private GameObject seed = null;
   [SerializeField] private GameObject[] tutorialWalls = null;
   [SerializeField] private Dialog tutorialDialog = null;
+  [SerializeField] private Dialog firstSeedDialog = null;
 
   private SpriteRenderer sprite;
+  private int seedsSeen = 0;
+
   public int curGrowth = 1;
 
   private void Awake()
   {
     EventManager.instance.DialogCompleteEvent += OnDialogCompleteEvent;
+    EventManager.instance.ItemDrop += OnItemDrop;
+
     sprite = GetComponent<SpriteRenderer>();
     sprite.sprite = null;
 
@@ -65,6 +70,19 @@ public class Tree : MonoBehaviour
       }
 
       DialogManager.instance.StartDialog(tutorialDialog);
+    }
+  }
+
+  private void OnItemDrop(Item item)
+  {
+    if (item is SeedItem seed)
+    {
+      seedsSeen++;
+
+      if (seedsSeen == 1)
+      {
+        DialogManager.instance.StartDialog(firstSeedDialog);
+      }
     }
   }
 }

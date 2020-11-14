@@ -3,7 +3,6 @@
 public class Projectile : MonoBehaviour
 {
   [SerializeField] private float speed;
-  [SerializeField] private float rotationSpeed = 2.0f;
   [SerializeField] private float maxLifeTime = 2.0f;
   [SerializeField] private GameObject destroyEffect = null;
   [SerializeField] private int damage = 3;

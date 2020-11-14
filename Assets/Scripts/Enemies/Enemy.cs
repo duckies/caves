@@ -7,7 +7,7 @@ public class Enemy : MonoBehaviour
 {
   [SerializeField] protected private float speed;
   [SerializeField] protected private float range;
-  [SerializeField] private float maxHealth;
+  [SerializeField] private float maxHealth = default;
   [SerializeField] protected private Slider healthSlider;
   [SerializeField] protected GameObject itemPickupPrefab;
   [SerializeField] protected Item item;
@@ -89,6 +89,8 @@ public class Enemy : MonoBehaviour
       GameObject pickupGO = Instantiate(itemPickupPrefab, position, Quaternion.identity);
       ItemPickup pickup = pickupGO.GetComponent<ItemPickup>();
       pickup.item = item;
+
+      EventManager.instance.OnItemDrop(item);
     }
 
     Destroy(gameObject);
