@@ -852,15 +852,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8642539938235802801, guid: c737f8d13bcae594fb3cb2c23a907371, type: 3}
       propertyPath: m_Layer
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8860771543685893298, guid: c737f8d13bcae594fb3cb2c23a907371, type: 3}
       propertyPath: m_Layer
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 9025345521197139061, guid: c737f8d13bcae594fb3cb2c23a907371, type: 3}
       propertyPath: m_Layer
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c737f8d13bcae594fb3cb2c23a907371, type: 3}
@@ -1186,6 +1186,52 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 119139417}
   m_CullTransparentMesh: 0
+--- !u!1 &133841867
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 133841868}
+  - component: {fileID: 133841869}
+  m_Layer: 8
+  m_Name: ShootPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &133841868
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 133841867}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.42, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1831684734}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &133841869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 133841867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e99eb4a05916db34a8e95341f8e5f497, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  arrow: {fileID: 4910647975520823236, guid: 57aad27c56a21b74eb1ce67164903afb, type: 3}
+  shootPoint: {fileID: 133841868}
+  force: 10
 --- !u!1001 &136715977
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1335,15 +1381,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8642539938235802801, guid: c737f8d13bcae594fb3cb2c23a907371, type: 3}
       propertyPath: m_Layer
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8860771543685893298, guid: c737f8d13bcae594fb3cb2c23a907371, type: 3}
       propertyPath: m_Layer
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 9025345521197139061, guid: c737f8d13bcae594fb3cb2c23a907371, type: 3}
       propertyPath: m_Layer
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c737f8d13bcae594fb3cb2c23a907371, type: 3}
@@ -1723,15 +1769,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8642539938235802801, guid: c737f8d13bcae594fb3cb2c23a907371, type: 3}
       propertyPath: m_Layer
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8860771543685893298, guid: c737f8d13bcae594fb3cb2c23a907371, type: 3}
       propertyPath: m_Layer
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 9025345521197139061, guid: c737f8d13bcae594fb3cb2c23a907371, type: 3}
       propertyPath: m_Layer
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c737f8d13bcae594fb3cb2c23a907371, type: 3}
@@ -2083,7 +2129,7 @@ GameObject:
   - component: {fileID: 256621613}
   m_Layer: 10
   m_Name: Flower (1)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2479,7 +2525,7 @@ GameObject:
   - component: {fileID: 287706242}
   m_Layer: 10
   m_Name: Slime
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2897,15 +2943,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8642539938235802801, guid: c737f8d13bcae594fb3cb2c23a907371, type: 3}
       propertyPath: m_Layer
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8860771543685893298, guid: c737f8d13bcae594fb3cb2c23a907371, type: 3}
       propertyPath: m_Layer
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 9025345521197139061, guid: c737f8d13bcae594fb3cb2c23a907371, type: 3}
       propertyPath: m_Layer
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c737f8d13bcae594fb3cb2c23a907371, type: 3}
@@ -3030,15 +3076,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8642539938235802801, guid: c737f8d13bcae594fb3cb2c23a907371, type: 3}
       propertyPath: m_Layer
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8860771543685893298, guid: c737f8d13bcae594fb3cb2c23a907371, type: 3}
       propertyPath: m_Layer
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 9025345521197139061, guid: c737f8d13bcae594fb3cb2c23a907371, type: 3}
       propertyPath: m_Layer
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c737f8d13bcae594fb3cb2c23a907371, type: 3}
@@ -3067,7 +3113,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 316112994}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ProjectileSpawnLocation
   m_TagString: Untagged
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
@@ -3169,7 +3215,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 324047772}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ProjectileSpawnLocation
   m_TagString: Untagged
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
@@ -3342,7 +3388,7 @@ GameObject:
   - component: {fileID: 373076041}
   m_Layer: 10
   m_Name: Tree 2
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3942,7 +3988,7 @@ GameObject:
   - component: {fileID: 459072049}
   m_Layer: 10
   m_Name: Tree 4
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4656,7 +4702,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 537573661}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ProjectileSpawnLocation
   m_TagString: Untagged
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
@@ -4887,7 +4933,7 @@ GameObject:
   - component: {fileID: 565976773}
   m_Layer: 10
   m_Name: Slime (3)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5207,7 +5253,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 597221751}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ProjectileSpawnLocation
   m_TagString: Untagged
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
@@ -5939,9 +5985,29 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 778809536}
     m_Modifications:
+    - target: {fileID: 317581958833201502, guid: 0c10b41d8abbb384d9c2e43b3d0b5b97, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 680034295421667677, guid: 0c10b41d8abbb384d9c2e43b3d0b5b97, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1069684890685325722, guid: 0c10b41d8abbb384d9c2e43b3d0b5b97, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 1281005380881646496, guid: 0c10b41d8abbb384d9c2e43b3d0b5b97, type: 3}
       propertyPath: m_Name
       value: DragonflyPath (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1281005380881646496, guid: 0c10b41d8abbb384d9c2e43b3d0b5b97, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1281005380881646496, guid: 0c10b41d8abbb384d9c2e43b3d0b5b97, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 3817065109474557596, guid: 0c10b41d8abbb384d9c2e43b3d0b5b97, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5987,6 +6053,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8326674709076367975, guid: 0c10b41d8abbb384d9c2e43b3d0b5b97, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 8326674709255546541, guid: 0c10b41d8abbb384d9c2e43b3d0b5b97, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.7
@@ -5998,6 +6068,10 @@ PrefabInstance:
     - target: {fileID: 8326674709255546541, guid: 0c10b41d8abbb384d9c2e43b3d0b5b97, type: 3}
       propertyPath: m_LocalScale.z
       value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8326674709307146291, guid: 0c10b41d8abbb384d9c2e43b3d0b5b97, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8356011613788628938, guid: 0c10b41d8abbb384d9c2e43b3d0b5b97, type: 3}
       propertyPath: m_AnchorMax.x
@@ -6023,7 +6097,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 634514140}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ProjectileSpawnLocation (1)
   m_TagString: Untagged
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
@@ -6267,7 +6341,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 672680851}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ProjectileSpawnLocation
   m_TagString: Untagged
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
@@ -6382,7 +6456,7 @@ GameObject:
   - component: {fileID: 690551340}
   m_Layer: 10
   m_Name: Flower (7)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6846,7 +6920,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 758811298}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ProjectileSpawnLocation
   m_TagString: Untagged
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
@@ -7017,7 +7091,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 778809536}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: RockyArea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7051,7 +7125,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 803945457}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: WaypointSlime1
   m_TagString: Untagged
   m_Icon: {fileID: 7148428337604731935, guid: 0000000000000000d000000000000000, type: 0}
@@ -7308,7 +7382,7 @@ GameObject:
   - component: {fileID: 815818516}
   m_Layer: 10
   m_Name: Flower (5)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7555,9 +7629,29 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 778809536}
     m_Modifications:
+    - target: {fileID: 317581958833201502, guid: 0c10b41d8abbb384d9c2e43b3d0b5b97, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 680034295421667677, guid: 0c10b41d8abbb384d9c2e43b3d0b5b97, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1069684890685325722, guid: 0c10b41d8abbb384d9c2e43b3d0b5b97, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 1281005380881646496, guid: 0c10b41d8abbb384d9c2e43b3d0b5b97, type: 3}
       propertyPath: m_Name
       value: DragonflyPath (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1281005380881646496, guid: 0c10b41d8abbb384d9c2e43b3d0b5b97, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1281005380881646496, guid: 0c10b41d8abbb384d9c2e43b3d0b5b97, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 3817065109474557596, guid: 0c10b41d8abbb384d9c2e43b3d0b5b97, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7603,6 +7697,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8326674709076367975, guid: 0c10b41d8abbb384d9c2e43b3d0b5b97, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 8326674709255546541, guid: 0c10b41d8abbb384d9c2e43b3d0b5b97, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.7
@@ -7614,6 +7712,10 @@ PrefabInstance:
     - target: {fileID: 8326674709255546541, guid: 0c10b41d8abbb384d9c2e43b3d0b5b97, type: 3}
       propertyPath: m_LocalScale.z
       value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8326674709307146291, guid: 0c10b41d8abbb384d9c2e43b3d0b5b97, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8356011613788628938, guid: 0c10b41d8abbb384d9c2e43b3d0b5b97, type: 3}
       propertyPath: m_AnchorMax.x
@@ -7735,15 +7837,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8642539938235802801, guid: c737f8d13bcae594fb3cb2c23a907371, type: 3}
       propertyPath: m_Layer
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8860771543685893298, guid: c737f8d13bcae594fb3cb2c23a907371, type: 3}
       propertyPath: m_Layer
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 9025345521197139061, guid: c737f8d13bcae594fb3cb2c23a907371, type: 3}
       propertyPath: m_Layer
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c737f8d13bcae594fb3cb2c23a907371, type: 3}
@@ -8323,7 +8425,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 923107060}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ProjectileSpawnLocation
   m_TagString: Untagged
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
@@ -8449,15 +8551,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8642539938235802801, guid: c737f8d13bcae594fb3cb2c23a907371, type: 3}
       propertyPath: m_Layer
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8860771543685893298, guid: c737f8d13bcae594fb3cb2c23a907371, type: 3}
       propertyPath: m_Layer
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 9025345521197139061, guid: c737f8d13bcae594fb3cb2c23a907371, type: 3}
       propertyPath: m_Layer
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c737f8d13bcae594fb3cb2c23a907371, type: 3}
@@ -8610,15 +8712,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8642539938235802801, guid: c737f8d13bcae594fb3cb2c23a907371, type: 3}
       propertyPath: m_Layer
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8860771543685893298, guid: c737f8d13bcae594fb3cb2c23a907371, type: 3}
       propertyPath: m_Layer
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 9025345521197139061, guid: c737f8d13bcae594fb3cb2c23a907371, type: 3}
       propertyPath: m_Layer
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c737f8d13bcae594fb3cb2c23a907371, type: 3}
@@ -8647,7 +8749,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 944390512}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Monsters
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8881,7 +8983,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 973097883}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: WaypointSlime2 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 7148428337604731935, guid: 0000000000000000d000000000000000, type: 0}
@@ -8917,7 +9019,7 @@ GameObject:
   - component: {fileID: 980442965}
   m_Layer: 10
   m_Name: Slime (1)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9186,7 +9288,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 986117789}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ProjectileSpawnLocation
   m_TagString: Untagged
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
@@ -9798,15 +9900,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8642539938235802801, guid: c737f8d13bcae594fb3cb2c23a907371, type: 3}
       propertyPath: m_Layer
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8860771543685893298, guid: c737f8d13bcae594fb3cb2c23a907371, type: 3}
       propertyPath: m_Layer
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 9025345521197139061, guid: c737f8d13bcae594fb3cb2c23a907371, type: 3}
       propertyPath: m_Layer
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c737f8d13bcae594fb3cb2c23a907371, type: 3}
@@ -9851,7 +9953,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1048100014}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ProjectileSpawnLocation
   m_TagString: Untagged
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
@@ -10311,7 +10413,7 @@ GameObject:
   - component: {fileID: 1082498369}
   m_Layer: 10
   m_Name: Flower (4)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10594,7 +10696,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1116075475}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ProjectileSpawnLocation
   m_TagString: Untagged
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
@@ -10720,15 +10822,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8642539938235802801, guid: c737f8d13bcae594fb3cb2c23a907371, type: 3}
       propertyPath: m_Layer
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8860771543685893298, guid: c737f8d13bcae594fb3cb2c23a907371, type: 3}
       propertyPath: m_Layer
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 9025345521197139061, guid: c737f8d13bcae594fb3cb2c23a907371, type: 3}
       propertyPath: m_Layer
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c737f8d13bcae594fb3cb2c23a907371, type: 3}
@@ -11137,7 +11239,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1225569387}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: WaypointSlime2
   m_TagString: Untagged
   m_Icon: {fileID: 7148428337604731935, guid: 0000000000000000d000000000000000, type: 0}
@@ -11597,15 +11699,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8642539938235802801, guid: c737f8d13bcae594fb3cb2c23a907371, type: 3}
       propertyPath: m_Layer
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8860771543685893298, guid: c737f8d13bcae594fb3cb2c23a907371, type: 3}
       propertyPath: m_Layer
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 9025345521197139061, guid: c737f8d13bcae594fb3cb2c23a907371, type: 3}
       propertyPath: m_Layer
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c737f8d13bcae594fb3cb2c23a907371, type: 3}
@@ -11634,7 +11736,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1285664973}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Forest Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11726,7 +11828,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1298672998}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: WaypointSlime1 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 7148428337604731935, guid: 0000000000000000d000000000000000, type: 0}
@@ -11850,7 +11952,7 @@ GameObject:
   - component: {fileID: 1317409679}
   m_Layer: 10
   m_Name: Flower
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12062,7 +12164,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1335955811}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: WaypointSlime1 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 7148428337604731935, guid: 0000000000000000d000000000000000, type: 0}
@@ -12382,15 +12484,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8642539938235802801, guid: c737f8d13bcae594fb3cb2c23a907371, type: 3}
       propertyPath: m_Layer
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8860771543685893298, guid: c737f8d13bcae594fb3cb2c23a907371, type: 3}
       propertyPath: m_Layer
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 9025345521197139061, guid: c737f8d13bcae594fb3cb2c23a907371, type: 3}
       propertyPath: m_Layer
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c737f8d13bcae594fb3cb2c23a907371, type: 3}
@@ -12559,7 +12661,7 @@ GameObject:
   - component: {fileID: 1427571650}
   m_Layer: 10
   m_Name: Flower (6)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12968,7 +13070,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1469422890}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: WaypointSlime1
   m_TagString: Untagged
   m_Icon: {fileID: 7148428337604731935, guid: 0000000000000000d000000000000000, type: 0}
@@ -13341,7 +13443,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1566431667}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: WaypointSlime2 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 7148428337604731935, guid: 0000000000000000d000000000000000, type: 0}
@@ -13565,7 +13667,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1611760258}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: StartingArea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13608,7 +13710,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1614026826}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: WaypointSlime1 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 7148428337604731935, guid: 0000000000000000d000000000000000, type: 0}
@@ -13636,9 +13738,29 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 778809536}
     m_Modifications:
+    - target: {fileID: 317581958833201502, guid: 0c10b41d8abbb384d9c2e43b3d0b5b97, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 680034295421667677, guid: 0c10b41d8abbb384d9c2e43b3d0b5b97, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1069684890685325722, guid: 0c10b41d8abbb384d9c2e43b3d0b5b97, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 1281005380881646496, guid: 0c10b41d8abbb384d9c2e43b3d0b5b97, type: 3}
       propertyPath: m_Name
       value: DragonflyPath (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1281005380881646496, guid: 0c10b41d8abbb384d9c2e43b3d0b5b97, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1281005380881646496, guid: 0c10b41d8abbb384d9c2e43b3d0b5b97, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 3817065109474557596, guid: 0c10b41d8abbb384d9c2e43b3d0b5b97, type: 3}
       propertyPath: m_LocalPosition.x
@@ -13684,6 +13806,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8326674709076367975, guid: 0c10b41d8abbb384d9c2e43b3d0b5b97, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 8326674709255546541, guid: 0c10b41d8abbb384d9c2e43b3d0b5b97, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.7
@@ -13695,6 +13821,10 @@ PrefabInstance:
     - target: {fileID: 8326674709255546541, guid: 0c10b41d8abbb384d9c2e43b3d0b5b97, type: 3}
       propertyPath: m_LocalScale.z
       value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8326674709307146291, guid: 0c10b41d8abbb384d9c2e43b3d0b5b97, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8356011613788628938, guid: 0c10b41d8abbb384d9c2e43b3d0b5b97, type: 3}
       propertyPath: m_AnchorMax.x
@@ -13726,7 +13856,7 @@ GameObject:
   - component: {fileID: 1630385425}
   m_Layer: 10
   m_Name: Tree
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13811,7 +13941,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0
-  range: 3
+  range: 5
   maxHealth: 200
   healthSlider: {fileID: 707988343}
   itemPickupPrefab: {fileID: 5992166288544002315, guid: 0effaea69f1fffe47bfc5e679878f625, type: 3}
@@ -14066,15 +14196,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8642539938235802801, guid: c737f8d13bcae594fb3cb2c23a907371, type: 3}
       propertyPath: m_Layer
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8860771543685893298, guid: c737f8d13bcae594fb3cb2c23a907371, type: 3}
       propertyPath: m_Layer
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 9025345521197139061, guid: c737f8d13bcae594fb3cb2c23a907371, type: 3}
       propertyPath: m_Layer
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c737f8d13bcae594fb3cb2c23a907371, type: 3}
@@ -22542,7 +22672,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1655337074}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: WaypointSlime2 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 7148428337604731935, guid: 0000000000000000d000000000000000, type: 0}
@@ -22668,15 +22798,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8642539938235802801, guid: c737f8d13bcae594fb3cb2c23a907371, type: 3}
       propertyPath: m_Layer
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8860771543685893298, guid: c737f8d13bcae594fb3cb2c23a907371, type: 3}
       propertyPath: m_Layer
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 9025345521197139061, guid: c737f8d13bcae594fb3cb2c23a907371, type: 3}
       propertyPath: m_Layer
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c737f8d13bcae594fb3cb2c23a907371, type: 3}
@@ -22705,7 +22835,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1659225092}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: WaypointSlime2
   m_TagString: Untagged
   m_Icon: {fileID: 7148428337604731935, guid: 0000000000000000d000000000000000, type: 0}
@@ -22741,7 +22871,7 @@ GameObject:
   - component: {fileID: 1661808705}
   m_Layer: 10
   m_Name: Slime
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -22913,7 +23043,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1675672066}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ProjectileSpawnLocation
   m_TagString: Untagged
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
@@ -23543,15 +23673,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8642539938235802801, guid: c737f8d13bcae594fb3cb2c23a907371, type: 3}
       propertyPath: m_Layer
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8860771543685893298, guid: c737f8d13bcae594fb3cb2c23a907371, type: 3}
       propertyPath: m_Layer
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 9025345521197139061, guid: c737f8d13bcae594fb3cb2c23a907371, type: 3}
       propertyPath: m_Layer
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c737f8d13bcae594fb3cb2c23a907371, type: 3}
@@ -23846,7 +23976,7 @@ GameObject:
   - component: {fileID: 1782290725}
   m_Layer: 10
   m_Name: Flower (9)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -23992,7 +24122,7 @@ GameObject:
   - component: {fileID: 1809065989}
   m_Layer: 10
   m_Name: Tree 3
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24372,6 +24502,7 @@ Transform:
   - {fileID: 505224477}
   - {fileID: 831833196}
   - {fileID: 1651566648}
+  - {fileID: 133841868}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -24595,13 +24726,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f0b8a944e9ec6e48b6c488d86f0c890, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bow: {fileID: 133841869}
   enemyLayers:
     serializedVersion: 2
     m_Bits: 1024
   attackPoint: {fileID: 1651566648}
   attackKeyCode: 113
+  shootKeyCode: 114
+  arrow: {fileID: 4910647975520823236, guid: 57aad27c56a21b74eb1ce67164903afb, type: 3}
+  shootPoint: {fileID: 133841868}
+  arrowForce: 10
   attackRange: 1.26
   attackDamage: 10
+  attackCooldown: 0
 --- !u!1 &1838885467
 GameObject:
   m_ObjectHideFlags: 0
@@ -24659,6 +24796,7 @@ MonoBehaviour:
   - {fileID: 0}
   startingTools:
   - {fileID: 11400000, guid: 9a3610f3f05abcd4c909def16fbbe9a3, type: 2}
+  - {fileID: 11400000, guid: af4f1ca0e9891c0489f3320ebd435dbd, type: 2}
   - {fileID: 11400000, guid: 80c9c56bfbe9ebd4fa9ccb921ab73527, type: 2}
   - {fileID: 11400000, guid: c8cd9410a8aab39449d83b5852138ec9, type: 2}
   itemsParent: {fileID: 242982750}
@@ -24932,10 +25070,22 @@ CompositeCollider2D:
       - X: -500000000
         Y: 20000000
       - X: -500000000
+        Y: 29999900
+      - X: -499999959
+        Y: 29999900
+      - X: -499999900
+        Y: 29999959
+      - X: -499999900
         Y: 70000000
       - X: -490000000
         Y: 70000000
       - X: -490000000
+        Y: 79999900
+      - X: -489999959
+        Y: 79999900
+      - X: -489999900
+        Y: 79999959
+      - X: -489999900
         Y: 90000000
       - X: -480000000
         Y: 90000000
@@ -24944,10 +25094,22 @@ CompositeCollider2D:
       - X: -470000000
         Y: 100000000
       - X: -470000000
+        Y: 109999900
+      - X: -469999959
+        Y: 109999900
+      - X: -469999900
+        Y: 109999959
+      - X: -469999900
         Y: 120000000
       - X: -460000000
         Y: 120000000
       - X: -460000000
+        Y: 129999900
+      - X: -459999959
+        Y: 129999900
+      - X: -459999900
+        Y: 129999959
+      - X: -459999900
         Y: 140000000
       - X: -450000000
         Y: 140000000
@@ -25010,6 +25172,12 @@ CompositeCollider2D:
       - X: -110000000
         Y: 110000000
       - X: -110000000
+        Y: 119999900
+      - X: -109999959
+        Y: 119999900
+      - X: -109999900
+        Y: 119999959
+      - X: -109999900
         Y: 130000000
       - X: -100000000
         Y: 130000000
@@ -25046,6 +25214,12 @@ CompositeCollider2D:
       - X: 50000000
         Y: 120000000
       - X: 50000000
+        Y: 129999900
+      - X: 50000041
+        Y: 129999900
+      - X: 50000100
+        Y: 129999959
+      - X: 50000100
         Y: 140000000
       - X: 100000000
         Y: 140000000
@@ -25139,8 +25313,14 @@ CompositeCollider2D:
         Y: -20000000
       - X: 330000000
         Y: -30000000
-      - X: 240000000
+      - X: 240000100
         Y: -30000000
+      - X: 240000100
+        Y: -19999959
+      - X: 240000041
+        Y: -19999900
+      - X: 240000000
+        Y: -19999900
       - X: 240000000
         Y: -10000000
       - X: 230000000
@@ -25159,8 +25339,14 @@ CompositeCollider2D:
         Y: 0
       - X: 90000000
         Y: 10000000
-      - X: 40000000
+      - X: 40000100
         Y: 10000000
+      - X: 40000100
+        Y: 20000041
+      - X: 40000041
+        Y: 20000100
+      - X: 40000000
+        Y: 20000100
       - X: 40000000
         Y: 30000000
       - X: -20000000
@@ -25265,12 +25451,24 @@ CompositeCollider2D:
         Y: 90000000
     - - X: 410000000
         Y: 100000000
-      - X: 380000000
+      - X: 380000100
         Y: 100000000
+      - X: 380000100
+        Y: 110000041
+      - X: 380000041
+        Y: 110000100
+      - X: 380000000
+        Y: 110000100
       - X: 380000000
         Y: 120000000
-      - X: 350000000
+      - X: 350000100
         Y: 120000000
+      - X: 350000100
+        Y: 130000041
+      - X: 350000041
+        Y: 130000100
+      - X: 350000000
+        Y: 130000100
       - X: 350000000
         Y: 140000000
       - X: 220000000
@@ -25343,6 +25541,22 @@ CompositeCollider2D:
         Y: 100000000
       - X: -1430000000
         Y: 100000000
+    - - X: 160000000
+        Y: 110000000
+      - X: 150000000
+        Y: 110000000
+      - X: 150000000
+        Y: 90000000
+      - X: 160000000
+        Y: 90000000
+    - - X: -1180000000
+        Y: 110000000
+      - X: -1190000000
+        Y: 110000000
+      - X: -1190000000
+        Y: 90000000
+      - X: -1180000000
+        Y: 90000000
     - - X: -1220000000
         Y: 80000000
       - X: -1250000000
@@ -25367,30 +25581,6 @@ CompositeCollider2D:
         Y: 60000000
       - X: -1220000000
         Y: 60000000
-    - - X: 160000000
-        Y: 110000000
-      - X: 150000000
-        Y: 110000000
-      - X: 150000000
-        Y: 90000000
-      - X: 160000000
-        Y: 90000000
-    - - X: -1180000000
-        Y: 110000000
-      - X: -1190000000
-        Y: 110000000
-      - X: -1190000000
-        Y: 90000000
-      - X: -1180000000
-        Y: 90000000
-    - - X: 430000000
-        Y: 100000000
-      - X: 420000000
-        Y: 100000000
-      - X: 420000000
-        Y: 80000000
-      - X: 430000000
-        Y: 80000000
     - - X: -1450000000
         Y: 70000000
       - X: -1460000000
@@ -25415,6 +25605,14 @@ CompositeCollider2D:
         Y: 50000000
       - X: -1450000000
         Y: 50000000
+    - - X: 430000000
+        Y: 100000000
+      - X: 420000000
+        Y: 100000000
+      - X: 420000000
+        Y: 80000000
+      - X: 430000000
+        Y: 80000000
     - - X: 70000000
         Y: 70000000
       - X: 120000000
@@ -25485,8 +25683,14 @@ CompositeCollider2D:
         Y: 50000000
     - - X: 340000000
         Y: 30000000
-      - X: 310000000
+      - X: 310000100
         Y: 30000000
+      - X: 310000100
+        Y: 40000041
+      - X: 310000041
+        Y: 40000100
+      - X: 310000000
+        Y: 40000100
       - X: 310000000
         Y: 50000000
       - X: 240000000
@@ -25599,14 +25803,6 @@ CompositeCollider2D:
         Y: 20000000
       - X: -890000000
         Y: 20000000
-    - - X: 360000000
-        Y: 30000000
-      - X: 350000000
-        Y: 30000000
-      - X: 350000000
-        Y: 10000000
-      - X: 360000000
-        Y: 10000000
     - - X: -750000000
         Y: 30000000
       - X: -760000000
@@ -25614,6 +25810,14 @@ CompositeCollider2D:
       - X: -760000000
         Y: 10000000
       - X: -750000000
+        Y: 10000000
+    - - X: 360000000
+        Y: 30000000
+      - X: 350000000
+        Y: 30000000
+      - X: 350000000
+        Y: 10000000
+      - X: 360000000
         Y: 10000000
     - - X: -1510000000
         Y: 0
@@ -25822,15 +26026,15 @@ CompositeCollider2D:
       - {x: -51, y: 0.86002934}
       - {x: -50.999973, y: 1.86}
       - {x: -50, y: 1.8600293}
-      - {x: -49.999973, y: 6.86}
+      - {x: -49.99996, y: 6.86}
       - {x: -49, y: 6.8600297}
-      - {x: -48.999973, y: 8.86}
+      - {x: -48.99996, y: 8.86}
       - {x: -48, y: 8.860029}
       - {x: -47.999973, y: 9.86}
       - {x: -47, y: 9.860029}
-      - {x: -46.999973, y: 11.86}
+      - {x: -46.99996, y: 11.86}
       - {x: -46, y: 11.860029}
-      - {x: -45.999973, y: 13.86}
+      - {x: -45.99996, y: 13.86}
       - {x: -45, y: 13.860028}
       - {x: -44.999973, y: 14.85999}
       - {x: -43.999992, y: 14.860025}
@@ -25856,7 +26060,7 @@ CompositeCollider2D:
       - {x: -12, y: 9.860029}
       - {x: -11.99997, y: 10.86}
       - {x: -11, y: 10.860029}
-      - {x: -10.99997, y: 12.86}
+      - {x: -10.999961, y: 12.86}
       - {x: -10, y: 12.860029}
       - {x: -9.99997, y: 13.86}
       - {x: -7, y: 13.859971}
@@ -25874,7 +26078,7 @@ CompositeCollider2D:
       - {x: 1, y: 10.860029}
       - {x: 1.0000294, y: 11.86}
       - {x: 5, y: 11.860029}
-      - {x: 5.0000296, y: 13.86}
+      - {x: 5.000039, y: 13.86}
       - {x: 10, y: 13.860028}
       - {x: 10.00003, y: 14.86}
       - {x: 17.00001, y: 14.860025}
@@ -25911,7 +26115,7 @@ CompositeCollider2D:
       - {x: 55.99996, y: -2.14}
       - {x: 33, y: -2.1400294}
       - {x: 32.999973, y: -3.14}
-      - {x: 24, y: -3.1399708}
+      - {x: 24.00001, y: -3.1399708}
       - {x: 23.999971, y: -1.14}
       - {x: 23, y: -1.1399707}
       - {x: 22.999971, y: -0.14}
@@ -25921,7 +26125,7 @@ CompositeCollider2D:
       - {x: 10.99997, y: -0.14}
       - {x: 9, y: -0.1399706}
       - {x: 8.99997, y: 0.86}
-      - {x: 4, y: 0.86002946}
+      - {x: 4.00001, y: 0.86002946}
       - {x: 3.999971, y: 2.86}
       - {x: -2, y: 2.8600292}
       - {x: -2.0000293, y: 3.86}
@@ -25947,9 +26151,9 @@ CompositeCollider2D:
       - {x: -91.99997, y: -10.14}
     - - {x: 40.999973, y: 7.86}
       - {x: 40.999973, y: 9.86}
-      - {x: 38, y: 9.860029}
+      - {x: 38.00001, y: 9.860029}
       - {x: 37.999973, y: 11.86}
-      - {x: 35, y: 11.860029}
+      - {x: 35.00001, y: 11.860029}
       - {x: 34.999973, y: 13.86}
       - {x: 22, y: 13.859971}
       - {x: 21.999971, y: 12.86}
@@ -26085,7 +26289,7 @@ CompositeCollider2D:
       - {x: 43.00003, y: 3.86}
     - - {x: 33.999973, y: 0.86}
       - {x: 33.999973, y: 2.86}
-      - {x: 31, y: 2.8600292}
+      - {x: 31.00001, y: 2.8600292}
       - {x: 30.999971, y: 4.86}
       - {x: 24, y: 4.8600297}
       - {x: 23.999971, y: 5.86}
@@ -40459,7 +40663,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 9
-      m_TileSpriteIndex: 11
+      m_TileSpriteIndex: 22
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -41249,7 +41453,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 9
-      m_TileSpriteIndex: 11
+      m_TileSpriteIndex: 22
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -43999,7 +44203,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 9
-      m_TileSpriteIndex: 11
+      m_TileSpriteIndex: 22
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -45739,7 +45943,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 9
-      m_TileSpriteIndex: 11
+      m_TileSpriteIndex: 22
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -46179,7 +46383,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 9
-      m_TileSpriteIndex: 11
+      m_TileSpriteIndex: 22
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -46889,7 +47093,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 9
-      m_TileSpriteIndex: 11
+      m_TileSpriteIndex: 22
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -47879,7 +48083,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 9
-      m_TileSpriteIndex: 11
+      m_TileSpriteIndex: 22
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -48809,7 +49013,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 9
-      m_TileSpriteIndex: 11
+      m_TileSpriteIndex: 22
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -50489,7 +50693,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 9
-      m_TileSpriteIndex: 11
+      m_TileSpriteIndex: 22
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -53119,7 +53323,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 9
-      m_TileSpriteIndex: 11
+      m_TileSpriteIndex: 22
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -53879,7 +54083,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 9
-      m_TileSpriteIndex: 11
+      m_TileSpriteIndex: 22
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -55229,7 +55433,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 9
-      m_TileSpriteIndex: 11
+      m_TileSpriteIndex: 22
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -55489,7 +55693,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 9
-      m_TileSpriteIndex: 11
+      m_TileSpriteIndex: 22
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -56199,7 +56403,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 9
-      m_TileSpriteIndex: 11
+      m_TileSpriteIndex: 22
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -56419,7 +56623,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 9
-      m_TileSpriteIndex: 11
+      m_TileSpriteIndex: 22
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -67233,6 +67437,10 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: e10cd1ebc822d3f4faaba8f077f41114, type: 2}
   - m_RefCount: 7
     m_Data: {fileID: 11400000, guid: 30752e599af0da442a977cf9179c471e, type: 2}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   m_TileSpriteArray:
   - m_RefCount: 26
     m_Data: {fileID: 21300000, guid: 173717d876e7d7c4a8f1ae025a684ea0, type: 3}
@@ -67256,8 +67464,8 @@ Tilemap:
     m_Data: {fileID: 21300000, guid: 32f169fb5a8f1524ab74a50368106f7e, type: 3}
   - m_RefCount: 7
     m_Data: {fileID: -8912932148187528994, guid: c8ecea3df3251b74fa35bb9602c043a0, type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: -3502186859281277887, guid: daeea071671c88047aa6fb4ef5ba3794, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 42
     m_Data: {fileID: -3599981608736371148, guid: daeea071671c88047aa6fb4ef5ba3794, type: 3}
   - m_RefCount: 29
@@ -67276,6 +67484,10 @@ Tilemap:
     m_Data: {fileID: 5613625410805641350, guid: daeea071671c88047aa6fb4ef5ba3794, type: 3}
   - m_RefCount: 49
     m_Data: {fileID: 21300000, guid: 6dbe7c2fa4ee0824cae00087e408834a, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 15
+    m_Data: {fileID: -3502186859281277887, guid: daeea071671c88047aa6fb4ef5ba3794, type: 3}
   m_TileMatrixArray:
   - m_RefCount: 4090
     m_Data:
@@ -67619,7 +67831,7 @@ GameObject:
   - component: {fileID: 1865940613}
   m_Layer: 10
   m_Name: Flower (3)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -68067,7 +68279,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1929428982}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ProjectileSpawnLocation
   m_TagString: Untagged
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
@@ -68103,7 +68315,7 @@ GameObject:
   - component: {fileID: 1933762220}
   m_Layer: 10
   m_Name: Flower (8)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -68424,15 +68636,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8642539938235802801, guid: c737f8d13bcae594fb3cb2c23a907371, type: 3}
       propertyPath: m_Layer
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8860771543685893298, guid: c737f8d13bcae594fb3cb2c23a907371, type: 3}
       propertyPath: m_Layer
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 9025345521197139061, guid: c737f8d13bcae594fb3cb2c23a907371, type: 3}
       propertyPath: m_Layer
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c737f8d13bcae594fb3cb2c23a907371, type: 3}
@@ -68629,15 +68841,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8642539938235802801, guid: c737f8d13bcae594fb3cb2c23a907371, type: 3}
       propertyPath: m_Layer
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8860771543685893298, guid: c737f8d13bcae594fb3cb2c23a907371, type: 3}
       propertyPath: m_Layer
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 9025345521197139061, guid: c737f8d13bcae594fb3cb2c23a907371, type: 3}
       propertyPath: m_Layer
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c737f8d13bcae594fb3cb2c23a907371, type: 3}
@@ -68672,7 +68884,7 @@ GameObject:
   - component: {fileID: 2046656425}
   m_Layer: 10
   m_Name: Slime (2)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -68844,7 +69056,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2047153609}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ProjectileSpawnLocation
   m_TagString: Untagged
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
@@ -74650,15 +74862,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8642539938235802801, guid: c737f8d13bcae594fb3cb2c23a907371, type: 3}
       propertyPath: m_Layer
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8860771543685893298, guid: c737f8d13bcae594fb3cb2c23a907371, type: 3}
       propertyPath: m_Layer
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 9025345521197139061, guid: c737f8d13bcae594fb3cb2c23a907371, type: 3}
       propertyPath: m_Layer
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c737f8d13bcae594fb3cb2c23a907371, type: 3}
@@ -74687,7 +74899,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2097848687}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ProjectileSpawnLocation
   m_TagString: Untagged
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
@@ -74978,15 +75190,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8642539938235802801, guid: c737f8d13bcae594fb3cb2c23a907371, type: 3}
       propertyPath: m_Layer
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8860771543685893298, guid: c737f8d13bcae594fb3cb2c23a907371, type: 3}
       propertyPath: m_Layer
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 9025345521197139061, guid: c737f8d13bcae594fb3cb2c23a907371, type: 3}
       propertyPath: m_Layer
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c737f8d13bcae594fb3cb2c23a907371, type: 3}
@@ -75005,7 +75217,7 @@ GameObject:
   - component: {fileID: 2146804954}
   m_Layer: 10
   m_Name: Flower (2)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -75204,9 +75416,29 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 778809536}
     m_Modifications:
+    - target: {fileID: 317581958833201502, guid: 0c10b41d8abbb384d9c2e43b3d0b5b97, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 680034295421667677, guid: 0c10b41d8abbb384d9c2e43b3d0b5b97, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1069684890685325722, guid: 0c10b41d8abbb384d9c2e43b3d0b5b97, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 1281005380881646496, guid: 0c10b41d8abbb384d9c2e43b3d0b5b97, type: 3}
       propertyPath: m_Name
       value: DragonflyPath
+      objectReference: {fileID: 0}
+    - target: {fileID: 1281005380881646496, guid: 0c10b41d8abbb384d9c2e43b3d0b5b97, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1281005380881646496, guid: 0c10b41d8abbb384d9c2e43b3d0b5b97, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 3817065109474557596, guid: 0c10b41d8abbb384d9c2e43b3d0b5b97, type: 3}
       propertyPath: m_LocalPosition.x
@@ -75252,6 +75484,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8326674709076367975, guid: 0c10b41d8abbb384d9c2e43b3d0b5b97, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 8326674709255546541, guid: 0c10b41d8abbb384d9c2e43b3d0b5b97, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.7
@@ -75271,6 +75507,14 @@ PrefabInstance:
     - target: {fileID: 8326674709255546541, guid: 0c10b41d8abbb384d9c2e43b3d0b5b97, type: 3}
       propertyPath: m_LocalPosition.y
       value: 2.43
+      objectReference: {fileID: 0}
+    - target: {fileID: 8326674709255546542, guid: 0c10b41d8abbb384d9c2e43b3d0b5b97, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 8326674709307146291, guid: 0c10b41d8abbb384d9c2e43b3d0b5b97, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8356011613788628938, guid: 0c10b41d8abbb384d9c2e43b3d0b5b97, type: 3}
       propertyPath: m_AnchorMax.x

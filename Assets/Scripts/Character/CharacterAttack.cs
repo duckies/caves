@@ -3,13 +3,22 @@
 public class CharacterAttack : MonoBehaviour
 {
   [Header("Serialize Fields")]
+  [SerializeField] private Bow bow = null;
   [SerializeField] private LayerMask enemyLayers = default;
   [SerializeField] private Transform attackPoint = null;
   [SerializeField] private KeyCode attackKeyCode = default;
+  [SerializeField] private KeyCode shootKeyCode = default;
+
+  [SerializeField] private GameObject arrow = null;
+  [SerializeField] private Transform shootPoint = null;
 
   [Header("Configurables")]
+  public float arrowForce;
   public float attackRange;
   public int attackDamage;
+  public float attackCooldown;
+
+  private float attackCooldownValue;
 
   private Animator animator;
 
@@ -27,6 +36,19 @@ public class CharacterAttack : MonoBehaviour
     else
     {
       animator.SetBool("IsAttacking", false);
+    }
+
+    // Bow and Arrow Ranged Attack
+    if (attackCooldownValue <= 0 && Input.GetKeyDown(shootKeyCode))
+    {
+      animator.SetBool("IsShooting", true);
+      bow.Shoot();
+      attackCooldownValue = attackCooldown;
+    }
+    else
+    {
+      animator.SetBool("IsShooting", false);
+      attackCooldownValue -= Time.deltaTime;
     }
   }
 
