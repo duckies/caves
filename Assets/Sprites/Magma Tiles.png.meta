@@ -1,0 +1,403 @@
+fileFormatVersion: 2
+guid: 538bab829cc45a248a9c097beae8ad73
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8861420893830252576
+    second: Magma Tiles_0
+  - first:
+      213: -5072486427057314099
+    second: Magma Tiles_1
+  - first:
+      213: -3188255896547078990
+    second: Magma Tiles_2
+  - first:
+      213: -8595058347538457706
+    second: Magma Tiles_3
+  - first:
+      213: 8980876581534334386
+    second: Magma Tiles_4
+  - first:
+      213: -2511755016911278504
+    second: Magma Tiles_5
+  - first:
+      213: 5843664502450595013
+    second: Magma Tiles_6
+  - first:
+      213: -729650941995788630
+    second: Magma Tiles_7
+  - first:
+      213: -1082277400287663965
+    second: Magma Tiles_8
+  - first:
+      213: -2886171119678144518
+    second: Magma Tiles_9
+  - first:
+      213: -7786896558232606861
+    second: Magma Tiles_10
+  - first:
+      213: 3468414950883015123
+    second: Magma Tiles_11
+  - first:
+      213: 7102987943036436371
+    second: Magma Tiles_12
+  - first:
+      213: -8417716276260248813
+    second: Magma Tiles_13
+  - first:
+      213: -778056273766696051
+    second: Magma Tiles_14
+  - first:
+      213: 3174498305557251770
+    second: Magma Tiles_15
+  - first:
+      213: 8782280453601267485
+    second: Magma Tiles_16
+  - first:
+      213: -131449950945098678
+    second: Magma Tiles_17
+  - first:
+      213: 114299315895454727
+    second: Magma Tiles_18
+  - first:
+      213: -8519830429875883216
+    second: Magma Tiles_19
+  - first:
+      213: 4227485524711575073
+    second: Magma Tiles_20
+  - first:
+      213: 5382280613758820608
+    second: Magma Tiles_21
+  - first:
+      213: 3891530230092919348
+    second: Magma Tiles_22
+  - first:
+      213: -6391834649297565406
+    second: Magma Tiles_23
+  - first:
+      213: 6377327039568106588
+    second: Magma Tiles_24
+  - first:
+      213: 3399829892517494411
+    second: Magma Tiles_25
+  - first:
+      213: 7242989142299387794
+    second: Magma Tiles_26
+  - first:
+      213: -470296692258528306
+    second: Magma Tiles_27
+  - first:
+      213: -6246680999902914861
+    second: Magma Tiles_28
+  - first:
+      213: 6957502124288033808
+    second: Magma Tiles_29
+  - first:
+      213: 314085161662479066
+    second: Magma Tiles_30
+  - first:
+      213: 5316451080281657563
+    second: Magma Tiles_31
+  - first:
+      213: -5079427889288076224
+    second: Magma Tiles_32
+  - first:
+      213: 9186436494179072783
+    second: Magma Tiles_33
+  - first:
+      213: 9190992324637177578
+    second: Magma Tiles_34
+  - first:
+      213: 2523192371346201622
+    second: Magma Tiles_35
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 256
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Magma Tiles_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 512
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e7f50a95a8e50580800000000000000
+      internalID: -8861420893830252576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magma Tiles_1
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 512
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc622434878ea99b0800000000000000
+      internalID: -5072486427057314099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magma Tiles_2
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 512
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bc4449772a01c3d0800000000000000
+      internalID: -3188255896547078990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magma Tiles_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69bd633b8f738b880800000000000000
+      internalID: -8595058347538457706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magma Tiles_4
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bd7afd0bab72ac70800000000000000
+      internalID: 8980876581534334386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magma Tiles_5
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85ea236be14742dd0800000000000000
+      internalID: -2511755016911278504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magma Tiles_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c4a02767edd81150800000000000000
+      internalID: 5843664502450595013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magma Tiles_7
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa6df488552cfd5f0800000000000000
+      internalID: -729650941995788630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magma Tiles_8
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a8ab67407afaf0f0800000000000000
+      internalID: -1082277400287663965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
