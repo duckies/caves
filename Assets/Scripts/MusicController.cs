@@ -9,7 +9,7 @@ public class MusicController : MonoBehaviour
 
 
     // Start is called before the first frame update
-    public void onTriggerEnter2D(Collider2D collider) 
+    private void onTriggerEnter2D(Collider2D collider) 
     {
     	OldMusic.SetActive(false);
     	NewMusic.SetActive(true);
