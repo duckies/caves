@@ -24639,6 +24639,7 @@ MonoBehaviour:
   heart: {fileID: 8400559245628191683, guid: d7df95cc4539b38448c169d6859dda17, type: 3}
   heartHalf: {fileID: 4133870983334564297, guid: 5d2f6c9370f3d5f449c8d3ae4d676679, type: 3}
   text: {fileID: 307488336}
+  rigidbody: {fileID: 0}
   health: 100
   regenRate: 5
   relocateFallHeight: -20
@@ -24738,7 +24739,8 @@ MonoBehaviour:
   arrowForce: 10
   attackRange: 1.26
   attackDamage: 10
-  attackCooldown: 0
+  meleeCooldown: 0.25
+  attackCooldown: 0.75
 --- !u!1 &1838885467
 GameObject:
   m_ObjectHideFlags: 0

@@ -16,6 +16,9 @@ public class CharacterAttack : MonoBehaviour
   public float arrowForce;
   public float attackRange;
   public int attackDamage;
+
+  public float meleeCooldown;
+  private float meleeCooldownValue;
   public float attackCooldown;
 
   private float attackCooldownValue;
@@ -29,13 +32,16 @@ public class CharacterAttack : MonoBehaviour
 
   private void Update()
   {
-    if (Input.GetKeyDown(attackKeyCode))
+    if (meleeCooldownValue <= 0 && Input.GetKeyDown(attackKeyCode))
     {
+      animator.SetBool("IsAttacking", true);
       Attack();
+      meleeCooldownValue = meleeCooldown;
     }
     else
     {
       animator.SetBool("IsAttacking", false);
+      meleeCooldownValue -= Time.deltaTime;
     }
 
     // Bow and Arrow Ranged Attack
@@ -54,8 +60,6 @@ public class CharacterAttack : MonoBehaviour
 
   private void Attack()
   {
-    animator.SetBool("IsAttacking", true);
-
     // We may want to change this to a rectangle, since, you know, spear.
     Collider2D[] enemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
 
