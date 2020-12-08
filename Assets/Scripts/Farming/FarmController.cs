@@ -82,6 +82,9 @@ public class FarmController : MonoBehaviour
       case "WateringPail":
         UseWateringPail();
         return;
+      case "Bow":
+        // Handled externally
+        return;
       default:
         Debug.Log("Unimplemented Tool Name [" + toolSlot.tool.name + "]");
         return;
