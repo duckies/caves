@@ -17,6 +17,20 @@ public class Patroller : Enemy
     Patrol();
   }
 
+  protected override void Attack()
+  {
+    if (!animator) return;
+
+    if (IsPlayerInRange())
+    {
+      animator.SetBool("IsAttacking", true);
+    }
+    else
+    {
+      animator.SetBool("IsAttacking", false);
+    }
+  }
+
   protected void Patrol()
   {
     // No waypoints means no patrolling.
@@ -32,6 +46,14 @@ public class Patroller : Enemy
 
       // Move to the current waypoint
       transform.position = Vector2.MoveTowards(transform.position, waypoints[wayIndex].position, speed * Time.deltaTime);
+    }
+  }
+
+  private void OnCollisionEnter2D(Collision2D other)
+  {
+    if (other.gameObject.tag == "Player")
+    {
+      other.gameObject.GetComponent<Character>().TakeDamage(attackDamage);
     }
   }
 

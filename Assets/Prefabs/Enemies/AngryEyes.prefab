@@ -10,12 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 1190213055732667570}
   - component: {fileID: 1190213055732667582}
-  - component: {fileID: 1190213055732667583}
   - component: {fileID: 1190213055732667580}
   - component: {fileID: 1190213055732667581}
   - component: {fileID: 1190213055732667577}
   m_Layer: 10
-  m_Name: Snowflake
+  m_Name: AngryEyes
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -73,10 +72,10 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -665931421
-  m_SortingLayer: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 98130f018ed90864bb75c25f8fb8d30b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9e0c6c194a14c774f8b6287a2817b4e7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -87,25 +86,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &1190213055732667583
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1190213055732667571}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f6a6c5ab8c8551b41b54f8957eb5e202, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &1190213055732667580
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -153,7 +133,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!58 &1190213055732667577
 CircleCollider2D:
   m_ObjectHideFlags: 0
