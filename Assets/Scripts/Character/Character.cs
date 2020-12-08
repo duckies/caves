@@ -11,7 +11,7 @@ public class Character : MonoBehaviour
   [SerializeField] private GameObject heartHalf = null;
   [SerializeField] private TextMeshProUGUI text = null;
 
-  [SerializeField] private Rigidbody2D rigidbody = null;
+  [SerializeField] private Rigidbody2D rb = null;
 
   [Header("Stats")]
   public int health = 100;
@@ -28,7 +28,7 @@ public class Character : MonoBehaviour
 
   private void Start()
   {
-    rigidbody = GetComponent<Rigidbody2D>();
+    rb = GetComponent<Rigidbody2D>();
   }
 
   private void Awake()
@@ -47,7 +47,7 @@ public class Character : MonoBehaviour
     // May want this to hurt or kill the player.
     if (gameObject.transform.position.y < relocateFallHeight)
     {
-      rigidbody.velocity = Vector2.zero;
+      rb.velocity = Vector2.zero;
       gameObject.transform.position = respawnPoint.position;
     }
 

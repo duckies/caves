@@ -9,13 +9,13 @@ public class CharacterArrow : MonoBehaviour
   private Vector3 velocity;
   private bool hasHit = false;
   private Rigidbody2D rb;
-  private Collider2D collider;
+  private Collider2D col;
 
   private void Start()
   {
     Invoke("DestroyProjectile", lifeTime);
     rb = GetComponent<Rigidbody2D>();
-    collider = GetComponent<Collider2D>();
+    col = GetComponent<Collider2D>();
   }
 
   private void Update()
@@ -38,7 +38,7 @@ public class CharacterArrow : MonoBehaviour
     {
       hasHit = true;
       rb.velocity = Vector2.zero;
-      collider.isTrigger = true;
+      col.isTrigger = true;
       rb.isKinematic = true;
     }
   }
@@ -54,7 +54,7 @@ public class CharacterArrow : MonoBehaviour
     {
       hasHit = true;
       rb.velocity = Vector2.zero;
-      collider.isTrigger = true;
+      col.isTrigger = true;
       rb.isKinematic = true;
     }
   }

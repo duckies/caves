@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3817065109474557596}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: DragonflyPath
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -42,7 +42,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8326674709076367974}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Waypoint1
   m_TagString: Untagged
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
@@ -594,7 +594,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8326674709307146290}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Waypoint1 (1)
   m_TagString: Untagged
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
@@ -662,6 +662,10 @@ PrefabInstance:
       propertyPath: waypoints.Array.data[1]
       value: 
       objectReference: {fileID: 8326674709307146290}
+    - target: {fileID: 1825457108765588946, guid: 9d7a3ec8fcd78364aa7e93c69030357e, type: 3}
+      propertyPath: bullet
+      value: 
+      objectReference: {fileID: 6934902874650346382, guid: 868bd79d875bafe419f26601b380589d, type: 3}
     - target: {fileID: 3109076028329772563, guid: 9d7a3ec8fcd78364aa7e93c69030357e, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -672,11 +676,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3124766892070815604, guid: 9d7a3ec8fcd78364aa7e93c69030357e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.4951086
+      value: 3.41
       objectReference: {fileID: 0}
     - target: {fileID: 3124766892070815604, guid: 9d7a3ec8fcd78364aa7e93c69030357e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.564229
+      value: 2.43
       objectReference: {fileID: 0}
     - target: {fileID: 3124766892070815604, guid: 9d7a3ec8fcd78364aa7e93c69030357e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -714,6 +718,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3124766892070815604, guid: 9d7a3ec8fcd78364aa7e93c69030357e, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3124766892070815604, guid: 9d7a3ec8fcd78364aa7e93c69030357e, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3124766892070815604, guid: 9d7a3ec8fcd78364aa7e93c69030357e, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.7
+      objectReference: {fileID: 0}
     - target: {fileID: 3124766892070815605, guid: 9d7a3ec8fcd78364aa7e93c69030357e, type: 3}
       propertyPath: m_Animations.Array.size
       value: 1
@@ -746,6 +762,18 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 5889824236651849860, guid: 9d7a3ec8fcd78364aa7e93c69030357e, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6200160204442132547, guid: 9d7a3ec8fcd78364aa7e93c69030357e, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6682052658124865671, guid: 9d7a3ec8fcd78364aa7e93c69030357e, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 8560756233340110360, guid: 9d7a3ec8fcd78364aa7e93c69030357e, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0
@@ -754,7 +782,8 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0.36
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1825457108765588946, guid: 9d7a3ec8fcd78364aa7e93c69030357e, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 9d7a3ec8fcd78364aa7e93c69030357e, type: 3}
 --- !u!1 &8326674709255546542 stripped
 GameObject:
