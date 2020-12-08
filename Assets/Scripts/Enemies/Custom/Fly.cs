@@ -10,6 +10,8 @@ public class Fly : Enemy
   [SerializeField] private Transform[] waypoints;
   [SerializeField] private GameObject bullet;
 
+  [SerializeField] private Transform firingPoint;
+
   private float shootCooldownValue = 0f;
 
   private int wayIndex = 0;
@@ -50,6 +52,8 @@ public class Fly : Enemy
 
   private bool IsTooFarFromPatrol()
   {
+    if (waypoints.Length == 0) return false;
+
     return Vector2.Distance(waypoints[wayIndex].position, transform.position) >= tetherRange;
   }
 
@@ -63,12 +67,22 @@ public class Fly : Enemy
     if (shootCooldownValue <= 0)
     {
       Vector3 targetPosition = player.transform.position;
-      Vector3 direction = targetPosition - transform.position;
 
-      GameObject bulletInstance = Instantiate(bullet, transform.position, transform.rotation, null);
-      Bullet bulletObject = bulletInstance.GetComponent<Bullet>();
+      if (firingPoint)
+      {
+        Vector3 direction = targetPosition - firingPoint.position;
+        GameObject bulletInstance = Instantiate(bullet, firingPoint.position, firingPoint.rotation, null);
+        Bullet bulletObject = bulletInstance.GetComponent<Bullet>();
+        bulletInstance.GetComponent<Rigidbody2D>().velocity = direction * bulletObject.speed;
+      }
+      else
+      {
+        Vector3 direction = targetPosition - transform.position;
+        GameObject bulletInstance = Instantiate(bullet, transform.position, transform.rotation, null);
+        Bullet bulletObject = bulletInstance.GetComponent<Bullet>();
+        bulletInstance.GetComponent<Rigidbody2D>().velocity = direction * bulletObject.speed;
+      }
 
-      bulletInstance.GetComponent<Rigidbody2D>().velocity = direction * bulletObject.speed;
       shootCooldownValue = shootCooldown;
     }
     else
