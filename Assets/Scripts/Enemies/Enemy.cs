@@ -16,8 +16,8 @@ public class Enemy : MonoBehaviour
   private SpriteRenderer sprite;
   protected private Animator animator;
   protected private Transform player;
-  private float curHealth;
-  private bool facingRight = true;
+  protected float curHealth;
+  protected bool facingRight = true;
 
   protected virtual void Start()
   {
