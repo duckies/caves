@@ -19,7 +19,7 @@ public class Patroller : Enemy
 
   protected override void Attack()
   {
-    if (!animator) return;
+    if (!animator || !ContainsParam("IsAttacking")) return;
 
     if (IsPlayerInRange())
     {
@@ -29,6 +29,16 @@ public class Patroller : Enemy
     {
       animator.SetBool("IsAttacking", false);
     }
+  }
+
+  private bool ContainsParam(string name)
+  {
+    foreach (AnimatorControllerParameter param in animator.parameters)
+    {
+      if (param.name == name) return true;
+    }
+
+    return false;
   }
 
   protected void Patrol()
