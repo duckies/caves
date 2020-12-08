@@ -9,6 +9,8 @@ public class DialogManager : MonoBehaviour
   [SerializeField] private GameObject button = null;
   [SerializeField] private TextMeshProUGUI text = null;
 
+  private Coroutine routine = null;
+
   public float autoAdvanceTimer = 5.0f;
   public Animator animator;
   public static DialogManager instance;
@@ -50,8 +52,6 @@ public class DialogManager : MonoBehaviour
 
   public void StartDialog(Dialog dialogue)
   {
-    Debug.Log("Starting Dialog: " + dialogue.name);
-
     dialog.SetActive(true);
 
     curDialog = dialogue;
@@ -68,7 +68,10 @@ public class DialogManager : MonoBehaviour
 
   public void DisplayNextSentence()
   {
-    // StopCoroutine("Type");
+    if (routine != null)
+    {
+      StopCoroutine(routine);
+    }
 
     button.SetActive(false);
 
@@ -80,7 +83,7 @@ public class DialogManager : MonoBehaviour
 
     string sentence = sentences.Dequeue();
     text.text = "";
-    StartCoroutine(Type(sentence));
+    routine = StartCoroutine(Type(sentence));
   }
 
   public void EndDialogue()
