@@ -17,7 +17,7 @@ public class Patroller : Enemy
     Patrol();
   }
 
-  private void Patrol()
+  protected void Patrol()
   {
     // No waypoints means no patrolling.
     if (waypoints.Length == 0) return;
@@ -25,7 +25,7 @@ public class Patroller : Enemy
     if (!IsPlayerInRange())
     {
       // Change waypoints by cycling through the array length if we are close enough to a waypoint.
-      if (Vector2.Distance(transform.position, waypoints[wayIndex].position) < 0.01f)
+      if (Vector2.Distance(transform.position, waypoints[wayIndex].position) < 0.1f)
       {
         wayIndex = (wayIndex + 1) % waypoints.Length;
       }
@@ -35,12 +35,11 @@ public class Patroller : Enemy
     }
   }
 
-  private void OnCollisionEnter2D(Collision2D other)
+  private void OnTriggerEnter2D(Collider2D other)
   {
-    if (other.collider.tag == "Player")
+    if (other.tag == "Player")
     {
-      Debug.Log("Patroller hit player");
-      other.collider.GetComponent<Character>().TakeDamage(attackDamage);
+      other.GetComponent<Character>().TakeDamage(attackDamage);
     }
   }
 
