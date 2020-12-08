@@ -70,10 +70,7 @@ public class Tree : MonoBehaviour
       sprite.sprite = sprites[0];
       Destroy(seed);
 
-      foreach (GameObject wall in tutorialWalls)
-      {
-        Destroy(wall);
-      }
+      Destroy(tutorialWalls[0]);
 
       DialogManager.instance.StartDialog(tutorialDialog);
     }
@@ -88,6 +85,10 @@ public class Tree : MonoBehaviour
       if (seedsSeen == 1)
       {
         DialogManager.instance.StartDialog(firstSeedDialog);
+        foreach (GameObject wall in tutorialWalls)
+        {
+            Destroy(wall);
+        }
       }
     }
   }
