@@ -8880,6 +8880,14 @@ PrefabInstance:
       propertyPath: pressedColor.a
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7774060263985718043, guid: 0984a78d958a44a439c5c2918eb74e7e, type: 3}
+      propertyPath: keyCode
+      value: 121
+      objectReference: {fileID: 0}
+    - target: {fileID: 7774060263985718043, guid: 0984a78d958a44a439c5c2918eb74e7e, type: 3}
+      propertyPath: keyCodeName
+      value: Y
+      objectReference: {fileID: 0}
     - target: {fileID: 8810920189363237004, guid: 0984a78d958a44a439c5c2918eb74e7e, type: 3}
       propertyPath: m_Name
       value: ToolSlot (3)
