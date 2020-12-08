@@ -11,6 +11,8 @@ public class Character : MonoBehaviour
   [SerializeField] private GameObject heartHalf = null;
   [SerializeField] private TextMeshProUGUI text = null;
 
+  [SerializeField] private Rigidbody2D rigidbody = null;
+
   [Header("Stats")]
   public int health = 100;
   public float regenRate = 1.0f;
@@ -23,6 +25,11 @@ public class Character : MonoBehaviour
   public static Character instance;
 
   private float regenCountdown = 0.0f;
+
+  private void Start()
+  {
+    rigidbody = GetComponent<Rigidbody2D>();
+  }
 
   private void Awake()
   {
@@ -40,6 +47,7 @@ public class Character : MonoBehaviour
     // May want this to hurt or kill the player.
     if (gameObject.transform.position.y < relocateFallHeight)
     {
+      rigidbody.velocity = Vector2.zero;
       gameObject.transform.position = respawnPoint.position;
     }
 
