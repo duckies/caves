@@ -3,6 +3,7 @@ using UnityEngine;
 public class Lizard : Patroller
 {
   public float attackCooldown = 5f;
+  public int meleeDamage = 5;
 
   [SerializeField] private GameObject projectile;
   [SerializeField] private Transform projectileSpawn;
@@ -38,7 +39,7 @@ public class Lizard : Patroller
       GameObject projectileInstance = Instantiate(projectile, projectileSpawn.position, projectileSpawn.rotation, null);
       Bullet projectileObject = projectileInstance.GetComponent<Bullet>();
 
-      projectile.GetComponent<Rigidbody2D>().velocity = direction * projectileObject.speed;
+      projectileInstance.GetComponent<Rigidbody2D>().velocity = direction * projectileObject.speed;
 
       attackCooldownValue = attackCooldown;
     }
@@ -67,6 +68,14 @@ public class Lizard : Patroller
     {
       facingRight = !facingRight;
       transform.Rotate(0f, 180f, 0f);
+    }
+  }
+
+  private void OnCollisionEnter2D(Collision2D other)
+  {
+    if (other.gameObject.tag == "Player")
+    {
+      other.gameObject.GetComponent<Character>().TakeDamage(meleeDamage);
     }
   }
 }
