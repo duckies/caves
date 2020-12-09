@@ -12603,7 +12603,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  range: 0.1
+  range: 0.2
   triggersOnce: 0
   shouldDestroy: 0
   dialog:
@@ -12620,7 +12620,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 939818734}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 34.56, y: -1.21, z: 64.5407}
+  m_LocalPosition: {x: 34.56, y: -1.05, z: 64.5407}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 391556505}
@@ -18106,13 +18106,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  range: 0.1
-  triggersOnce: 1
-  shouldDestroy: 1
+  range: 0.2
+  triggersOnce: 0
+  shouldDestroy: 0
   dialog:
     name: randomDialog
     sentences:
-    - Where once this cave was a beautiful sanctuary, it's soil now lay bare...
+    - Where once this cave was a beautiful sanctuary, its soil now lay bare...
     - The planting plot you want is to the left over there...
 --- !u!4 &1366076133
 Transform:
@@ -18122,7 +18122,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1366076131}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -23.81, y: 2.84, z: 64.5407}
+  m_LocalPosition: {x: -23.42, y: 2.9, z: 64.5407}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 391556505}
@@ -20143,6 +20143,11 @@ MonoBehaviour:
     - The tree grows stronger...
     - Explore the area and collect the seeds to grow The Tree
   winScreen: {fileID: 0}
+  triggersFirstGrowth: []
+  triggersSecondGrowth: []
+  triggersThirdGrowth: []
+  triggersFourthGrowth: []
+  growths: 
   curGrowth: 1
 --- !u!212 &1567785290
 SpriteRenderer:
@@ -23417,7 +23422,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1715400504}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 47.55577, y: 3.8282285, z: 64.5407}
+  m_LocalPosition: {x: 47.55577, y: 4.01, z: 64.5407}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 391556505}
