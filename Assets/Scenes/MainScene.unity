@@ -24775,7 +24775,7 @@ MonoBehaviour:
   text: {fileID: 307488336}
   rb: {fileID: 0}
   health: 100
-  regenRate: 1
+  regenRate: 2
   relocateFallHeight: -20
   numHearts: 5
   curHealth: 0
