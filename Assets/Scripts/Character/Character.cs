@@ -26,11 +26,6 @@ public class Character : MonoBehaviour
 
   private float regenCountdown = 0.0f;
 
-  public GameObject OldMusic1;
-  public GameObject OldMusic2;
-  public GameObject OldMusic3;
-  public GameObject NewMusic;
-
   private void Start()
   {
     rb = GetComponent<Rigidbody2D>();
@@ -119,10 +114,6 @@ public class Character : MonoBehaviour
 
   public void Death()
   {
-    OldMusic1.SetActive(false);
-    OldMusic2.SetActive(false);
-    OldMusic3.SetActive(false);
-    NewMusic.SetActive(true);
     EventManager.instance.OnDeathEvent(this);
   }
 }
