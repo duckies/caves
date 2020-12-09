@@ -20037,11 +20037,24 @@ MonoBehaviour:
     sentences:
     - The tree grows stronger...
     - Explore the area and collect the seeds to grow The Tree
-  winScreen: {fileID: 0}
-  triggersFirstGrowth: []
-  triggersSecondGrowth: []
-  triggersThirdGrowth: []
-  triggersFourthGrowth: []
+  winScreen: {fileID: 1792104119}
+  triggersFirstGrowth:
+  - {fileID: 11400000, guid: baaea006be9cf1b44aac428248d93ee0, type: 2}
+  triggersSecondGrowth:
+  - {fileID: 11400000, guid: baaea006be9cf1b44aac428248d93ee0, type: 2}
+  - {fileID: 11400000, guid: 72ce0bffc657a094da9e027aac224c6a, type: 2}
+  - {fileID: 11400000, guid: 2609c337c24f6d245b0bfe0ce8de837a, type: 2}
+  - {fileID: 11400000, guid: 3f6afa5ccf894164d8fd0f21b606d331, type: 2}
+  triggersThirdGrowth:
+  - {fileID: 11400000, guid: 137c37289d4333d46bd09585821eb39e, type: 2}
+  - {fileID: 11400000, guid: 6cac7ba0414d36d4baaed9f74b216574, type: 2}
+  - {fileID: 11400000, guid: bcd7913d11cd515489e019a65d96cd3d, type: 2}
+  - {fileID: 11400000, guid: 8b30556e560941544a1fda51036982c7, type: 2}
+  triggersFourthGrowth:
+  - {fileID: 11400000, guid: f744f31b0dccd7d4da2ba54498188d0e, type: 2}
+  - {fileID: 11400000, guid: 23eeb5bf2e32c8f44be7082bac3af8ca, type: 2}
+  - {fileID: 11400000, guid: c5aa7bb5e7d58b04f86f7a101b3ecf28, type: 2}
+  - {fileID: 11400000, guid: dc63b04869ba6f54bbb3fed9e2c03c82, type: 2}
   forestBarrier: {fileID: 1296531216}
   lavaBarrier: {fileID: 2123036317}
   snowBarrier: {fileID: 89135205}
