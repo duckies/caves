@@ -19,6 +19,11 @@ public class Tree : MonoBehaviour
   [SerializeField] private Plant[] triggersThirdGrowth = null;
   [SerializeField] private Plant[] triggersFourthGrowth = null;
 
+  [SerializeField] private GameObject forestBarrier = null;
+  [SerializeField] private GameObject lavaBarrier = null;
+  [SerializeField] private GameObject snowBarrier = null;
+
+
   [SerializeField] private int[] growths = null;
 
   private SpriteRenderer sprite;
@@ -61,6 +66,7 @@ public class Tree : MonoBehaviour
         {
           curGrowth++;
           ChangeSprite(0);
+          forestBarrier.SetActive(false);
         }
         break;
 
@@ -79,6 +85,7 @@ public class Tree : MonoBehaviour
           curGrowth++;
           DialogManager.instance.StartDialog(firstGrowth);
           ChangeSprite(1);
+          lavaBarrier.SetActive(false);
         }
         break;
 
@@ -96,6 +103,7 @@ public class Tree : MonoBehaviour
         {
           curGrowth++;
           ChangeSprite(2);
+          snowBarrier.SetActive(false);
         }
         break;
 
