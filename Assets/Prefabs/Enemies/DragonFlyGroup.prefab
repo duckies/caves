@@ -388,7 +388,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 2
   range: 5
-  maxHealth: 20
+  maxHealth: 100
   healthSlider: {fileID: 7109990335293520702}
   itemPickupPrefab: {fileID: 0}
   item: {fileID: 0}

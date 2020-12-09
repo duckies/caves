@@ -316,8 +316,8 @@ MonoBehaviour:
   range: 10
   maxHealth: 50
   healthSlider: {fileID: 1039847945744560254}
-  itemPickupPrefab: {fileID: 0}
-  item: {fileID: 0}
+  itemPickupPrefab: {fileID: 5992166288544002315, guid: 0effaea69f1fffe47bfc5e679878f625, type: 3}
+  item: {fileID: 11400000, guid: 02b4a907818c6934299d37a87668d81b, type: 2}
   itemSpawnYOffset: 0
   dropChance: 0
   shouldFacePlayer: 1

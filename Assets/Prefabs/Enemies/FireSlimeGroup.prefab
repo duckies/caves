@@ -166,7 +166,7 @@ MonoBehaviour:
   maxHealth: 80
   healthSlider: {fileID: 1197885095512660012}
   itemPickupPrefab: {fileID: 5992166288544002315, guid: 0effaea69f1fffe47bfc5e679878f625, type: 3}
-  item: {fileID: 11400000, guid: dca0f539bc22d7c4d998b3d2f1701af9, type: 2}
+  item: {fileID: 11400000, guid: 74a9bb701eb563447a1b6a6316559aec, type: 2}
   itemSpawnYOffset: 1.5
   dropChance: 1
   shouldFacePlayer: 1
@@ -211,7 +211,7 @@ PolygonCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.5, y: 0}
     oldSize: {x: 2.64, y: 1.71}
     newSize: {x: 2.6206396, y: 1.6800001}
     adaptiveTilingThreshold: 0.5

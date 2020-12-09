@@ -3119,7 +3119,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0
   range: 7
-  maxHealth: 200
+  maxHealth: 60
   healthSlider: {fileID: 888521087}
   itemPickupPrefab: {fileID: 5992166288544002315, guid: 0effaea69f1fffe47bfc5e679878f625, type: 3}
   item: {fileID: 11400000, guid: 1d1ae8ec65560c244a4be7cbc5fb1abc, type: 2}
@@ -9543,12 +9543,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0
   range: 7
-  maxHealth: 200
+  maxHealth: 60
   healthSlider: {fileID: 201575726}
   itemPickupPrefab: {fileID: 5992166288544002315, guid: 0effaea69f1fffe47bfc5e679878f625, type: 3}
   item: {fileID: 11400000, guid: 1d1ae8ec65560c244a4be7cbc5fb1abc, type: 2}
   itemSpawnYOffset: 0
-  dropChance: 0
+  dropChance: 1
   shouldFacePlayer: 0
   shootingRate: 1
   projectile: {fileID: 3423147512851388995, guid: 05b20c3d0e8beee4ab14c4f1afe38ba1, type: 3}
@@ -10989,12 +10989,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0
   range: 7
-  maxHealth: 200
+  maxHealth: 60
   healthSlider: {fileID: 1630526144}
   itemPickupPrefab: {fileID: 5992166288544002315, guid: 0effaea69f1fffe47bfc5e679878f625, type: 3}
   item: {fileID: 11400000, guid: 1d1ae8ec65560c244a4be7cbc5fb1abc, type: 2}
   itemSpawnYOffset: 0
-  dropChance: 0
+  dropChance: 1
   shouldFacePlayer: 0
   shootingRate: 1
   projectile: {fileID: 3423147512851388995, guid: 05b20c3d0e8beee4ab14c4f1afe38ba1, type: 3}
@@ -15282,12 +15282,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0
   range: 7
-  maxHealth: 200
+  maxHealth: 60
   healthSlider: {fileID: 1657014934}
   itemPickupPrefab: {fileID: 5992166288544002315, guid: 0effaea69f1fffe47bfc5e679878f625, type: 3}
   item: {fileID: 11400000, guid: 1d1ae8ec65560c244a4be7cbc5fb1abc, type: 2}
   itemSpawnYOffset: 0
-  dropChance: 0
+  dropChance: 1
   shouldFacePlayer: 0
   shootingRate: 1
   projectile: {fileID: 3423147512851388995, guid: ea6f3184f60f95b45bf561f05c0da76a, type: 3}
@@ -17603,7 +17603,7 @@ MonoBehaviour:
   itemPickupPrefab: {fileID: 5992166288544002315, guid: 0effaea69f1fffe47bfc5e679878f625, type: 3}
   item: {fileID: 11400000, guid: 1d1ae8ec65560c244a4be7cbc5fb1abc, type: 2}
   itemSpawnYOffset: 0
-  dropChance: 0
+  dropChance: 1
   shouldFacePlayer: 0
   shootingRate: 1
   projectile: {fileID: 3423147512851388995, guid: ea6f3184f60f95b45bf561f05c0da76a, type: 3}
@@ -18529,12 +18529,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0
   range: 7
-  maxHealth: 200
+  maxHealth: 60
   healthSlider: {fileID: 309189505}
   itemPickupPrefab: {fileID: 5992166288544002315, guid: 0effaea69f1fffe47bfc5e679878f625, type: 3}
   item: {fileID: 11400000, guid: 1d1ae8ec65560c244a4be7cbc5fb1abc, type: 2}
   itemSpawnYOffset: 0
-  dropChance: 0
+  dropChance: 1
   shouldFacePlayer: 0
   shootingRate: 1
   projectile: {fileID: 3423147512851388995, guid: 05b20c3d0e8beee4ab14c4f1afe38ba1, type: 3}
@@ -24013,12 +24013,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0
   range: 7
-  maxHealth: 200
+  maxHealth: 60
   healthSlider: {fileID: 2084376440}
   itemPickupPrefab: {fileID: 5992166288544002315, guid: 0effaea69f1fffe47bfc5e679878f625, type: 3}
   item: {fileID: 11400000, guid: 1d1ae8ec65560c244a4be7cbc5fb1abc, type: 2}
   itemSpawnYOffset: 0
-  dropChance: 0
+  dropChance: 1
   shouldFacePlayer: 0
   shootingRate: 1
   projectile: {fileID: 3423147512851388995, guid: 05b20c3d0e8beee4ab14c4f1afe38ba1, type: 3}
@@ -109988,12 +109988,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0
   range: 7
-  maxHealth: 200
+  maxHealth: 60
   healthSlider: {fileID: 2045983158}
   itemPickupPrefab: {fileID: 5992166288544002315, guid: 0effaea69f1fffe47bfc5e679878f625, type: 3}
   item: {fileID: 11400000, guid: 1d1ae8ec65560c244a4be7cbc5fb1abc, type: 2}
   itemSpawnYOffset: 0
-  dropChance: 0
+  dropChance: 1
   shouldFacePlayer: 0
   shootingRate: 1
   projectile: {fileID: 3423147512851388995, guid: ea6f3184f60f95b45bf561f05c0da76a, type: 3}
@@ -110694,12 +110694,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0
   range: 7
-  maxHealth: 200
+  maxHealth: 60
   healthSlider: {fileID: 309262884}
   itemPickupPrefab: {fileID: 5992166288544002315, guid: 0effaea69f1fffe47bfc5e679878f625, type: 3}
   item: {fileID: 11400000, guid: 1d1ae8ec65560c244a4be7cbc5fb1abc, type: 2}
   itemSpawnYOffset: 0
-  dropChance: 0
+  dropChance: 1
   shouldFacePlayer: 0
   shootingRate: 1
   projectile: {fileID: 3423147512851388995, guid: ea6f3184f60f95b45bf561f05c0da76a, type: 3}
@@ -122977,12 +122977,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0
   range: 7
-  maxHealth: 200
+  maxHealth: 60
   healthSlider: {fileID: 1381387160}
   itemPickupPrefab: {fileID: 5992166288544002315, guid: 0effaea69f1fffe47bfc5e679878f625, type: 3}
   item: {fileID: 11400000, guid: 1d1ae8ec65560c244a4be7cbc5fb1abc, type: 2}
   itemSpawnYOffset: 0
-  dropChance: 0
+  dropChance: 1
   shouldFacePlayer: 0
   shootingRate: 1
   projectile: {fileID: 3423147512851388995, guid: ea6f3184f60f95b45bf561f05c0da76a, type: 3}
