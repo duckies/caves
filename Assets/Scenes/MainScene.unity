@@ -2575,8 +2575,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1795526891
+  m_SortingLayer: -1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 9258ebe16757eda4e91b39691a6ae4b9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -4560,7 +4560,7 @@ MonoBehaviour:
   healthSlider: {fileID: 726689274}
   itemPickupPrefab: {fileID: 5992166288544002315, guid: 0effaea69f1fffe47bfc5e679878f625, type: 3}
   item: {fileID: 11400000, guid: 8d5a3f11144f7c545bbedf7057c400d5, type: 2}
-  itemSpawnYOffset: 5
+  itemSpawnYOffset: 2
   dropChance: 1
   shouldFacePlayer: 1
   shootingRate: 2
@@ -5729,7 +5729,7 @@ MonoBehaviour:
   healthSlider: {fileID: 1125657523}
   itemPickupPrefab: {fileID: 5992166288544002315, guid: 0effaea69f1fffe47bfc5e679878f625, type: 3}
   item: {fileID: 11400000, guid: 8d5a3f11144f7c545bbedf7057c400d5, type: 2}
-  itemSpawnYOffset: 5
+  itemSpawnYOffset: 2
   dropChance: 1
   shouldFacePlayer: 1
   shootingRate: 2
@@ -6349,8 +6349,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1795526891
+  m_SortingLayer: -1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 6ba83e1e6d7e63d468c240014b07f0a6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -18224,8 +18224,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1795526891
+  m_SortingLayer: -1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 6ba83e1e6d7e63d468c240014b07f0a6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -20574,7 +20574,7 @@ MonoBehaviour:
   healthSlider: {fileID: 707988343}
   itemPickupPrefab: {fileID: 5992166288544002315, guid: 0effaea69f1fffe47bfc5e679878f625, type: 3}
   item: {fileID: 11400000, guid: 8d5a3f11144f7c545bbedf7057c400d5, type: 2}
-  itemSpawnYOffset: 5
+  itemSpawnYOffset: 2
   dropChance: 1
   shouldFacePlayer: 1
   shootingRate: 2
@@ -24314,7 +24314,7 @@ MonoBehaviour:
   healthSlider: {fileID: 2043427458}
   itemPickupPrefab: {fileID: 5992166288544002315, guid: 0effaea69f1fffe47bfc5e679878f625, type: 3}
   item: {fileID: 11400000, guid: 8d5a3f11144f7c545bbedf7057c400d5, type: 2}
-  itemSpawnYOffset: 5
+  itemSpawnYOffset: 2
   dropChance: 1
   shouldFacePlayer: 1
   shootingRate: 2
