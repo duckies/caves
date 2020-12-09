@@ -870,6 +870,7 @@ GameObject:
   m_Component:
   - component: {fileID: 89135206}
   - component: {fileID: 89135207}
+  - component: {fileID: 89135208}
   m_Layer: 0
   m_Name: SnowBarrier
   m_TagString: Untagged
@@ -917,6 +918,28 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.5148411, y: 3}
   m_EdgeRadius: 0
+--- !u!114 &89135208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 89135205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df6421fcb7f478d48b2ed489e4759e0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  forestArea:
+    name: forestDialog
+    sentences:
+    - Hmm... I think I should look around more before heading this way...
+    - Let's try planting a seed first
+  lavaArea:
+    name: LavaAndSnow
+    sentences:
+    - Hmm... I think I should look around more before heading this way...
+    - Let's try to grow more plants first
 --- !u!1001 &93212613
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17292,6 +17315,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1296531217}
   - component: {fileID: 1296531218}
+  - component: {fileID: 1296531219}
   m_Layer: 0
   m_Name: ForestBarrier
   m_TagString: Untagged
@@ -17339,6 +17363,28 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.5148411, y: 4}
   m_EdgeRadius: 0
+--- !u!114 &1296531219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1296531216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df6421fcb7f478d48b2ed489e4759e0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  forestArea:
+    name: forestDialog
+    sentences:
+    - Hmm... I think I should look around more before heading this way...
+    - Let's try planting a seed first
+  lavaArea:
+    name: LavaAndSnow
+    sentences:
+    - Hmm... I think I should look around more before heading this way...
+    - Let's try to grow more plants first
 --- !u!1 &1298672997
 GameObject:
   m_ObjectHideFlags: 0
@@ -122752,6 +122798,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2123036318}
   - component: {fileID: 2123036319}
+  - component: {fileID: 2123036320}
   m_Layer: 0
   m_Name: LavaBarrier
   m_TagString: Untagged
@@ -122799,6 +122846,28 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.5148411, y: 4}
   m_EdgeRadius: 0
+--- !u!114 &2123036320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2123036317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df6421fcb7f478d48b2ed489e4759e0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  forestArea:
+    name: forestDialog
+    sentences:
+    - Hmm... I think I should look around more before heading this way...
+    - Let's try planting a seed first
+  lavaArea:
+    name: LavaAndSnow
+    sentences:
+    - Hmm... I think I should look around more before heading this way...
+    - Let's try to grow more plants first
 --- !u!1001 &2129810294
 PrefabInstance:
   m_ObjectHideFlags: 0
