@@ -134,7 +134,7 @@ public class FarmController : MonoBehaviour
 
         if (plot.Value.IsGrown())
         {
-          EventManager.instance.OnPlantGrown(plot.Value.plant.growthAmount);
+          EventManager.instance.OnPlantGrown(plot.Value.plant);
         }
         DrawPlant(plot.Value);
         plot.Value.SetProgress();

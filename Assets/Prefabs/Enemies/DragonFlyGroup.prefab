@@ -393,7 +393,7 @@ MonoBehaviour:
   itemPickupPrefab: {fileID: 0}
   item: {fileID: 0}
   itemSpawnYOffset: 0
-  dropChance: 0
+  dropChance: 1
   shouldFacePlayer: 1
   shootCooldown: 2
   tetherRange: 5

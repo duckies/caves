@@ -14,10 +14,22 @@ public class Tree : MonoBehaviour
 
   [SerializeField] private GameObject winScreen = null;
 
+  [SerializeField] private Plant[] triggersFirstGrowth = null;
+  [SerializeField] private Plant[] triggersSecondGrowth = null;
+  [SerializeField] private Plant[] triggersThirdGrowth = null;
+  [SerializeField] private Plant[] triggersFourthGrowth = null;
+
+  [SerializeField] private int[] growths = null;
+
   private SpriteRenderer sprite;
   private int seedsSeen = 0;
 
   public int curGrowth = 1;
+
+  private void Start()
+  {
+    growths = new int[] { 0, 0, 0, 0 };
+  }
 
   private void Awake()
   {
@@ -31,24 +43,96 @@ public class Tree : MonoBehaviour
     slider.maxValue = maxGrowth;
   }
 
-  public void AdvanceState(int amount)
+  public void AdvanceState(Plant plant)
   {
-    curGrowth += amount;
-    slider.value = maxGrowth;
-
-    if (curGrowth >= 6)
+    switch (curGrowth)
     {
-      Debug.Log("You won!");
-      winScreen.SetActive(true);
-      return;
-    }
+      case 1:
+        foreach (Plant triggerPlant in triggersFirstGrowth)
+        {
+          if (triggerPlant.name == plant.name)
+          {
+            growths[0]++;
+            break;
+          }
+        }
 
-    // if (curGrowth == 2)
+        if (growths[0] == triggersFirstGrowth.Length)
+        {
+          curGrowth++;
+          ChangeSprite(0);
+        }
+        break;
+
+      case 2:
+        foreach (Plant triggerPlant in triggersSecondGrowth)
+        {
+          if (triggerPlant.name == plant.name)
+          {
+            growths[1]++;
+            break;
+          }
+        }
+
+        if (growths[1] == triggersSecondGrowth.Length)
+        {
+          curGrowth++;
+          DialogManager.instance.StartDialog(firstGrowth);
+          ChangeSprite(1);
+        }
+        break;
+
+      case 3:
+        foreach (Plant triggerPlant in triggersThirdGrowth)
+        {
+          if (triggerPlant.name == plant.name)
+          {
+            growths[2]++;
+            break;
+          }
+        }
+
+        if (growths[2] == triggersThirdGrowth.Length)
+        {
+          curGrowth++;
+          ChangeSprite(2);
+        }
+        break;
+
+      case 4:
+        foreach (Plant triggerPlant in triggersFourthGrowth)
+        {
+          if (triggerPlant.name == plant.name)
+          {
+            growths[3]++;
+            break;
+          }
+        }
+
+        if (growths[3] == triggersFourthGrowth.Length)
+        {
+          winScreen.SetActive(true);
+          ChangeSprite(3);
+          return;
+        }
+        break;
+    }
+    // curGrowth += amount;
+    // slider.value = maxGrowth;
+
+    // if (curGrowth >= 6)
     // {
-    DialogManager.instance.StartDialog(firstGrowth);
+    //   Debug.Log("You won!");
+    //   winScreen.SetActive(true);
+    //   return;
     // }
 
-    ChangeSprite(curGrowth - 2);
+    // // if (curGrowth == 2)
+    // // {
+    // DialogManager.instance.StartDialog(firstGrowth);
+    // // }
+
+    // ChangeSprite(curGrowth - 2);
   }
 
   public void ChangeSprite(int index)
@@ -61,9 +145,9 @@ public class Tree : MonoBehaviour
     return curGrowth;
   }
 
-  private void OnPlantGrown(int amount)
+  private void OnPlantGrown(Plant plant)
   {
-    AdvanceState(amount);
+    AdvanceState(plant);
   }
 
   private void OnDialogCompleteEvent(Dialog dialog)

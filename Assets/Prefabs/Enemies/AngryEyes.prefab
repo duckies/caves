@@ -105,7 +105,7 @@ MonoBehaviour:
   itemPickupPrefab: {fileID: 5992166288544002315, guid: 0effaea69f1fffe47bfc5e679878f625, type: 3}
   item: {fileID: 11400000, guid: 947b9db91e7250746853fb590b6232c8, type: 2}
   itemSpawnYOffset: 0
-  dropChance: 0
+  dropChance: 1
   shouldFacePlayer: 1
   attackDamage: 5
   waypoints: []

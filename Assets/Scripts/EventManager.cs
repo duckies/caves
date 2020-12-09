@@ -105,12 +105,12 @@ public class EventManager : MonoBehaviour
 
   // Farming Events
 
-  public event Action<int> PlantGrown;
+  public event Action<Plant> PlantGrown;
   public event Action<SeedItem> SeedUse;
 
-  public void OnPlantGrown(int amount)
+  public void OnPlantGrown(Plant plant)
   {
-    PlantGrown?.Invoke(amount);
+    PlantGrown?.Invoke(plant);
   }
 
   public void OnSeedUse(SeedItem seed)

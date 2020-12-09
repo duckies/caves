@@ -190,10 +190,10 @@ MonoBehaviour:
   range: 5
   maxHealth: 30
   healthSlider: {fileID: 6730362681750565715}
-  itemPickupPrefab: {fileID: 0}
-  item: {fileID: 0}
+  itemPickupPrefab: {fileID: 5992166288544002315, guid: 0effaea69f1fffe47bfc5e679878f625, type: 3}
+  item: {fileID: 11400000, guid: 74a9bb701eb563447a1b6a6316559aec, type: 2}
   itemSpawnYOffset: 0
-  dropChance: 0
+  dropChance: 1
   shouldFacePlayer: 1
   shootCooldown: 2
   tetherRange: 5

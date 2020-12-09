@@ -123,10 +123,10 @@ MonoBehaviour:
   range: 20
   maxHealth: 100
   healthSlider: {fileID: 7130778655087404399}
-  itemPickupPrefab: {fileID: 0}
-  item: {fileID: 0}
+  itemPickupPrefab: {fileID: 5992166288544002315, guid: 0effaea69f1fffe47bfc5e679878f625, type: 3}
+  item: {fileID: 11400000, guid: 800dbb3bde5fcc841909f440639e096d, type: 2}
   itemSpawnYOffset: 0
-  dropChance: 0
+  dropChance: 1
   shouldFacePlayer: 1
   attackDamage: 0
   waypoints: []
