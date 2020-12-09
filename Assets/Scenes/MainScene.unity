@@ -5970,6 +5970,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: AngryEyes
       objectReference: {fileID: 0}
+    - target: {fileID: 1190213055732667580, guid: f5fa19055ae677443b71567e40fffc2d, type: 3}
+      propertyPath: itemPickupPrefab
+      value: 
+      objectReference: {fileID: 5992166288544002315, guid: 0effaea69f1fffe47bfc5e679878f625, type: 3}
+    - target: {fileID: 1190213055732667580, guid: f5fa19055ae677443b71567e40fffc2d, type: 3}
+      propertyPath: item
+      value: 
+      objectReference: {fileID: 11400000, guid: 947b9db91e7250746853fb590b6232c8, type: 2}
+    - target: {fileID: 1190213055732667580, guid: f5fa19055ae677443b71567e40fffc2d, type: 3}
+      propertyPath: dropChance
+      value: 0.75
+      objectReference: {fileID: 0}
     - target: {fileID: 1190213055732667582, guid: f5fa19055ae677443b71567e40fffc2d, type: 3}
       propertyPath: m_SortingLayerID
       value: -665931421
@@ -8583,10 +8595,10 @@ MonoBehaviour:
   range: 10
   maxHealth: 50
   healthSlider: {fileID: 435870091}
-  itemPickupPrefab: {fileID: 0}
-  item: {fileID: 0}
+  itemPickupPrefab: {fileID: 5992166288544002315, guid: 0effaea69f1fffe47bfc5e679878f625, type: 3}
+  item: {fileID: 11400000, guid: 02b4a907818c6934299d37a87668d81b, type: 2}
   itemSpawnYOffset: 0
-  dropChance: 0
+  dropChance: 0.79
   shouldFacePlayer: 1
   shootCooldown: 2
   tetherRange: 5
@@ -12046,6 +12058,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AngryEyes (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 1190213055732667580, guid: f5fa19055ae677443b71567e40fffc2d, type: 3}
+      propertyPath: dropChance
+      value: 0.41
+      objectReference: {fileID: 0}
     - target: {fileID: 1190213055732667582, guid: f5fa19055ae677443b71567e40fffc2d, type: 3}
       propertyPath: m_SortingLayerID
       value: -665931421
@@ -13334,10 +13350,10 @@ MonoBehaviour:
   range: 10
   maxHealth: 50
   healthSlider: {fileID: 1110853015}
-  itemPickupPrefab: {fileID: 0}
-  item: {fileID: 0}
+  itemPickupPrefab: {fileID: 5992166288544002315, guid: 0effaea69f1fffe47bfc5e679878f625, type: 3}
+  item: {fileID: 11400000, guid: 02b4a907818c6934299d37a87668d81b, type: 2}
   itemSpawnYOffset: 0
-  dropChance: 0
+  dropChance: 0.21
   shouldFacePlayer: 1
   shootCooldown: 2
   tetherRange: 5
@@ -14644,10 +14660,10 @@ MonoBehaviour:
   range: 10
   maxHealth: 50
   healthSlider: {fileID: 1289073185}
-  itemPickupPrefab: {fileID: 0}
+  itemPickupPrefab: {fileID: 5992166288544002315, guid: 0effaea69f1fffe47bfc5e679878f625, type: 3}
   item: {fileID: 0}
   itemSpawnYOffset: 0
-  dropChance: 0
+  dropChance: 0.6
   shouldFacePlayer: 1
   shootCooldown: 2
   tetherRange: 5
@@ -16279,6 +16295,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: AngryEyes (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 1190213055732667580, guid: f5fa19055ae677443b71567e40fffc2d, type: 3}
+      propertyPath: itemPickupPrefab
+      value: 
+      objectReference: {fileID: 5992166288544002315, guid: 0effaea69f1fffe47bfc5e679878f625, type: 3}
+    - target: {fileID: 1190213055732667580, guid: f5fa19055ae677443b71567e40fffc2d, type: 3}
+      propertyPath: item
+      value: 
+      objectReference: {fileID: 11400000, guid: 947b9db91e7250746853fb590b6232c8, type: 2}
+    - target: {fileID: 1190213055732667580, guid: f5fa19055ae677443b71567e40fffc2d, type: 3}
+      propertyPath: dropChance
+      value: 0.78
+      objectReference: {fileID: 0}
     - target: {fileID: 1190213055732667582, guid: f5fa19055ae677443b71567e40fffc2d, type: 3}
       propertyPath: m_SortingLayerID
       value: -665931421
@@ -16795,6 +16823,10 @@ PrefabInstance:
     - target: {fileID: 1190213055732667571, guid: f5fa19055ae677443b71567e40fffc2d, type: 3}
       propertyPath: m_Name
       value: AngryEyes (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1190213055732667580, guid: f5fa19055ae677443b71567e40fffc2d, type: 3}
+      propertyPath: dropChance
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 1190213055732667582, guid: f5fa19055ae677443b71567e40fffc2d, type: 3}
       propertyPath: m_SortingLayerID
@@ -18756,6 +18788,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: AngryEyes (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1190213055732667580, guid: f5fa19055ae677443b71567e40fffc2d, type: 3}
+      propertyPath: itemPickupPrefab
+      value: 
+      objectReference: {fileID: 5992166288544002315, guid: 0effaea69f1fffe47bfc5e679878f625, type: 3}
+    - target: {fileID: 1190213055732667580, guid: f5fa19055ae677443b71567e40fffc2d, type: 3}
+      propertyPath: item
+      value: 
+      objectReference: {fileID: 11400000, guid: 947b9db91e7250746853fb590b6232c8, type: 2}
     - target: {fileID: 1190213055732667582, guid: f5fa19055ae677443b71567e40fffc2d, type: 3}
       propertyPath: m_SortingLayerID
       value: -665931421
@@ -107619,10 +107659,10 @@ MonoBehaviour:
   range: 10
   maxHealth: 50
   healthSlider: {fileID: 2005628565}
-  itemPickupPrefab: {fileID: 0}
-  item: {fileID: 0}
+  itemPickupPrefab: {fileID: 5992166288544002315, guid: 0effaea69f1fffe47bfc5e679878f625, type: 3}
+  item: {fileID: 11400000, guid: 02b4a907818c6934299d37a87668d81b, type: 2}
   itemSpawnYOffset: 0
-  dropChance: 0
+  dropChance: 0.5
   shouldFacePlayer: 1
   shootCooldown: 2
   tetherRange: 5
@@ -116142,6 +116182,10 @@ PrefabInstance:
     - target: {fileID: 1190213055732667571, guid: e74db3b2128bf8c4682274f882505de9, type: 3}
       propertyPath: m_Name
       value: Snowflake
+      objectReference: {fileID: 0}
+    - target: {fileID: 1190213055732667580, guid: e74db3b2128bf8c4682274f882505de9, type: 3}
+      propertyPath: item
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 1219005927774063696, guid: e74db3b2128bf8c4682274f882505de9, type: 3}
       propertyPath: m_AnchorMax.y
