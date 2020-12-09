@@ -2386,6 +2386,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: DragonFlyGroup (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1750817489815466103, guid: e0b1039492f6d0549b32913aed91e520, type: 3}
+      propertyPath: itemPickupPrefab
+      value: 
+      objectReference: {fileID: 5992166288544002315, guid: 0effaea69f1fffe47bfc5e679878f625, type: 3}
+    - target: {fileID: 1750817489815466103, guid: e0b1039492f6d0549b32913aed91e520, type: 3}
+      propertyPath: item
+      value: 
+      objectReference: {fileID: 11400000, guid: b79eaee6173b5d146a638dee0f5dfc17, type: 2}
     - target: {fileID: 4298700809727665328, guid: e0b1039492f6d0549b32913aed91e520, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -3114,7 +3122,7 @@ MonoBehaviour:
   maxHealth: 200
   healthSlider: {fileID: 888521087}
   itemPickupPrefab: {fileID: 5992166288544002315, guid: 0effaea69f1fffe47bfc5e679878f625, type: 3}
-  item: {fileID: 11400000, guid: b79eaee6173b5d146a638dee0f5dfc17, type: 2}
+  item: {fileID: 11400000, guid: 1d1ae8ec65560c244a4be7cbc5fb1abc, type: 2}
   itemSpawnYOffset: -2
   dropChance: 1
   shouldFacePlayer: 0
@@ -5355,7 +5363,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!95 &428852865
 Animator:
   serializedVersion: 3
@@ -8783,6 +8791,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: DragonFlyGroup (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1750817489815466103, guid: e0b1039492f6d0549b32913aed91e520, type: 3}
+      propertyPath: itemPickupPrefab
+      value: 
+      objectReference: {fileID: 5992166288544002315, guid: 0effaea69f1fffe47bfc5e679878f625, type: 3}
+    - target: {fileID: 1750817489815466103, guid: e0b1039492f6d0549b32913aed91e520, type: 3}
+      propertyPath: item
+      value: 
+      objectReference: {fileID: 11400000, guid: b79eaee6173b5d146a638dee0f5dfc17, type: 2}
     - target: {fileID: 4298700809727665328, guid: e0b1039492f6d0549b32913aed91e520, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -9529,8 +9545,8 @@ MonoBehaviour:
   range: 7
   maxHealth: 200
   healthSlider: {fileID: 201575726}
-  itemPickupPrefab: {fileID: 0}
-  item: {fileID: 0}
+  itemPickupPrefab: {fileID: 5992166288544002315, guid: 0effaea69f1fffe47bfc5e679878f625, type: 3}
+  item: {fileID: 11400000, guid: 1d1ae8ec65560c244a4be7cbc5fb1abc, type: 2}
   itemSpawnYOffset: 0
   dropChance: 0
   shouldFacePlayer: 0
@@ -10290,10 +10306,10 @@ RectTransform:
   m_Father: {fileID: 646353792}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 532.5, y: -57.836914}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &740074510
 MonoBehaviour:
@@ -10975,8 +10991,8 @@ MonoBehaviour:
   range: 7
   maxHealth: 200
   healthSlider: {fileID: 1630526144}
-  itemPickupPrefab: {fileID: 0}
-  item: {fileID: 0}
+  itemPickupPrefab: {fileID: 5992166288544002315, guid: 0effaea69f1fffe47bfc5e679878f625, type: 3}
+  item: {fileID: 11400000, guid: 1d1ae8ec65560c244a4be7cbc5fb1abc, type: 2}
   itemSpawnYOffset: 0
   dropChance: 0
   shouldFacePlayer: 0
@@ -13546,10 +13562,10 @@ RectTransform:
   m_Father: {fileID: 646353792}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 652.5, y: -57.836914}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &987629285
 MonoBehaviour:
@@ -15268,8 +15284,8 @@ MonoBehaviour:
   range: 7
   maxHealth: 200
   healthSlider: {fileID: 1657014934}
-  itemPickupPrefab: {fileID: 0}
-  item: {fileID: 0}
+  itemPickupPrefab: {fileID: 5992166288544002315, guid: 0effaea69f1fffe47bfc5e679878f625, type: 3}
+  item: {fileID: 11400000, guid: 1d1ae8ec65560c244a4be7cbc5fb1abc, type: 2}
   itemSpawnYOffset: 0
   dropChance: 0
   shouldFacePlayer: 0
@@ -17584,8 +17600,8 @@ MonoBehaviour:
   range: 7
   maxHealth: 200
   healthSlider: {fileID: 1969504778}
-  itemPickupPrefab: {fileID: 0}
-  item: {fileID: 0}
+  itemPickupPrefab: {fileID: 5992166288544002315, guid: 0effaea69f1fffe47bfc5e679878f625, type: 3}
+  item: {fileID: 11400000, guid: 1d1ae8ec65560c244a4be7cbc5fb1abc, type: 2}
   itemSpawnYOffset: 0
   dropChance: 0
   shouldFacePlayer: 0
@@ -18515,8 +18531,8 @@ MonoBehaviour:
   range: 7
   maxHealth: 200
   healthSlider: {fileID: 309189505}
-  itemPickupPrefab: {fileID: 0}
-  item: {fileID: 0}
+  itemPickupPrefab: {fileID: 5992166288544002315, guid: 0effaea69f1fffe47bfc5e679878f625, type: 3}
+  item: {fileID: 11400000, guid: 1d1ae8ec65560c244a4be7cbc5fb1abc, type: 2}
   itemSpawnYOffset: 0
   dropChance: 0
   shouldFacePlayer: 0
@@ -23986,8 +24002,8 @@ MonoBehaviour:
   range: 7
   maxHealth: 200
   healthSlider: {fileID: 2084376440}
-  itemPickupPrefab: {fileID: 0}
-  item: {fileID: 0}
+  itemPickupPrefab: {fileID: 5992166288544002315, guid: 0effaea69f1fffe47bfc5e679878f625, type: 3}
+  item: {fileID: 11400000, guid: 1d1ae8ec65560c244a4be7cbc5fb1abc, type: 2}
   itemSpawnYOffset: 0
   dropChance: 0
   shouldFacePlayer: 0
@@ -109961,8 +109977,8 @@ MonoBehaviour:
   range: 7
   maxHealth: 200
   healthSlider: {fileID: 2045983158}
-  itemPickupPrefab: {fileID: 0}
-  item: {fileID: 0}
+  itemPickupPrefab: {fileID: 5992166288544002315, guid: 0effaea69f1fffe47bfc5e679878f625, type: 3}
+  item: {fileID: 11400000, guid: 1d1ae8ec65560c244a4be7cbc5fb1abc, type: 2}
   itemSpawnYOffset: 0
   dropChance: 0
   shouldFacePlayer: 0
@@ -110667,8 +110683,8 @@ MonoBehaviour:
   range: 7
   maxHealth: 200
   healthSlider: {fileID: 309262884}
-  itemPickupPrefab: {fileID: 0}
-  item: {fileID: 0}
+  itemPickupPrefab: {fileID: 5992166288544002315, guid: 0effaea69f1fffe47bfc5e679878f625, type: 3}
+  item: {fileID: 11400000, guid: 1d1ae8ec65560c244a4be7cbc5fb1abc, type: 2}
   itemSpawnYOffset: 0
   dropChance: 0
   shouldFacePlayer: 0
@@ -122950,8 +122966,8 @@ MonoBehaviour:
   range: 7
   maxHealth: 200
   healthSlider: {fileID: 1381387160}
-  itemPickupPrefab: {fileID: 0}
-  item: {fileID: 0}
+  itemPickupPrefab: {fileID: 5992166288544002315, guid: 0effaea69f1fffe47bfc5e679878f625, type: 3}
+  item: {fileID: 11400000, guid: 1d1ae8ec65560c244a4be7cbc5fb1abc, type: 2}
   itemSpawnYOffset: 0
   dropChance: 0
   shouldFacePlayer: 0
@@ -123097,6 +123113,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: DragonFlyGroup
       objectReference: {fileID: 0}
+    - target: {fileID: 1750817489815466103, guid: e0b1039492f6d0549b32913aed91e520, type: 3}
+      propertyPath: itemPickupPrefab
+      value: 
+      objectReference: {fileID: 5992166288544002315, guid: 0effaea69f1fffe47bfc5e679878f625, type: 3}
+    - target: {fileID: 1750817489815466103, guid: e0b1039492f6d0549b32913aed91e520, type: 3}
+      propertyPath: item
+      value: 
+      objectReference: {fileID: 11400000, guid: b79eaee6173b5d146a638dee0f5dfc17, type: 2}
     - target: {fileID: 4298700809727665328, guid: e0b1039492f6d0549b32913aed91e520, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
